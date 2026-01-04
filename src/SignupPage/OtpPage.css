@@ -1,0 +1,206 @@
+.body {
+  margin: 0;
+  /* font-family: 'Arial', sans-serif; */
+  background-color: #3c4357;
+}
+
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -50px;
+  background-color: #3c4357;
+}
+
+.otp-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Default width for smaller screens */
+  max-width: 400px; /* Max width for larger screens */
+}
+
+.otp-icon {
+  font-size: 40px;
+  color: #0cbaba;
+  margin-bottom: 10px;
+}
+
+h5 {
+  margin: 10px 0;
+  color: #4a4a4a;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #6c757d;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.otp-field {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.otp-field:focus {
+  border-color: #0cbaba;
+  outline: none;
+}
+
+.otp-verify-btn {
+  background-color: #0cbaba;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.otp-verify-btn:hover {
+  background-color: rgb(89, 158, 158);
+}
+
+.inner-circle1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px; /* Adjust size as needed */
+  color: white; /* Adjust color if needed */
+}
+
+.signup-container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.circle1 {
+  width: 25px;
+  height: 25px; /* Adjusted to be circular */
+  border-radius: 50%;
+  background-color: rgb(1, 119, 119);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.circle.active1 {
+  border-color: rgb(89, 158, 158);
+  background-color: rgb(51, 177, 177);
+}
+
+.inner-circle2 {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(77, 201, 201); /* Inner circle color */
+  border-radius: 50%;
+}
+
+.line1 {
+  width: 100px; /* Adjust the width as needed */
+  height: 1px; /* Added height to make it visible */
+  background-color: rgb(21, 247, 247);
+  color: rgb(89, 158, 158);
+  margin-top: 20px;
+}
+
+.labels1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 50px; /* Adjust padding for better responsiveness */
+  font-size: medium;
+}
+
+.labels1 span1 {
+  color: rgb(89, 158, 158);
+  text-align: center;
+  font-size: 15px;
+}
+
+.background-container-img {
+  position: relative;
+  height: 100vh;
+  width: 60%; /* Slightly reduced width for smaller screens */
+  background-color: transparent;
+  margin: 0 auto; /* Centers the container horizontally */
+  /* overflow: hidden; */
+}
+
+.background-container-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('/src/assets/Background-image1.png');
+  background-size: 100% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+
+  /* z-index: -1; Ensure it's behind other content/ */
+}
+
+.otp-card, .otp-inputs, .otp-field {
+  position: relative; /* Ensure positioning context */
+  z-index: 10; /* Higher z-index to stay on top */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .otp-container {
+    margin-top: 0; /* Remove negative margin for smaller screens */
+  }
+
+  .otp-card {
+    padding: 15px;
+    width: 95%; /* Full width for smaller screens */
+  }
+
+  .otp-inputs {
+    flex-direction: row; /* Stack inputs vertically on small screens */
+    align-items: center;
+  }
+
+  .otp-field {
+    width: 5px; /* Make inputs wider on small screens */
+    max-width: 30px;
+    margin: 0px;
+  }
+
+  .labels1 {
+    padding: 0 20px; /* Reduce padding for smaller screens */
+    font-size: small; /* Adjust font size */
+  }
+
+  .background-container-img {
+    width: 100%; /* Full width for mobile */
+    height: 3%;
+  }
+}

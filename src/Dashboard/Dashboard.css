@@ -1,0 +1,2732 @@
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  height: 70px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 80px;
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: inherit;
+  margin-right: 10px;
+  color: #000;
+}
+
+.dashboard-text {
+  font-size: 30px;
+  font-weight: 500;
+  color: #58A4B0;
+  margin-top: -10px;
+  margin-left: 50px;
+}
+
+.search-section1 {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 120px;
+  color: #58a4b0;
+}
+
+.search-input1 {
+  width: 80%;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  height: 30px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+
+}
+
+.user-section-noti {
+  /* border: 2px solid yellow; */
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: rgb(255, 244, 221);
+
+  padding: 2px 11px;
+}
+
+.notification-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  /* border: 1px solid ; */
+  align-items: center;
+  margin-top: 10px;
+}
+
+.profile-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
+/* Extra-small screens (below 768px): hidden sidebar with toggle button */
+@media (max-width: 767px) {
+  .sidebar-newsdash {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 100%;
+    /* Full-width on small screens when toggled */
+  }
+
+  /* Sidebar toggle button */
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: #58A4B0;
+    cursor: pointer;
+    z-index: 1100;
+    /* Above the sidebar */
+  }
+
+  /* When the sidebar is toggled */
+  .sidebar.active {
+    transform: translateX(0);
+    /* Slide in */
+  }
+}
+
+@media (min-width: 1600px) {
+  .header1 {
+    height: 120px !important;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .dashboard-text {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .search-section1 {
+    margin-left: 150px;
+
+  }
+
+  .search-input1 {
+    width: 500px !important;
+    height: 50px;
+    margin-left: 300px;
+  }
+
+  .user-section {
+    margin-right: 20px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1400px) {
+  .header1 {
+    height: 100px !important;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .dashboard-text {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .search-section1 {
+    margin-left: 50px;
+  }
+
+  .search-input1 {
+    width: 90%;
+  }
+
+  .user-section {
+    margin-right: 20px;
+  }
+}
+
+/* Medium screens (laptops, tablets) */
+@media (max-width: 1200px) {
+  .header1 {
+    height: 200px !important;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .dashboard-text {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .search-section1 {
+    margin-left: 50px;
+  }
+
+  .search-input1 {
+    width: 90%;
+  }
+
+  .user-section {
+    margin-right: 20px;
+  }
+}
+
+/* Small screens (tablets, large phones) */
+@media (max-width: 992px) {
+  .header1 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo-section {
+    margin-bottom: 10px;
+  }
+
+  .search-section1 {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+
+  .dashboard-text {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  .search-input1 {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .user-section {
+    margin-right: 0;
+  }
+}
+
+/* Extra-small screens (mobile) */
+@media (max-width: 576px) {
+  .logo {
+    height: 50px;
+    margin-left: 10px;
+  }
+
+  .company-name {
+    font-size: 20px;
+  }
+
+  .dashboard-text {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .search-input1 {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .user-section {
+    margin-right: 10px;
+  }
+
+  .user-section-noti {
+    height: 35px;
+    width: 35px;
+  }
+
+  .profile-image {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .header1 {
+    padding: 20px 40px;
+  }
+
+  .logo {
+    height: 80px;
+    margin-left: 100px;
+  }
+
+  .company-name {
+    font-size: 28px;
+  }
+
+  .dashboard-text {
+    font-size: 34px;
+    margin-left: 70px;
+  }
+
+  .search-section1 {
+    margin-left: 150px;
+  }
+
+  .search-input1 {
+    width: 70%;
+    font-size: 18px;
+  }
+
+  .user-section {
+    margin-right: 60px;
+  }
+
+  .user-section-noti {
+    height: 45px;
+    width: 45px;
+  }
+
+  .notification-icon {
+    width: 20px;
+    height: 22px;
+  }
+
+  .profile-image {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* ==================================================================== */
+/* sidebar */
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 20px 0;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  /* Keeps the sidebar fixed on the left */
+  height: 90vh;
+  /* Full height of the viewport */
+
+
+  margin-top: 80px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  color: #58A4B0;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 20px;
+  border-radius: 15px;
+}
+
+.menu-item:hover {
+  background-color: #58A4B0;
+  color: white;
+  border-radius: 10px;
+}
+
+.menu-item.active {
+  background-color: #58A4B0;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.menu-icon {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item:hover .menu-icon {
+  color: white;
+}
+
+.menu-icon1 {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item:hover .menu-icon1 path {
+  stroke: white;
+  /* Change color on hover */
+}
+
+.menu-item:hover .menu-icon path {
+  fill: white;
+}
+
+
+
+
+
+.setting-acc {
+  color: #58A4B0;
+  text-decoration: none;
+}
+
+.setting-acc:hover {
+  color: white;
+}
+
+
+
+
+/* Responsive Styling */
+
+/* Large screens: default sidebar width */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 250px;
+  }
+}
+
+/* Extra-large screens: slightly wider sidebar */
+@media (min-width: 1600px) {
+  .sidebar {
+    width: 380px;
+  }
+
+  .menu-item {
+    font-size: 35px;
+  }
+
+  .menu-item svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* Medium screens (1024px - 1199px): narrower sidebar */
+@media (max-width: 1199px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .menu-item {
+    font-size: 17px;
+  }
+
+  .menu-icon {
+    font-size: 18px;
+  }
+}
+
+/* Small screens (768px - 1023px): even narrower sidebar */
+@media (max-width: 1023px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .menu-item {
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    font-size: 16px;
+  }
+}
+
+/* Extra-small screens (below 768px): hidden sidebar with toggle button */
+@media (max-width: 767px) {
+  .sidebar {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 100%;
+    /* Full-width on small screens when toggled */
+  }
+
+  /* Sidebar toggle button */
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: #58A4B0;
+    cursor: pointer;
+    z-index: 1100;
+    /* Above the sidebar */
+  }
+
+  /* When the sidebar is toggled */
+  .sidebar.active {
+    transform: translateX(0);
+    /* Slide in */
+  }
+}
+
+
+
+
+
+
+
+
+
+.popup-logout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* position: absolute; must be positioned */
+}
+
+.popup-content-logout {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  /* must be positioned */
+  z-index: 9999;
+}
+
+.popup-content-logout h2 {
+  margin-bottom: 20px;
+}
+
+.cancel-button-logout,
+.confirm-button-logout {
+  /* background-color: #6bb9b7; */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.confirm-button-logout {
+  background-color: #58A4B0;
+  color: white;
+}
+
+.cancel-button-logout {
+  background-color: transparent;
+  border: 1px solid #58a4b0;
+  color: black;
+}
+
+.cancel-button-logout:hover,
+.confirm-button-logout:hover {
+  opacity: 0.8;
+}
+
+/* ============================================================================= */
+.dashannouncement-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  /* margin-top: 5px; */
+  width: 80%;
+  /* Default to 90% width on smaller screens */
+  max-width: 1000px;
+  /* Prevents the container from growing too wide */
+  margin-left: 200px !important;
+  /* Centers the container horizontally */
+
+
+}
+
+/* Title Styling */
+.dashannouncement-title {
+  font-size: 16px;
+  color: #58a4b0;
+  margin-bottom: 0px;
+  text-align: center;
+  position: relative;
+
+}
+
+.dashannouncement-title::after {
+  content: '';
+  display: block;
+  width: 140px;
+  height: 2px;
+  background-color: #2e5e6a;
+  margin: 5px auto 0;
+  margin-top: -3px;
+}
+
+/* Table Styles */
+.dashannouncement-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.dashannouncement-table th {
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 1;
+
+}
+
+.dashannouncement-table td {
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgb(109, 109, 109);
+}
+
+.dashannouncement-actions {
+  text-align: center;
+}
+
+.dashannouncement-actions i {
+  color: #4a4a4a;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.dashannouncement-actions i:hover {
+  color: #59a4b0;
+}
+
+/* Ensure rows have a fixed height */
+.dashannouncement-table tr {
+  height: 30px;
+}
+
+/* Media Queries for different screen sizes */
+
+/* For smaller screens (like mobile) */
+@media (max-width: 576px) {
+  .dashannouncement-container {
+    width: 100%;
+    /* Takes up full width on smaller screens */
+  }
+
+  .dashannouncement-table th,
+  .dashannouncement-table td {
+    font-size: 12px;
+    /* Smaller font size for smaller screens */
+  }
+}
+
+/* For tablets and medium screens */
+@media (max-width: 768px) {
+  .dashannouncement-container {
+    width: 90%;
+    /* Keeps the container at 90% width */
+  }
+}
+
+/* For large screens */
+@media (min-width: 1200px) {
+  .dashannouncement-container {
+    width: 43%;
+    /* Keeps the container at 80% width on larger screens */
+    margin-left: 210px;
+    height: 190px;
+    margin-top: -10px;
+  }
+}
+
+/* For very large screens (like 1920px or wider) */
+@media (min-width: 1600px) {
+  .dashannouncement-container {
+    width: 60%;
+    margin-left: 90px;
+    height: 260px;
+
+  }
+
+  /* Makes it 70% on very large screens to prevent it from being too wide */
+  .dashannouncement-table th {
+    padding: 4px 8px;
+    font-size: 18px;
+    line-height: 1.2;
+
+  }
+
+  .dashannouncement-table td {
+    padding: 4px 8px;
+    font-size: 19px;
+    line-height: 2;
+    color: rgb(109, 109, 109);
+  }
+
+  .dashannouncement-actions {
+    text-align: center;
+  }
+
+  .dashannouncement-actions i {
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .dashannouncement-actions i:hover {
+    color: #59a4b0;
+  }
+
+  /* Ensure rows have a fixed height */
+  .dashannouncement-table tr {
+    height: 30px;
+  }
+}
+
+
+
+/* ================================================================= */
+.topmentor-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  font-family: 'poppins';
+  width: 1300px !important;
+  height: 105px;
+  margin-left: 260px;
+  margin-bottom: 10px;
+  /* margin-top: 100px; */
+}
+
+.topmentor-title {
+  font-size: 18px !important;
+  color: #58a4b0;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  margin-top: -8px;
+}
+
+.topmentor-title::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: #2e5e6a;
+  margin: 1px auto 0;
+}
+
+.topmentor-list {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 5px 0;
+  scroll-behavior: smooth;
+  margin-top: -15px;
+  -ms-overflow-style: none;
+  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;
+}
+
+.topmentor-item {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 120px;
+}
+
+.topmentor-image {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 2px solid #b2ebf2; */
+}
+
+.topmentor-name {
+  margin: 10px 0 0 0;
+  font-size: 12px !important;
+  font-weight: 500;
+  color: #757474;
+  margin-top: -2px;
+}
+
+.topmentor-role {
+  font-size: 11px !important;
+  color: #a1a1a1;
+  width: fit-content;
+  /* Adjusts the width based on content */
+  white-space: pre-wrap;
+  /* Allows wrapping */
+  word-break: break-word;
+  /* Breaks the word if needed */
+  display: inline-block;
+  margin-top: -2px;
+  line-height: 1.0;
+}
+
+.topmentor-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.topmentor-list::-webkit-scrollbar-thumb {
+  background-color: #b2ebf2;
+  border-radius: 10px;
+}
+
+.topmentor-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Small screens (mobile, below 600px) */
+@media (max-width: 600px) {
+  .topmentor-container {
+    width: 95%;
+    /* Increase container width for mobile */
+    padding: 15px;
+  }
+
+  .topmentor-title {
+    font-size: 18px;
+  }
+
+  .topmentor-item {
+    width: 80px;
+    /* Smaller items for mobile */
+  }
+
+  .topmentor-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topmentor-name {
+    font-size: 12px;
+  }
+
+  .topmentor-role {
+    font-size: 10px;
+  }
+}
+
+/* Medium screens (tablet, 600px to 1199px) */
+@media (min-width: 600px) and (max-width: 1199px) {
+  .topmentor-container {
+    width: 90%;
+    /* Responsive width for medium screens */
+    max-width: 900px;
+    padding: 20px;
+  }
+
+  .topmentor-title {
+    font-size: 20px;
+  }
+
+  .topmentor-item {
+    width: 100px;
+  }
+
+  .topmentor-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .topmentor-name {
+    font-size: 13px;
+  }
+
+  .topmentor-role {
+    font-size: 12px;
+  }
+}
+
+/* Large screens (1200px to 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .topmentor-container {
+    width: 80%;
+    /* Increase width for larger screens */
+    max-width: 800px;
+    padding: 13px;
+    margin-top: 10px;
+  }
+
+  .topmentor-title {
+    font-size: 23px;
+  }
+
+  .topmentor-item {
+    width: 120px;
+    /* Larger items for larger screens */
+  }
+
+  .topmentor-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .topmentor-name {
+    font-size: 14px;
+  }
+
+  .topmentor-role {
+    font-size: 13px;
+  }
+}
+
+/* Extra large screens (1600px and up) */
+@media (min-width: 1600px) {
+  .topmentor-container {
+    width: 80% !important;
+    /* Wider width for extra-large screens */
+    max-width: 1040px !important;
+    padding: 30px;
+    /* height: 100px; */
+    margin-left: 400px;
+    height: 240px;
+    margin-top: 0px;
+  }
+
+  .topmentor-title {
+    margin-top: 10px;
+    font-size: 32px !important;
+  }
+
+  .topmentor-item {
+    width: 130px;
+    /* Bigger items for extra-large screens */
+  }
+
+  .topmentor-image {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .topmentor-name {
+    font-size: 21px !important;
+  }
+
+  .topmentor-role {
+    font-size: 16px !important;
+  }
+
+  .topmentor-list {
+    display: flex;
+    gap: 75px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px 0;
+    scroll-behavior: smooth;
+    margin-top: -15px;
+    -ms-overflow-style: none;
+    /* Hides scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;
+  }
+}
+
+/* ==================================================================== */
+.topArticle-container {
+  width: 60% !important;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  height: 165px !important;
+  margin-left: 260px;
+}
+
+.topArticle-title {
+  font-size: 18px;
+  color: #58a4b0;
+  /* margin-bottom: 20px; */
+  text-align: center;
+  position: relative;
+
+}
+
+.topArticle-title::after {
+  content: '';
+  display: block;
+  width: 205px;
+  height: 1.5px;
+  background-color: #2e5e6a;
+  margin: 1px auto 0;
+}
+
+.topArticle-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.topArticle-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 10px;
+  margin-left: 50px;
+}
+
+.topArticle-image {
+  width: 170px !important;
+  height: 80px !important;
+  /* border-radius: 10px; */
+  margin-top: -14px;
+}
+
+.topArticle-author-info {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  /* margin-left: 20px; */
+}
+
+.topArticle-author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* margin-left: 70px; */
+}
+
+.topArticle-author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.topArticle-author-name {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.topArticle-post-date {
+  font-size: 8px;
+  color: #888;
+}
+
+.topArticle-follow-btn {
+  padding: 0.5px 7px;
+  margin-left: -30px;
+  background-color: transparent;
+  border: 1px solid #ccd;
+  border-radius: 12px;
+  height: 10px;
+  cursor: pointer;
+  margin-top: -15px;
+  font-size: 7px;
+}
+
+.topArticle-right {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.topArticle-heading {
+  font-size: 12px !important;
+  color: #212121;
+  margin-top: -1px;
+  /* margin-bottom: 10px; */
+}
+
+.topArticle-description {
+  font-size: 10px;
+  color: #555;
+  margin-top: -2px;
+  /* margin-bottom: 20px; */
+}
+
+.topArticle-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: -15px;
+  font-size: 10px;
+}
+
+.topArticle-share-btn {
+  padding: 1px 15px;
+  background-color: #fff;
+  border: 1px solid #ccd;
+  border-radius: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 50px;
+  width: 80px;
+  height: 20px;
+}
+
+.topArticle-open-btn {
+  background-color: #4e5e6a;
+  color: white;
+  padding: 5px 15px;
+  /* background-color: #fff; */
+  border: 1px solid #ccd;
+  border-radius: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 80px;
+  height: 20px;
+}
+
+.topArticle-pagination {
+  text-align: center;
+  margin-top: -10px;
+}
+
+.topArticle-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 2px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  /* margin-top: -30px; */
+}
+
+.topArticle-dot1 {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 2px;
+  background-color: #6a6a6a;
+  border-radius: 50%;
+  cursor: pointer;
+  /* margin-top: -30px; */
+}
+
+.topArticle-dot.active {
+  background-color: #4e5e6a;
+}
+
+/* Responsive Styles for Different Breakpoints */
+
+/* Large screens (1600px and up) */
+@media (min-width: 1600px) {
+  .topArticle-container {
+    width: 80% !important;
+    max-width: 1040px !important;
+    margin-left: 400px !important;
+    height: 350px !important;
+  }
+
+  .topArticle-title {
+    margin-top: 10px;
+    font-size: 32px !important;
+  }
+
+  .topArticle-image {
+    width: 250px !important;
+    height: 200px !important;
+  }
+
+  .topArticle-heading {
+    margin-top: 10px;
+    font-size: 20px !important;
+  }
+
+  .topArticle-description {
+    font-size: 22px !important;
+  }
+
+  .topArticle-author-info {
+    display: flex !important;
+    align-items: center !important;
+    /* margin-top: 4px; */
+    /* margin-left: 20px; */
+  }
+
+  .topArticle-author-img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    margin-right: 10px !important;
+    /* margin-left: 70px; */
+  }
+
+  .topArticle-author-details {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .topArticle-author-name {
+    font-weight: bold !important;
+    font-size: 20px !important;
+  }
+
+  .topArticle-post-date {
+    font-size: 16px !important;
+    color: #888 !important;
+  }
+
+  .topArticle-follow-btn {
+    height: 30px;
+    font-size: 20px;
+    margin-top: -25px;
+  }
+
+  .topArticle-dot {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 2px !important;
+    background-color: #ccc !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    /* margin-top: -30px; */
+  }
+
+  .topArticle-dot1 {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 2px !important;
+    background-color: #6a6a6a !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    /* margin-top: -30px; */
+  }
+
+  .topArticle-pagination {
+    text-align: center !important;
+    margin-top: -20px !important;
+  }
+
+  .topArticle-share-btn {
+    padding: 1px 15px;
+    background-color: #fff;
+    border: 1px solid #ccd;
+    border-radius: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 50px;
+    width: 80px;
+    height: 40px !important;
+    font-size: 15px;
+  }
+
+  .topArticle-open-btn {
+    background-color: #4e5e6a;
+    color: white;
+    padding: 5px 15px;
+    /* background-color: #fff; */
+    border: 1px solid #ccd;
+    border-radius: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 80px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+/* Medium screens (1200px to 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .topArticle-container {
+    width: 56%;
+  }
+
+  .topArticle-image {
+    width: 180px;
+    height: 100px;
+  }
+
+  .topArticle-heading {
+    font-size: 17px;
+  }
+}
+
+/* Tablet and smaller desktops (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .topArticle-container {
+    width: 85%;
+    padding: 10px;
+  }
+
+  .topArticle-card {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+  }
+
+  .topArticle-image {
+    width: 160px;
+    height: 90px;
+  }
+
+  .topArticle-heading {
+    font-size: 16px;
+  }
+
+  .topArticle-follow-btn,
+  .topArticle-share-btn,
+  .topArticle-open-btn {
+    width: 90px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile screens (less than 768px) */
+@media (max-width: 767px) {
+  .topArticle-container {
+    width: 95%;
+    padding: 8px;
+  }
+
+  .topArticle-title {
+    font-size: 18px;
+  }
+
+  .topArticle-card {
+    flex-direction: column;
+    /* Stack vertically */
+    gap: 10px;
+  }
+
+  .topArticle-image {
+    width: 140px;
+    height: 80px;
+  }
+
+  .topArticle-heading {
+    font-size: 15px;
+  }
+
+  .topArticle-description {
+    font-size: 12px;
+  }
+
+  .topArticle-follow-btn,
+  .topArticle-share-btn,
+  .topArticle-open-btn {
+    width: 80px;
+    font-size: 10px;
+  }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 480px) {
+  .topArticle-container {
+    padding: 5px;
+  }
+
+  .topArticle-title {
+    font-size: 16px;
+  }
+
+  .topArticle-image {
+    width: 120px;
+    height: 70px;
+  }
+
+  .topArticle-heading {
+    font-size: 14px;
+  }
+
+  .topArticle-description {
+    font-size: 11px;
+  }
+
+  .topArticle-follow-btn,
+  .topArticle-share-btn,
+  .topArticle-open-btn {
+    width: 70px;
+    font-size: 9px;
+  }
+}
+
+/* ============================================================ */
+/* Messages Section */
+.dash-messages-wrapper {
+  /* margin-top: 10px; */
+  background-color: white;
+  height: 280px;
+  width: 300px !important;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-left: 1190px !important;
+  margin-top: -280px;
+  /* padding: 20px; */
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;
+}
+
+.dash-message-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+}
+
+.dash-requests-heading {
+  color: black;
+}
+
+.dash-message-title h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #58a4b0;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.dash-expand-btn {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.dash-message-list {
+  max-height: 180px;
+  /* overflow-y: auto; */
+  margin-left: 10px;
+}
+
+.dash-message-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.dash-user-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.dash-message-details {
+  flex-grow: 1;
+}
+
+.dash-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
+
+.dash-message-text {
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.dash-message-meta {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.dash-time-stamp {
+  display: block;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.dash-unread-count {
+  display: inline-block;
+  background-color: #5da3a3;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+/* Responsive Styles */
+
+/* Large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .dash-messages-wrapper {
+    width: 440px !important;
+    height: 600px;
+    margin-top: -600px;
+    margin-left: 1450px !important;
+  }
+
+  .dash-user-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .dash-message-title h4 {
+    font-size: 28px;
+    margin-left: 190px;
+  }
+
+  .dash-message-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .dash-user-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+
+  .dash-message-details {
+    flex-grow: 1;
+  }
+
+  .dash-user-name {
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .dash-message-text {
+    font-size: 22px;
+    color: #6b6b6b;
+  }
+
+  .dash-message-meta {
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  .dash-time-stamp {
+    display: block;
+    font-size: 20px;
+    color: #6b6b6b;
+  }
+
+  .dash-unread-count {
+    display: inline-block;
+    background-color: #5da3a3;
+    color: white;
+    font-size: 17px;
+    border-radius: 50%;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+  }
+}
+
+/* Medium screens (1200px to 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .dash-messages-wrapper {
+    width: 80%;
+    max-width: 340px;
+    margin-left: 1070px;
+  }
+
+  .dash-message-title h4 {
+    font-size: 16px;
+  }
+}
+
+/* Tablet (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .dash-messages-wrapper {
+    width: 85%;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+
+  .dash-user-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .dash-message-title h4 {
+    font-size: 16px;
+  }
+
+  .dash-message-item {
+    padding: 5px;
+  }
+}
+
+/* Mobile (less than 768px) */
+@media (max-width: 767px) {
+  .dash-messages-wrapper {
+    width: 90%;
+    max-width: 280px;
+    margin: 10px auto;
+    padding: 5px;
+  }
+
+  .dash-message-title h4 {
+    font-size: 15px;
+  }
+
+  .dash-user-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dash-message-text,
+  .dash-user-name {
+    font-size: 13px;
+  }
+
+  .dash-unread-count {
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 480px) {
+  .dash-messages-wrapper {
+    max-width: 95%;
+    height: auto;
+    margin: 10px;
+  }
+
+  .dash-message-title h4 {
+    font-size: 14px;
+  }
+
+  .dash-message-text,
+  .dash-user-name {
+    font-size: 12px;
+  }
+
+  .dash-unread-count {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ======================================================== */
+
+/* Container for the calendar */
+.calender-overall-cont {
+  display: flex;
+  background-color: white;
+  margin-top: -182px !important;
+  /* box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1); */
+  width: 500px !important;
+  border-radius: 10px;
+  height: 190px !important;
+  margin-left: 730px !important;
+  padding-left: 10px;
+}
+
+.calendar-container {
+  width: 300px;
+  /* margin: 0 auto; */
+  /* border: 1px solid #ddd; */
+  border-radius: 10px;
+  padding: 90px;
+  width: 200px;
+  height: 170px;
+  margin-top: -70px;
+  left: 40px;
+  /* background-color: #fff; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* Header containing the navigation buttons and month/year display */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 10px; */
+  font-family: 'poppins';
+}
+
+.calendar-month {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+}
+
+.calendar-nav {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Grid for days of the week and dates */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 8fr);
+  /* gap: -2px; */
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-size: 10px;
+  color: #333;
+  font-weight: 500;
+  margin-top: -15px;
+  margin-bottom: -10px;
+}
+
+/* All dates have default black color */
+.calendar-date {
+  text-align: center;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  /* line-height: 0.7; */
+  border-radius: 50%;
+  background-color: #AFE5E8;
+  /* Default background color */
+  color: #333;
+  /* Default color black */
+  font-size: 9px;
+  cursor: pointer;
+  margin-left: 7px;
+  margin-top: -40px;
+
+}
+
+.calendar-date.active {
+  background-color: #58a4b0;
+  color: #fff;
+}
+
+/* Sunday styling: red background */
+.calendar-day:nth-child(7n + 1) .calendar-date {
+  background-color: transparent;
+  /* Light red background */
+  color: red !important;
+  margin-left: 7px;
+  /* Sunday numbers in red */
+}
+
+/* Saturday styling: black number with light gray background */
+.calendar-day:nth-child(7n) .calendar-date {
+  background-color: transparent;
+  /* Light gray background for Saturday */
+  color: black !important;
+  /* Saturday numbers in black */
+  margin-left: 7px;
+}
+
+/* Sunday day name (header) color red */
+.calendar-day-header:nth-child(1) {
+  color: red;
+}
+
+/* Saturday day name (header) color black */
+.calendar-day-header:nth-child(7) {
+  color: black;
+  /* background-color: transparent; */
+}
+
+
+
+
+.dashcalendararticle-container {
+  font-family: 'poppins';
+  padding: 20px;
+  width: 280px;
+  margin-top: -65px;
+  margin-left: 430px;
+}
+
+.dashcalendararticle-heading {
+  color: #58a4b0;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  position: relative;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.dashcalendararticle-heading::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: #030404;
+  margin-top: -2px;
+  margin-left: 80px;
+}
+
+.dashcalendararticle-events {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 4px;
+
+}
+
+.dashcalendararticle-event {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 2px; */
+}
+
+.dashcalendararticle-date {
+  background-color: #58a4b0;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.dashcalendararticle-name {
+  font-size: 10px;
+  color: #333;
+}
+
+/* Extra large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .calender-overall-cont {
+    width: 50%;
+    max-width: 700px;
+    margin-top: -265px;
+    margin-left: 1200px;
+    height: 308px !important;
+    /* Explicit height for large screens */
+  }
+}
+
+/* Large screens (1200px to 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .calender-overall-cont {
+    width: 60%;
+    max-width: 570px;
+    margin-top: -205px;
+    margin-left: 840px;
+    height: 190px;
+    /* Explicit height for medium-large screens */
+  }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .calender-overall-cont {
+    width: 75%;
+    margin-top: -150px;
+    padding-left: 8px;
+    height: 300px;
+    /* Explicit height for medium screens */
+  }
+}
+
+/* Small screens (large phones, 576px to 767px) */
+@media (max-width: 767px) {
+  .calender-overall-cont {
+    width: 85%;
+    margin-top: -100px;
+    padding-left: 5px;
+    height: 250px;
+    /* Explicit height for small screens */
+  }
+}
+
+/* Extra small screens (mobile devices, below 576px) */
+@media (max-width: 576px) {
+  .calender-overall-cont {
+    width: 95%;
+    margin-top: -80px;
+    padding-left: 3px;
+    height: 200px;
+    /* Explicit height for extra small screens */
+  }
+}
+
+/* =============== */
+@media (min-width: 1600px) {
+  .calendar-container {
+    width: 40%;
+    padding: 30px;
+
+  }
+
+  .calendar-month {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 20px;
+    /* margin-bottom: 10px */
+  }
+
+  .calendar-nav {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+  }
+
+
+  .calendar-day-header {
+    margin-top: 10px;
+    font-size: 14px;
+
+  }
+
+  .calendar-date {
+    margin-top: 5px;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+  }
+
+
+  .dashcalendararticle-container {
+    width: 50%;
+    height: 220px !important;
+  }
+
+  .dashcalendararticle-heading {
+    font-size: 24px;
+    text-align: center;
+    margin-top: -70px;
+  }
+
+  .dashcalendararticle-heading::after {
+    width: 120px;
+    margin-left: 115px;
+  }
+
+  .dashcalendararticle-events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashcalendararticle-date {
+    font-size: 14px;
+
+  }
+
+
+  .dashcalendararticle-name {
+    font-size: 16px;
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+
+  /* Medium-large screens */
+  .calendar-container,
+  .dashcalendararticle-container {
+    max-width: 380px;
+  }
+
+  .calendar-date {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .dashcalendararticle-heading {
+    font-size: 20px;
+  }
+
+  .dashcalendararticle-name {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* Tablets */
+  .calendar-container,
+  .dashcalendararticle-container {
+    max-width: 350px;
+
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-date {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .dashcalendararticle-heading {
+    font-size: 18px;
+  }
+
+  .dashcalendararticle-date {
+    width: 22px;
+    height: 22px;
+  }
+
+  .dashcalendararticle-name {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  /* Small screens (large mobile phones) */
+  .calendar-container {
+    padding: 15px;
+  }
+
+  .calendar-grid {
+    gap: 3px;
+  }
+
+  .calendar-date {
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+  }
+
+  .dashcalendararticle-heading {
+    font-size: 16px;
+  }
+
+  .dashcalendararticle-date {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dashcalendararticle-name {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Small mobile screens */
+  .calendar-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .calendar-month {
+    font-size: 10px;
+  }
+
+  .calendar-date {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+  }
+
+  .dashcalendararticle-heading {
+    font-size: 14px;
+  }
+
+  .dashcalendararticle-date {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dashcalendararticle-name {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 320px) {
+
+  /* Extra small screens */
+  .calendar-container {
+    padding: 8px;
+  }
+
+  .calendar-month,
+  .calendar-day-header,
+  .calendar-date {
+    font-size: 8px;
+  }
+
+  .calendar-date {
+    width: 12px;
+    height: 12px;
+  }
+
+  .dashcalendararticle-heading {
+    font-size: 12px;
+  }
+
+  .dashcalendararticle-date {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dashcalendararticle-name {
+    font-size: 8px;
+  }
+}
+
+/* ======================== */
+.dashmessages-chat-container {
+  width: 400px;
+  height: 600px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.dashmessages-chat-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.dashmessages-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.dashmessages-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dashmessages-profile-pic-small {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.dashmessages-header-icons i {
+  font-size: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.dashmessages-chat-body {
+  padding: 15px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashmessages-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dashmessages-received {
+  justify-content: flex-start;
+}
+
+.dashmessages-sent {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.dashmessages-message p {
+  background-color: #f1f1f1;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 60%;
+}
+
+.dashmessages-sent p {
+  background-color: #8ed1dc;
+  color: white;
+}
+
+.dashmessages-chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.dashmessages-chat-footer input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  background-color: #f1f1f1;
+  margin: 0 10px;
+}
+
+.dashmessages-chat-footer i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dashmessages-open-chat-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* MAIN */
+.dash-container {
+  margin-left: 260px;
+  padding: 25px;
+  background: #f6f8fb;
+  min-height: 100vh;
+}
+
+/* ROWS */
+.dash-row {
+  display: grid;
+  grid-template-columns: 2.1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+/* CARD BASE */
+.dash-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dash-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #58a4b0;
+  margin-bottom: 14px;
+}
+
+/* ANNOUNCEMENTS */
+.announce-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.announce-table th {
+  color: #7aaeb6;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.announce-table td {
+  padding: 8px 0;
+  color: #6b6b6b;
+  border-bottom: 1px solid #eee;
+}
+
+/* CALENDAR */
+.calendar-wrap {
+  display: flex;
+  gap: 18px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-date {
+  background: #dff1f4;
+  text-align: center;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 12px;
+}
+
+.calendar-events p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.calendar-events span {
+  background: #58a4b0;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+/* MENTORS */
+.mentor-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+
+.mentor-item {
+  font-size: 12px;
+  color: #777;
+}
+
+/* MESSAGES */
+.msg-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.msg-item p {
+  font-size: 12px;
+  color: #777;
+}
+
+.msg-time {
+  font-size: 12px;
+  color: #58a4b0;
+}
+
+/* ARTICLE */
+.article-card {
+  margin-top: 5px;
+}
+
+.article-text {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0 20px;
+}
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-outline {
+  border: 1px solid #ccd;
+  background: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-solid {
+  background: #4e5e6a;
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============================================================================ */
+/* COMPREHENSIVE RESPONSIVE DESIGN FOR DASHBOARD */
+/* ============================================================================ */
+
+/* Tablets and below (1024px) */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 0 10px;
+  }
+
+  .content-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 220px;
+    margin-top: 70px;
+  }
+
+  .dash-container {
+    margin-left: 240px;
+    padding: 15px;
+  }
+
+  .dash-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dash-card {
+    width: 100% !important;
+    margin: 0 0 15px 0 !important;
+  }
+
+  .announce-card,
+  . calendar-card,
+  .mentors-card,
+  .messages-card {
+    max-width: 100%;
+  }
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    margin-top: 0;
+    padding-top: 80px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .dash-container {
+    margin-left: 0;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .header1 {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px 10px;
+  }
+
+  .logo-section {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    margin-left: 0;
+    height: 40px;
+  }
+
+  .company-name {
+    font-size: 20px;
+  }
+
+  .dashboard-text {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .search-section1 {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .search-input1 {
+    width: 100%;
+  }
+
+  .user-section {
+    margin-right: 0;
+    justify-content: center;
+  }
+
+  .dash-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .dash-title {
+    font-size: 16px;
+  }
+
+  .announce-table {
+    font-size: 12px;
+  }
+
+  .announce-table th,
+  .announce-table td {
+    padding: 8px 4px;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .cal-date {
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+
+  .mentor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .mentor-item {
+    font-size: 12px;
+  }
+
+  .msg-item {
+    padding: 8px 0;
+  }
+
+  .msg-item strong,
+  .msg-item p {
+    font-size: 13px;
+  }
+
+  .article-card h4 {
+    font-size: 16px;
+  }
+
+  .article-text {
+    font-size: 13px;
+  }
+
+  .article-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .article-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices (576px) */
+@media (max-width: 576px) {
+  .header1 {
+    padding: 10px 5px;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .company-name {
+    font-size: 16px;
+  }
+
+  .dashboard-text {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .search-input1 {
+    font-size: 14px;
+    padding: 8px 12px;
+    height: 38px;
+  }
+
+  .user-section-noti {
+    height: 30px;
+    width: 30px;
+    padding: 5px 8px;
+  }
+
+  .notification-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .profile-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .dash-container {
+    padding: 8px;
+  }
+
+  .dash-card {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .dash-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .announce-table {
+    font-size: 11px;
+  }
+
+  .announce-table th,
+  .announce-table td {
+    padding: 6px 3px;
+  }
+
+  .announce-table th:first-child,
+  .announce-table td:first-child {
+    display: none;
+  }
+
+  .calendar-wrap {
+    padding: 10px;
+  }
+
+  .calendar-grid {
+    gap: 3px;
+  }
+
+  .cal-date {
+    font-size: 10px;
+    padding: 6px 2px;
+  }
+
+  .calendar-events p {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .mentor-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .mentor-item strong {
+    font-size: 11px;
+  }
+
+  .mentor-item span {
+    font-size: 10px;
+  }
+
+  .msg-item {
+    padding: 6px 0;
+  }
+
+  .msg-item strong {
+    font-size: 12px;
+  }
+
+  .msg-item p {
+    font-size: 11px;
+  }
+
+  .msg-time {
+    font-size: 10px;
+  }
+
+  .article-card h4 {
+    font-size: 14px;
+  }
+
+  .article-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .article-footer span {
+    font-size: 11px;
+  }
+
+  .btn-outline,
+  .btn-solid {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .sidebar {
+    width: 220px;
+    left: -220px;
+  }
+
+  .menu-item {
+    font-size: 15px;
+    padding: 8px 15px;
+  }
+
+  .menu-icon,
+  .menu-icon1 {
+    font-size: 16px;
+  }
+}
+
+/* Extra Small Mobile (400px) */
+@media (max-width: 400px) {
+  .dashboard-text {
+    font-size: 18px;
+  }
+
+  .search-input1 {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .dash-card {
+    padding: 10px;
+  }
+
+  .dash-title {
+    font-size: 13px;
+  }
+
+  .announce-table {
+    font-size: 10px;
+  }
+
+  .mentor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .article-card h4 {
+    font-size: 13px;
+  }
+
+  .article-text {
+    font-size: 11px;
+  }
+}

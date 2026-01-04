@@ -1,0 +1,518 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-container-networks {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensure the layout takes full height */
+  background-color: rgb(252, 252, 255);
+  font-family: 'poppins';
+}
+
+.header1-networks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  height: 70px;
+}
+
+.logo-section-networks {
+  display: flex;
+  align-items: center;
+}
+
+.logo-networks {
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 80px;
+}
+
+.company-name-networks {
+  font-size: 24px;
+  font-weight: inherit;
+  margin-right: 10px;
+  color: #000;
+}
+
+.dashboard-text-networks {
+  font-size: 30px;
+  font-weight: 500;
+  color: #69b3b7;
+  margin-top: -10px;
+  margin-left: 50px;
+}
+
+.search-section1-networks {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 120px;
+  color: #58a4b0;
+}
+
+.search-input1-networks {
+  width: 80%;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  height: 35px;
+}
+
+.user-section-networks {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.user-section-noti-networks {
+  /* border: 2px solid yellow; */
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: rgb(255, 244, 221);
+
+  padding: 5px 11px;
+}
+
+.notification-icon-networks {
+  width: 10px;
+  height: 10px;
+  margin-right: 20px;
+  /* border: 1px solid ; */
+  align-items: center;
+}
+
+.profile-image-networks {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* sidebar */
+/* Sidebar styling */
+.sidebar-networks {
+  width: 250px;
+  background-color: white;
+  padding: 20px 0;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  /* Keeps the sidebar fixed on the left */
+  height: 100vh;
+  /* Full height of the viewport */
+
+  margin-top: 0px;
+}
+
+.sidebar-menu-networks {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.menu-item-networks {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  color: #58A4B0;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 20px;
+  border-radius: 15px;
+}
+
+.menu-item-networks:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+  border-radius: 10px;
+}
+
+.menu-item-networks.active {
+  background-color: rgb(89, 158, 158);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.menu-icon-networks {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-networks:hover .menu-icon-networks {
+  color: white;
+}
+
+.menu-icon1-networks {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-networks:hover .menu-icon1-networks path {
+  stroke: white;
+  /* Change color on hover */
+}
+
+.menu-item-networks:hover .menu-icon-networks path {
+  fill: white;
+}
+
+/* Extra-small screens (below 768px): hidden sidebar with toggle button */
+@media (max-width: 767px) {
+  .sidebar-newsdash {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 100%;
+    /* Full-width on small screens when toggled */
+  }
+
+  /* Sidebar toggle button */
+  .sidebar-toggle-networks {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: #58A4B0;
+    cursor: pointer;
+    z-index: 1100;
+    /* Above the sidebar */
+  }
+
+  /* When the sidebar is toggled */
+  .sidebar.active-networks {
+    transform: translateX(0);
+    /* Slide in */
+  }
+}
+
+/* Responsive Styling */
+
+/* Large screens: default sidebar width */
+@media (min-width: 1200px) {
+  .sidebar-networks {
+    width: 250px;
+  }
+}
+
+/* Extra-large screens: slightly wider sidebar */
+@media (min-width: 1600px) {
+  .sidebar-networks {
+    width: 380px;
+  }
+
+  .menu-item-networks {
+    font-size: 35px;
+  }
+
+  .menu-item-networks svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* Medium screens (1024px - 1199px): narrower sidebar */
+@media (max-width: 1199px) {
+  .sidebar-networks {
+    width: 220px;
+  }
+
+  .menu-item-networks {
+    font-size: 17px;
+  }
+
+  .menu-icon-networks {
+    font-size: 18px;
+  }
+}
+
+/* Small screens (768px - 1023px): even narrower sidebar */
+@media (max-width: 1023px) {
+  .sidebar-networks {
+    width: 200px;
+  }
+
+  .menu-item-networks {
+    font-size: 16px;
+  }
+
+  .menu-icon-networks {
+    font-size: 16px;
+  }
+}
+
+/* Extra-small screens (below 768px): hidden sidebar with toggle button */
+@media (max-width: 767px) {
+  .sidebar-networks {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 100%;
+    /* Full-width on small screens when toggled */
+  }
+
+  /* Sidebar toggle button */
+  .sidebar-toggle-networks {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: #58A4B0;
+    cursor: pointer;
+    z-index: 1100;
+    /* Above the sidebar */
+  }
+
+  /* When the sidebar is toggled */
+  .sidebar.active-networks {
+    transform: translateX(0);
+    /* Slide in */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popup-logout-networks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* position: absolute; must be positioned */
+}
+
+.popup-content-logout-networks {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  /* must be positioned */
+  z-index: 9999;
+}
+
+.popup-content-logout-networks h2 {
+  margin-bottom: 20px;
+}
+
+.cancel-button-logout-networks,
+.confirm-button-logout-networks {
+  /* background-color: #6bb9b7; */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.confirm-button-logout-networks {
+  background-color: #58A4B0;
+  color: white;
+}
+
+.cancel-button-logout-networks {
+  background-color: transparent;
+  border: 1px solid #58a4b0;
+  color: black;
+}
+
+.cancel-button-logout-networks:hover,
+.confirm-button-logout-networks:hover {
+  opacity: 0.8;
+}
+/* ============================================================================ */
+/* COMPREHENSIVE RESPONSIVE DESIGN FOR NETWORKING DASH */
+/* ============================================================================ */
+
+/* Tablets (1024px) */
+@media (max-width: 1024px) {
+  .header1-networks {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+
+  .search-section1-networks {
+    margin-left: 50px;
+  }
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+  .header1-networks {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    height: auto;
+  }
+
+  .logo-section-networks {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .logo-networks {
+    margin-left: 0;
+    height: 40px;
+  }
+
+  .company-name-networks {
+    font-size: 18px;
+  }
+
+  .dashboard-text-networks {
+    font-size: 22px;
+    margin-left: 15px;
+  }
+
+  .search-section1-networks {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .search-input1-networks {
+    width: 100%;
+    height: 40px;
+  }
+
+  .user-section-networks {
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .sidebar-toggle-networks {
+    display: block;
+  }
+
+  .content-container-networks {
+    margin-left: 0;
+  }
+}
+
+/* Mobile Devices (576px) */
+@media (max-width: 576px) {
+  .logo-networks {
+    height: 35px;
+  }
+
+  .company-name-networks {
+    font-size: 16px;
+  }
+
+  .dashboard-text-networks {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  .search-input1-networks {
+    font-size: 14px;
+    padding: 8px 12px;
+    height: 38px;
+  }
+
+  .user-section-networks {
+    gap: 10px;
+  }
+
+  .user-section-noti-networks {
+    height: 28px;
+    width: 28px;
+    padding: 3px 8px;
+  }
+
+  .notification-icon-networks {
+    width: 8px;
+    height: 8px;
+  }
+
+  .profile-image-networks {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar-networks {
+    width: 250px;
+  }
+
+  .menu-item-networks {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .menu-icon-networks,
+  .menu-icon1-networks {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra Small Mobile (400px) */
+@media (max-width: 400px) {
+  .logo-networks {
+    height: 32px;
+  }
+
+  .company-name-networks {
+    font-size: 14px;
+  }
+
+  .dashboard-text-networks {
+    font-size: 16px;
+  }
+
+  .search-input1-networks {
+    font-size: 13px;
+    height: 36px;
+  }
+
+  .user-section-noti-networks {
+    height: 26px;
+    width: 26px;
+  }
+
+  .profile-image-networks {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menu-item-networks {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+

@@ -1,0 +1,649 @@
+
+.dashboard-container-settingdash {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the layout takes full height */
+    background-color: rgb(252, 252, 255);
+  }
+  .header1-settingdash {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: white;
+      height: 100px;
+    }
+    
+    .logo-section-settingdash {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-settingdash {
+      height: 70px;
+      margin-right: 10px;
+      margin-left: 80px;
+    }
+    
+    .company-name-settingdash {
+      font-size: 24px;
+      font-weight: inherit;
+      margin-right: 10px;
+      color: #000;
+    }
+    
+    .dashboard-text-settingdash {
+      font-size: 30px;
+      font-weight: 600;
+      color: #69b3b7;
+      margin-top: -10px;
+      margin-left: 50px;
+    }
+    
+    .search-section1-settingdash {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      margin-left: 120px;
+    }
+    
+    .search-input1-settingdash{
+      width: 80%;
+      padding: 8px 16px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+    }
+    
+    .user-section-settingdash {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+    }
+    .user-section-noti-settingdash{
+      /* border: 2px solid yellow; */
+      height: 40px;
+      width: 40px;
+      margin-right: 20px;
+      border-radius: 10px;
+      background-color: rgb(255, 244, 221);
+    
+      padding: 5px 11px;
+    }
+    .notification-icon-settingdash {
+      width: 18px;
+      height: 20px;
+      margin-right: 20px;
+      /* border: 1px solid ; */
+      align-items: center;
+    }
+    
+    .profile-image-settingdash {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+     /* Responsive Adjustments */
+
+/* Medium screens (laptops, tablets) */
+@media (max-width: 1200px) {
+  .logo-settingdash-settingdash {
+    margin-left: 20px;
+  }
+
+  .dashboard-text-settingdash {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .search-section1-settingdash {
+    margin-left: 50px;
+  }
+
+  .search-input1-settingdash {
+    width: 90%;
+  }
+
+  .user-section-settingdash {
+    margin-right: 20px;
+  }
+}
+
+/* Small screens (tablets, large phones) */
+@media (max-width: 992px) {
+  .header1-settingdash {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo-section-settingdash {
+    margin-bottom: 10px;
+  }
+
+  .search-section1-settingdash {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+
+  .dashboard-text-settingdash {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  .search-input1-settingdash {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .user-section-settingdash {
+    margin-right: 0;
+  }
+}
+
+/* Extra-small screens (mobile) */
+@media (max-width: 576px) {
+  .logo-settingdash {
+    height: 50px;
+    margin-left: 10px;
+  }
+
+  .company-name-settingdash {
+    font-size: 20px;
+  }
+
+  .dashboard-text-settingdash {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .search-input1-settingdash {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .user-section-settingdash {
+    margin-right: 10px;
+  }
+
+  .user-section-noti-settingdash{
+    height: 35px;
+    width: 35px;
+  }
+
+  .profile-image-settingdash {
+    width: 35px;
+    height: 35px;
+  }
+}
+/* Extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .header1-settingdash {
+    padding: 20px 40px;
+  }
+
+  .logo-settingdash {
+    height: 80px;
+    margin-left: 100px;
+  }
+
+  .company-name-settingdash {
+    font-size: 28px;
+  }
+
+  .dashboard-text-settingdash {
+    font-size: 34px;
+    margin-left: 70px;
+  }
+
+  .search-section1-settingdash {
+    margin-left: 150px;
+  }
+
+  .search-input1-settingdash {
+    width: 70%;
+    font-size: 18px;
+  }
+
+  .user-section-settingdash {
+    margin-right: 60px;
+  }
+
+  .user-section-noti-settingdash {
+    height: 45px;
+    width: 45px;
+  }
+
+  .notification-icon-settingdash {
+    width: 20px;
+    height: 22px;
+  }
+
+  .profile-image-settingdash {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+    /* sidebar */
+   /* Sidebar styling */
+  .sidebar-settingdash {
+    width: 250px;
+    background-color: white;
+    padding: 20px 0;
+    border-right: 1px solid #e5e5e5;
+    position: fixed; /* Keeps the sidebar fixed on the left */
+    height: 100vh;   /* Full height of the viewport */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    margin-top: 100px;
+  }
+  
+  .sidebar-menu-settingdash {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+  
+  .menu-item-settingdash {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    color: #58A4B0;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px 20px;
+    border-radius: 15px;
+  }
+  
+  .menu-item-settingdash:hover {
+    background-color: rgb(89, 158, 158);
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .menu-item-settingdash.active {
+    background-color: rgb(89, 158, 158);
+    color: #fff;
+    border-radius: 10px;
+  }
+  
+  .menu-icon-settingdash {
+    margin-right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .menu-item-settingdash:hover .menu-icon-settingdash {
+    color: white;
+  }
+  .setting-acc-settingdash {
+    color:white;
+text-decoration: none;
+  }
+  .menu-icon1-settingdash {
+    margin-right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .menu-item-settingdash:hover .menu-icon1-settingdash path {
+    stroke: white; /* Change color on hover */
+  }
+  
+  .menu-item-settingdash:hover .menu-icon-settingdash path {
+    fill: white;
+  }
+  
+  
+  
+/* Responsive Styling */
+
+/* Large screens: default sidebar width */
+@media (min-width: 1200px) {
+  .sidebar-settingdash {
+    width: 250px;
+  }
+}
+
+/* Extra-large screens: slightly wider sidebar */
+@media (min-width: 1600px) {
+  .sidebar-settingdash {
+    width: 380px;
+  }
+
+  .menu-item-settingdash {
+    font-size: 35px;
+  }
+.menu-item-settingdash svg{
+  height: 30px;
+  width: 30px;
+}
+}
+
+/* Medium screens (1024px - 1199px): narrower sidebar */
+@media (max-width: 1199px) {
+  .sidebar-settingdash {
+    width: 220px;
+  }
+
+  .menu-item-settingdash {
+    font-size: 17px;
+  }
+
+  .menu-icon-settingdash {
+    font-size: 18px;
+  }
+}
+
+/* Small screens (768px - 1023px): even narrower sidebar */
+@media (max-width: 1023px) {
+  .sidebar-settingdash {
+    width: 200px;
+  }
+
+  .menu-item-settingdash {
+    font-size: 16px;
+  }
+
+  .menu-icon-settingdash {
+    font-size: 16px;
+  }
+}
+
+/* Extra-small screens (below 768px): hidden sidebar with toggle button */
+@media (max-width: 767px) {
+  .sidebar-settingdash {
+    transform: translateX(-100%); /* Hidden by default */
+    width: 100%; /* Full-width on small screens when toggled */
+  }
+
+  /* Sidebar toggle button */
+  .sidebar-toggle-settingdash {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    color: #58A4B0;
+    cursor: pointer;
+    z-index: 1100; /* Above the sidebar */
+  }
+
+  /* When the sidebar is toggled */
+  .sidebar-settingdash.active {
+    transform: translateX(0); /* Slide in */
+  }
+}
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .popup-logout-settingdash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* position: absolute; must be positioned */
+  }
+  
+  .popup-content-logout-settingdash {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute; /* must be positioned */
+    z-index: 9999;
+  }
+  
+  .popup-content-logout-settingdash h2 {
+    margin-bottom: 20px;
+  }
+  
+  .cancel-button-logout-settingdash,
+  .confirm-button-logout-settingdash {
+    /* background-color: #6bb9b7; */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+  }
+  .confirm-button-logout-settingdash {
+    background-color: #58A4B0;
+    color: white;
+  }
+  .cancel-button-logout-settingdash {
+    background-color: transparent;
+    border: 1px solid #58a4b0;
+    color: black;
+  }
+  
+  .cancel-button-logout-settingdash:hover,
+  .confirm-button-logout-settingdash:hover {
+    opacity: 0.8;
+  }
+  /* ================= */
+  .logoutdash-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.logoutdash-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logoutdash-modal p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.logoutdash-modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoutdash-cancel-button {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.logoutdash-logout-button {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.logoutdash-trigger-button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+}
+.logout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.logout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.logout-modal {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 14px;
+  text-align: center;
+  min-width: 350px;
+}
+
+.highlight {
+  color: #58a4b0;
+}
+
+.logout-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: 1px solid #aaa;
+  background: transparent;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  background: #58a4b0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============================================================================ */
+/* COMPREHENSIVE RESPONSIVE ENHANCEMENTS FOR SETTING DASH */
+/* ============================================================================ */
+
+/* Logout Modal Responsive */
+@media (max-width: 768px) {
+  .logout-modal {
+    min-width: 300px;
+    padding: 25px 30px;
+  }
+
+  .logout-modal h2 {
+    font-size: 18px;
+  }
+
+  .logout-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cancel-btn,
+  .logout-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .logout-modal {
+    min-width: 280px;
+    padding: 20px 25px;
+  }
+
+  .logout-modal h2 {
+    font-size: 16px;
+  }
+
+  .cancel-btn,
+  .logout-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logout-modal {
+    min-width: 260px;
+    padding: 18px 20px;
+  }
+
+  .logout-modal h2 {
+    font-size: 14px;
+  }
+
+  .cancel-btn,
+  .logout-btn {
+    padding: 7px 18px;
+    font-size: 13px;
+  }
+}
+

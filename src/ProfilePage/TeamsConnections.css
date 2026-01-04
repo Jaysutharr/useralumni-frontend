@@ -1,0 +1,1685 @@
+
+
+/* profilesection */
+.profile-header-team {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: -520px;
+  margin-left: 520px;
+  max-width: 805px;
+  
+}
+
+.profile-picture-team {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info-team h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-left: 0px
+}
+
+.profile-info-team p {
+  margin: 5px 0 0;
+  font-size: 15px;
+  color: #6c757d;
+}
+
+/* Edit button */
+.edit-button-team {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+  background-color: transparent; /* Remove default button styling */
+  border: 1px solid #1B1B1E; /* Border around the button */
+  padding: 10px 15px; /* Padding inside the button */
+  border-radius: 15px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+ margin-left: 450px;
+ margin-bottom: 50px;
+height: 20px;
+}
+
+.edit-button-team:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.edit-button-team svg {
+  fill: #1B1B1E; /* Color for the icon */
+}
+
+.edit-button-team h2 {
+  margin: 0; /* Removes default margin from h2 */
+  font-size: 16px; /* Text size for the Edit text */
+  color: #1B1B1E; /* Text color */
+}
+
+.edit-button-team:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adds focus effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* TeamsConnections.css */
+
+.my-teams-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin-left: 520px;
+  margin-top: 0px;
+}
+
+.header-team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.header-team h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.back-button {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header-team .back-button {
+  display: none;
+  /* Hide by default */
+}
+
+
+.header-team .back-button.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.back-button.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.view-all-btn.hidden {
+  display: none;
+  /* Hide when expanded */
+}
+
+
+.header-team .back-button {
+  transition: opacity 0.3s ease;
+}
+
+.view-all-btn {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.view-all-btn {
+  background-color: transparent;
+  color: rgb(89, 158, 158);
+  border: 0.01px solid rgb(89, 158, 158);
+  border-radius: 10px;
+  padding: 2px;
+  cursor: pointer;
+  height: 30px;
+  /* transition: background-color 0.3s ease; */
+  font-size: 15px;
+  width: 60px;
+}
+
+.view-all-btn:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+}
+
+.teams-container {
+  height: 180px;
+  /* Default height */
+  overflow: hidden;
+  transition: height 0.5s ease;
+  /* Smooth transition for height change */
+}
+
+.teams-container.expanded {
+  max-height: 1000px;
+  /* Set max height after expansion */
+  overflow-y: auto;
+  /* Enable scroll bar after expansion */
+}
+
+.teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.team-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0px 0px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border-bottom: 0.1px solid rgb(169, 168, 168);
+  width: 300px;
+  margin-left: 40px;
+}
+
+.avatar {
+  margin-right: 15px;
+}
+
+.avatar img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.team-details {
+  flex-grow: 1;
+}
+
+.team-details h4 {
+  margin: 0;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.team-details p {
+  margin: 5px 0 0;
+  font-size: 0.8em;
+  color: rgb(32, 31, 31);
+}
+
+.search-bar-team {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  border-radius: 20px;
+  padding: 5px;
+  transition: width 0.3s ease;
+  /* width: 40px; Initial width */
+  overflow: hidden;
+}
+
+.search-bar-team.focused {
+  width: 100px;
+  /* Expanded width on hover */
+  border: 1px solid black;
+  border-radius: 13px;
+  height: 25px;
+}
+
+.search-bar-team svg {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.search-bar-team input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 5px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.search-input {
+  display: none;
+}
+
+.search-bar-team.focused .search-input {
+  display: block;
+}
+
+.menu-dots {
+  font-size: 1.5em;
+  color: #101010;
+  /* padding-bottom: 25px; */
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+
+/* Media Queries */
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .my-teams-container {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-team h3 {
+    font-size: 1.4em;
+  }
+
+  .view-all-btn {
+    width: 70px;
+    font-size: 14px;
+  }
+
+  .search-bar-team.focused {
+    width: 120px;
+  }
+}
+
+/* Small Desktops (992px and up) */
+@media (min-width: 992px) {
+  .my-teams-container {
+    max-width: 600px;
+  }
+
+  .header-team h3 {
+    font-size: 1.6em;
+  }
+
+  .view-all-btn {
+    width: 80px;
+    font-size: 15px;
+  }
+}
+
+/* Medium Desktops (1200px and up) */
+@media (min-width: 1200px) {
+  .my-teams-container {
+    max-width: 700px;
+    margin-left: 520px; /* Adjust as needed */
+  }
+
+  .header-team h3 {
+    font-size: 1.1rem;
+  }
+
+  .view-all-btn {
+    width: 85px;
+  }
+
+  .team-item {
+    max-width: 400px;
+  }
+
+  .search-bar-team.focused {
+    width: 150px;
+  }
+}
+
+/* Large Desktops (1600px and up) */
+@media (min-width: 1600px) {
+  .my-teams-container {
+  width: 30%;
+    margin-left: 700px;
+    height: 330px;
+  }
+
+  .header-team h3 {
+    font-size: 2em;
+  }
+
+  .view-all-btn {
+    width: 90px;
+  }
+
+  .team-item {
+    max-width: 450px;
+  }
+
+  .search-bar-team.focused {
+    width: 180px;
+  }
+  .teams-container {
+    height: 240px;
+    /* Default height */
+    overflow: hidden;
+    transition: height 0.5s ease;
+    /* Smooth transition for height change */
+  }
+  .teams-container.expanded {
+    max-height: 1500px;
+    /* Set max height after expansion */
+    overflow-y: auto;
+    /* Enable scroll bar after expansion */
+  }
+  .avatar img {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+  }
+  
+  .team-details {
+    flex-grow: 1;
+  }
+  
+  .team-details h4 {
+    margin: 0;
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  
+  .team-details p {
+    margin: 5px 0 0;
+    font-size:20px;
+    color: rgb(32, 31, 31);
+  }
+  .team-menu-dots {
+    font-size: 1.5em;
+    color: #101010;
+    /* padding-bottom: 25px; */
+    margin-right: 0px;
+    cursor: pointer;
+  }
+  .team-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0px 0px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    border-bottom: 0.1px solid rgb(169, 168, 168);
+    width: 400px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+  
+  
+}
+/* Add these styles for the popup menu */
+.popup-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  top: 40px;
+  /* Adjust based on your layout */
+  right: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup-menu button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  /* transition: background 0.3s; */
+}
+
+.popup-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+/* ==================================================================================== */
+
+/* Connection */
+
+
+
+.my-connections-container-team {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin-left: 930px;
+  margin-top: -235px;
+}
+
+.header-connection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.header-connection h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.back-button {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header-connection .back-button {
+  display: none;
+  /* Hide by default */
+}
+
+
+.header-connection .back-button.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.back-button-conn.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.view-all-btn-conn.hidden {
+  display: none;
+  /* Hide when expanded */
+}
+
+
+.header-team-conn .back-button {
+  transition: opacity 0.3s ease;
+}
+
+.view-all-btn-conn {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.view-all-btn-connection {
+  background-color: transparent;
+  color: rgb(89, 158, 158);
+  border: 0.01px solid rgb(89, 158, 158);
+  border-radius: 10px;
+  padding: 2px;
+  cursor: pointer;
+  height: 30px;
+
+  /* transition: background-color 0.3s ease; */
+  font-size: 13px;
+  width: 60px;
+}
+
+.view-all-btn-connection:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+}
+
+.connections-container {
+  height: 180px;
+  /* Default height */
+  overflow: hidden;
+  transition: height 0.5s ease;
+  /* Smooth transition for height change */
+}
+
+.connections-container.expanded {
+  max-height: 1000px;
+  /* Set max height after expansion */
+  overflow-y: auto;
+  /* Enable scroll bar after expansion */
+}
+
+.connections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.connection-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0px 0px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border-bottom: 0.1px solid rgb(169, 168, 168);
+  width: 300px;
+  margin-left: 40px;
+}
+
+.avatar-conn {
+  margin-right: 15px;
+}
+
+.avatar-conn img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.connection-details {
+  flex-grow: 1;
+}
+
+.connection-details h4 {
+  margin: 0;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.connection-details p {
+  margin: 5px 0 0;
+  font-size: 0.8em;
+  color: rgb(32, 31, 31);
+}
+
+.search-bar-connection {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  border-radius: 20px;
+  padding: 5px;
+  transition: width 0.3s ease;
+  /* width: 40px; Initial width */
+  overflow: hidden;
+}
+
+.search-bar-connection.focused {
+  width: 100px;
+  /* Expanded width on hover */
+  border: 1px solid black;
+  border-radius: 13px;
+  height: 25px;
+}
+
+.search-bar-connection svg {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.search-bar-connection input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 5px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.search-input-connection {
+  display: none;
+}
+
+.search-bar-connection.focused .search-input-connection {
+  display: block;
+}
+
+.menu-dots {
+  font-size: 1.5em;
+  color: #101010;
+  /* padding-bottom: 25px; */
+  margin-right: 30px;
+}
+/* ========================== Responsive Design ========================== */
+
+/* Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+  .my-connections-container-team {
+    max-width: 95%;
+    margin: 10px auto;
+    padding: 8px;
+  }
+
+  .connection-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    margin: 5px auto;
+  }
+
+  .avatar-conn {
+    margin-bottom: 10px;
+  }
+
+  .header-connection h3 {
+    font-size: 1em;
+  }
+
+  .view-all-btn-connection {
+    font-size: 12px;
+    width: 50px;
+  }
+
+  .search-bar-connection {
+    width: 100%;
+  }
+
+  .menu-dots {
+    margin-right: 0;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .my-connections-container-team {
+    max-width: 80%;
+  }
+
+  .header-connection h3 {
+    font-size: 1.1em;
+  }
+}
+
+/* Small laptops (769px to 1200px) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .my-connections-container-team {
+    max-width: 70%;
+  }
+}
+
+/* Large laptops (1200px to 1600px) */
+@media screen and (min-width: 1200px) {
+  .my-connections-container-team {
+    max-width: 60%;
+    margin-left: 930px;
+    margin-right: auto;
+  }
+}
+
+/* Large desktops (1600px and above) */
+@media screen and (min-width: 1600px) {
+  .my-connections-container-team {
+    width: 30%;
+    max-width: 50%;
+    margin-left: 1260px;
+    margin-right: auto;
+    margin-top: -330px;
+    height: 330px;
+  }
+  .connection-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0px 0px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    border-bottom: 0.1px solid rgb(169, 168, 168);
+    width: 450px;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+  .blocked-teams-header h3 {
+    margin: 0;
+    font-size: 2.2em;
+  }
+  .header-connection h3 {
+    margin: 0;
+    font-size: 2em;
+  }
+  .connections-container {
+    height: 260px;
+    /* Default height */
+    overflow: hidden;
+    transition: height 0.5s ease;
+    /* Smooth transition for height change */
+  }
+  .avatar-conn img {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+  }
+  .connection-details h4 {
+    margin: 0;
+    color: black;
+    font-size:26px;
+    font-weight: 600;
+  }
+  
+  .connection-details p {
+    margin: 5px 0 0;
+    font-size: 20px;
+    color: rgb(32, 31, 31);
+  }
+  .menu-dots {
+    font-size: 1.5em;
+    color: #101010;
+    /* padding-bottom: 25px; */
+    margin-right: 50px;
+  }
+}
+/* ====================================================================================== */
+/* Blocked-team css */
+
+
+
+
+.my-teams-container-blocked {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin-left: 520px;
+  margin-top: 10px;
+  height: 200px;
+  overflow: hidden;
+
+  transition: height 0.3s ease-in-out;
+  /* Smooth height transition */
+  /* border: 1px solid #ccc; Border around the container */
+  padding: 10px;
+}
+
+.blocked-teams-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.blocked-teams-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.back-btn {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.blocked-teams-header .back-btn {
+  display: none;
+  /* Hide by default */
+}
+
+
+.blocked-teams-header .back-btn.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.back-btn.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.expand-btn.hidden {
+  display: none;
+  /* Hide when expanded */
+}
+
+
+.blocked-teams-header .back-button {
+  transition: opacity 0.3s ease;
+}
+
+.expand-btn {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.expand-btn {
+  background-color: transparent;
+  color: rgb(89, 158, 158);
+  border: 0.01px solid rgb(89, 158, 158);
+  border-radius: 10px;
+  padding: 2px;
+  cursor: pointer;
+  height: 30px;
+  /* transition: background-color 0.3s ease; */
+  font-size: 12px;
+  width: 60px;
+}
+
+.expand-btn:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.blocked-teams-container {
+  height: 180px;
+  /* Default height */
+  overflow: hidden;
+  transition: height 0.5s ease;
+  /* Smooth transition for height change */
+}
+
+.blocked-teams-container .expanded {
+  max-height: 1000px;
+  /* Set max height after expansion */
+  overflow-y: auto;
+  /* Enable scroll bar after expansion */
+}
+
+.blocked-teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.blocked-team-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0px 0px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border-bottom: 0.1px solid rgb(169, 168, 168);
+  width: 300px;
+  margin-left: 40px;
+}
+
+.team-avatar {
+  margin-right: 15px;
+}
+
+.team-avatar img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.team-details-blocked {
+  flex-grow: 1;
+}
+
+.team-details-blocked h4 {
+  margin: 0;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.team-details-blocked p {
+  margin: 5px 0 0;
+  font-size: 0.8em;
+  color: rgb(32, 31, 31);
+}
+
+.search-bar-blocked {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  border-radius: 20px;
+  padding: 5px;
+  transition: width 0.3s ease;
+  /* width: 40px; Initial width */
+  overflow: hidden;
+}
+
+.search-bar-blocked .focused {
+  width: 100px;
+  /* Expanded width on hover */
+  border: 1px solid black;
+  border-radius: 13px;
+  height: 25px;
+}
+
+.search-bar-blocked svg {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.search-bar-blocked input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 5px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.search-input-blocked {
+  display: none;
+}
+
+.search-bar-blocked .focused .search-input-blocked {
+  display: block;
+}
+
+.team-menu-dots {
+  font-size: 1.5em;
+  color: #101010;
+  /* padding-bottom: 25px; */
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+/* Base styling for the container */
+.my-teams-container-blocked {}
+
+/* Collapsed state with a small height */
+.my-teams-container-blocked.collapsed {
+  height: 140px;
+  /* Initial height when collapsed */
+  overflow: hidden;
+  /* Hide overflow completely when collapsed */
+}
+
+/* Expanded state with a larger height */
+.my-teams-container-blocked.expanded {
+  height: 190px;
+  /* Height after clicking 'View All' */
+  overflow: hidden
+    /* Allow overflow in expanded state */
+}
+
+/* Scrollable list inside the container */
+.blocked-teams-list {
+  height:150px;
+  /* Occupy the full height of the container */
+  overflow-y: hidden;
+  /* Hide scrolling initially */
+  padding: 0;
+  margin: 0;
+}
+
+.my-teams-container-blocked.expanded .blocked-teams-list {
+  overflow-y: auto;
+  /* Only allow scrolling when the container is expanded */
+}
+
+/* Styling for each team item */
+.blocked-team-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+/* Avatar styling */
+.avatar-blocked img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.menu-options{
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-options button {
+  background: none;
+  border: 0.1px solid rgb(89, 158, 158);
+  color: rgb(89, 158, 158);
+  padding:5px 10px;
+  /* text-align: center; */
+  cursor: pointer;
+  height: 15px;
+  padding-top:-12px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-options button:hover {
+  color:white;
+  background-color: rgb(89, 158, 158);
+}
+
+/* Base styles for all screen sizes */
+/* Existing styles above */
+
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  .my-teams-container-blocked {
+    width: 90%;
+    margin: 10px auto;
+    padding: 8px;
+  }
+
+  .blocked-teams-header h3 {
+    font-size: 1.1em;
+  }
+
+  .expand-btn {
+    width: 50px;
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  .blocked-team-item {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .team-avatar img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-options button {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+
+/* Medium screens (600px to 1200px) */
+@media (min-width: 600px) and (max-width: 1200px) {
+  .my-teams-container-blocked {
+    width: 80%;
+    max-width: 500px;
+    margin: 10px auto;
+  }
+
+  .blocked-teams-header h3 {
+    font-size: 1.2em;
+  }
+
+  .expand-btn {
+    width: 70px;
+    font-size: 12px;
+  }
+
+  .blocked-team-item {
+    padding: 6px 0;
+    width: 90%;
+  }
+
+  .team-avatar img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu-options button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  .my-teams-container-blocked {
+    width: 30%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 5px;
+    margin-left: 520px;
+    margin-top: 5px
+  }
+
+  .blocked-teams-header h3 {
+    font-size: 17px;
+  }
+
+  .expand-btn {
+    width: 90px;
+    font-size: 12px;
+  }
+
+  .blocked-team-item {
+    padding: 8px 0;
+    width: 100%;
+  }
+  .blocked-team-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0px 0px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    border-bottom: 0.1px solid rgb(169, 168, 168);
+    width: 300px;
+    margin-left: 40px;
+  }
+  .team-avatar img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .menu-options button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+/* Extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .my-teams-container-blocked {
+    width: 30%;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 20px;
+    margin-left: 700px;
+    height: 200px !important;
+  }
+
+  .blocked-teams-header h3 {
+    font-size: 2em;
+  }
+
+  .expand-btn {
+    width: 100px;
+    font-size: 16px;
+    padding: 4px 10px;
+  }
+
+  .blocked-team-item {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .team-avatar img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .menu-options button {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+  
+.team-details-blocked h4 {
+  margin: 0;
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+}
+.team-details-blocked p {
+  margin: 5px 0 0;
+  font-size:20px;
+  color: rgb(32, 31, 31);
+}
+.blocked-team-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0px 0px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border-bottom: 0.1px solid rgb(169, 168, 168);
+  width: 400px;
+  margin-left: 40px;
+}
+}
+
+
+/* =================================================================================== */
+/* BlockedConnection */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.my-blocked-connection-container{
+    margin-left: 930px;
+  margin-top: -140px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  border-radius: 8px;
+}
+.blocked-connections-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+
+  height: 200px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  
+}
+
+.blocked-connections-container.collapsed {
+  height: 140px;
+  /* Initial height when collapsed */
+  /* overflow: hidden; */
+  /* Hide overflow completely when collapsed */
+}
+
+/* Expanded state with a larger height */
+.blocked-connections-container.expanded {
+  height: 190px;
+  /* Height after clicking 'View All' */
+  overflow: hidden
+    /* Allow overflow in expanded state */
+}
+
+
+.header-blocked-connection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 5px; */
+}
+
+.header-blocked-connection h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.back-button-blocked-connection {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header-blocked-connection .back-button-blocked-connection {
+  display: none;
+  /* Hide by default */
+}
+
+
+.header-blocked-connection .back-button-blocked-connection.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.back-button-blocked-connection.visible {
+  display: block;
+  /* Show when expanded */
+}
+
+.view-all-btn-blocked-connection.hidden {
+  display: none;
+  /* Hide when expanded */
+}
+
+
+.header-blocked-connection .back-button-blocked-connection {
+  transition: opacity 0.3s ease;
+}
+
+.search-bar-blocked-connection {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  border-radius: 20px;
+  padding: 5px;
+  transition: width 0.3s ease;
+  /* width: 40px; Initial width */
+  overflow: hidden;
+}
+
+.search-bar-blocked-connection .focused {
+  width: 100px;
+  /* Expanded width on hover */
+  border: 1px solid black;
+  border-radius: 13px;
+  height: 25px;
+}
+
+.search-bar-blocked-connection svg {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.search-bar-blocked-connection input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 5px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.search-input-blocked-connection {
+  display: none;
+}
+
+.search-bar-blocked-connection .focused .search-input-blocked-connection {
+  display: block;
+}
+
+.view-all-btn-blocked-connection {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.view-all-btn-blocked-connection {
+  background-color: transparent;
+  color: rgb(89, 158, 158);
+  border: 0.01px solid rgb(89, 158, 158);
+  border-radius: 10px;
+  padding: 2px;
+  cursor: pointer;
+  height: 30px;
+  /* transition: background-color 0.3s ease; */
+  font-size: 13px;
+  width: 60px;
+}
+
+.view-all-btn-blocked-connection:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+}
+
+
+.blocked-connections-container {
+  height: 180px;
+  /* Default height */
+  overflow: hidden;
+  transition: height 0.5s ease;
+  /* Smooth transition for height change */
+}
+
+.blocked-connections-container .expanded {
+  max-height: 1000px;
+  /* Set max height after expansion */
+  overflow-y: auto;
+  /* Enable scroll bar after expansion */
+}
+
+.blocked-connections-list {
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+}
+
+/* Scrollable list inside the container */
+.blocked-connections-list {
+  height: 120px;
+  /* Occupy the full height of the container */
+  overflow-y: hidden;
+  /* Hide scrolling initially */
+  padding: 0;
+  margin: 0;
+}
+
+.blocked-connections-container.expanded .blocked-connections-list{
+  overflow-y: auto;
+  /* Only allow scrolling when the container is expanded */
+}
+
+/* Styling for each team item */
+.blocked-connection-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Avatar styling */
+.avatar-blocked-conn img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.blocked-connection-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0px 0px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  border-bottom: 0.1px solid rgb(169, 168, 168);
+  width: 300px;
+  margin-left: 40px;
+}
+
+.avatar-blocked-conn {
+  margin-right: 15px;
+}
+
+.avatar-blocked-connr img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.blocked-connection-details {
+  flex-grow: 1;
+}
+
+.blocked-connection-details h4 {
+  margin: 0;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.blocked-connection-details p {
+  margin: 5px 0 0;
+  font-size: 0.8em;
+  color: rgb(32, 31, 31);
+}
+
+.menu-dots-blocked-conn {
+  font-size: 1.5em;
+  color: #101010;
+  /* padding-bottom: 25px; */
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+
+.menu-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-actions button {
+  background: none;
+  border: 0.1px solid rgb(89, 158, 158);
+  color: rgb(89, 158, 158);
+  padding:5px 10px;
+  /* text-align: center; */
+  cursor: pointer;
+  height: 15px;
+  padding-top:-12px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-actions button:hover {
+  color:white;
+  background-color: rgb(89, 158, 158);
+}
+
+/* Responsive adjustments */
+@media (min-width: 1600px) {
+  .my-blocked-connection-container {
+    margin-left: 1260px !important; /* Adjusted for smaller screen */
+    width: 580px; /* Adjusted for smaller screen */
+    margin-top: -200px !important;
+    width: 30%!important;
+    height: 190px;
+  }
+  .header-blocked-connection h3 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .avatar-blocked-connr img {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+  }
+  .blocked-connection-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0px 0px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+    border-bottom: 0.1px solid rgb(169, 168, 168);
+    width: 400px;
+    margin-left: 40px;
+  }
+  .blocked-connections-container {
+    height: 190px !important;
+    /* Default height */
+    overflow: hidden;
+    transition: height 0.5s ease;
+    /* Smooth transition for height change */
+  }
+  
+  .blocked-connection-details h4 {
+    
+    font-size: 26px !important;
+   
+  }
+  
+  .blocked-connection-details p {
+   
+    font-size: 20px !important;
+  
+  }
+}
+
+@media (min-width: 1200px) {
+  .my-blocked-connection-container {
+    margin-left: 930px;
+    margin-top: -160px;
+    width: 400px;
+  }
+  .blocked-connections-container {
+    height: 180px; /* Adjust height for smaller screens */
+  }
+  .menu-dots-blocked-conn {
+    font-size: 1.5em;
+    color: #101010;
+    /* padding-bottom: 25px; */
+    margin-right: 0px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-blocked-connection-container {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: -50px;
+  }
+  .blocked-connection-item {
+    width: 100%;
+    margin-left: 0;
+  }
+  .search-bar-blocked-connection {
+    width: 100%;
+    padding: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-blocked-connection-container {
+    width: 100%;
+    margin-top: -20px;
+  }
+  .blocked-connections-container {
+    padding: 5px;
+    height: auto;
+  }
+  .view-all-btn-blocked-connection {
+    width: 100%;
+  }
+}

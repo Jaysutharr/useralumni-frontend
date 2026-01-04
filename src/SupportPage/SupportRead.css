@@ -1,0 +1,563 @@
+/* Main Layout Container */
+.support-read-layout {
+  position: absolute;
+  /* Force placement over the SupportDash background */
+  top: 100px;
+  /* Place just below the header (approx 70px + gap) */
+  left: 270px;
+  /* Clear the sidebar (250px + gap) */
+  right: 20px;
+  /* Padding on right */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 40px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 10;
+  margin: 0;
+}
+
+/* --- Left Column: FAQs --- */
+.support-faq-column {
+  flex: 3;
+  /* Give FAQs slightly more space */
+  max-width: 800px;
+}
+
+.support-header-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.back-arrow-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.support-main-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.faq-category-section {
+  margin-bottom: 30px;
+}
+
+.faq-category-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Custom Dropdown (Details/Summary) Styling */
+.faq-custom-dropdown {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-custom-dropdown summary {
+  padding: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  color: #444;
+  list-style: none;
+  /* Hide default triangle */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Custom arrow for summary */
+.faq-custom-dropdown summary::after {
+  content: '\25BC';
+  /* Down arrow */
+  font-size: 10px;
+  color: #888;
+  transition: transform 0.3s;
+}
+
+.faq-custom-dropdown[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq-custom-dropdown p {
+  padding: 0 15px 15px 15px;
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  border-top: 1px solid #f0f0f0;
+}
+
+
+/* --- Right Column: Action Grid --- */
+.support-action-column {
+  flex: 2;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.action-column-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 20px;
+  margin-top: 55px;
+  /* Visual alignment with FAQ items */
+}
+
+.action-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.action-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Soft shadow */
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-card-icon {
+  margin-bottom: 15px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-card-icon img {
+  max-height: 100%;
+  max-width: 50px;
+  object-fit: contain;
+}
+
+.action-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.action-card-btn {
+  background-color: #fff;
+  color: #58a4b0;
+  border: 1px solid #58a4b0;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.action-card-btn:hover {
+  background-color: #58a4b0;
+  color: #fff;
+}
+
+
+/* --- Email & Call Popup Styles --- */
+.email-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent dimmer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.email-popup-box {
+  background-color: white;
+  width: 450px;
+  max-width: 90%;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-popup-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.email-popup-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.email-popup-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+.email-popup-link {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.email-popup-action-btn {
+  background-color: #58cece;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  width: auto;
+  min-width: 180px;
+  transition: opacity 0.2s;
+  font-weight: 500;
+}
+
+.email-popup-action-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* --- Chat Popup Styles --- */
+.chat-popup-box {
+  background-color: white;
+  width: 400px;
+  max-width: 95%;
+  height: 550px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.chat-header {
+  background-color: #f5f5f5;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.chat-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+}
+
+.chat-messages-area {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.user-message {
+  align-self: flex-start;
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #58a4b0;
+  color: white;
+}
+
+.chat-input-area {
+  padding: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.chat-send-btn {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+
+/* --- Ticket Popup Styles (New) --- */
+.ticket-popup-box {
+  background-color: white;
+  width: 600px;
+  /* Wider for form */
+  max-width: 95%;
+  padding: 30px;
+  border-radius: 8px;
+  /* Slightly squarer than others */
+  position: relative;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-popup-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.ticket-popup-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.ticket-form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ticket-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.ticket-select,
+.ticket-textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  /* Important for width: 100% */
+}
+
+.ticket-select {
+  height: 45px;
+  background-color: white;
+}
+
+.ticket-textarea {
+  height: 100px;
+  resize: none;
+  font-family: inherit;
+}
+
+.ticket-upload-area {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #f0f0f0;
+  background-color: #fffcf8;
+  /* Slight off-white/beige tint per design */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+.ticket-radio-group {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.radio-label {
+  display: flex;
+  /* Activate flex context for radio + label */
+  align-items: center;
+  /* Center them vertically */
+  gap: 8px;
+  /* Space between radio and text */
+  font-size: 14px;
+  color: #333;
+  /* Ensure text is visible */
+  cursor: pointer;
+}
+
+.radio-label input {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.ticket-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  /* Align buttons to right */
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.ticket-discard-btn {
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #666;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ticket-submit-btn {
+  background-color: #58a4b0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ticket-submit-btn:hover {
+  background-color: #4a8f9a;
+  /* Slight hover darkening */
+}
+
+
+/* --- Responsive Design --- */
+
+/* Medium Screens (Tablets, smaller desktops) */
+@media (max-width: 1200px) {
+  .support-read-layout {
+    margin-left: 240px;
+    gap: 20px;
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 1024px) {
+  .support-read-layout {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .support-read-layout {
+    margin-left: 240px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .support-read-layout {
+    margin-left: 220px;
+    flex-direction: column;
+    max-width: 100%;
+    position: relative;
+    margin-top: 0;
+    top: 20px;
+    left: 0;
+    right: 0;
+  }
+
+  .support-faq-column,
+  .support-action-column {
+    max-width: 100%;
+  }
+
+  .action-column-title {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .support-read-layout {
+    margin-left: 0;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,1040 @@
+
+.flex-container {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 26px;
+}
+/* NetworkMessageBox.css */
+.network-message-box {
+  max-width: 350px;
+  /* background-color: #fff; */
+  border-radius: 15px;
+  padding: 22px !important;
+  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
+  margin-left: 240px;
+  margin-top: -560px
+}
+
+.network-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0px;
+  /* border-bottom: 1px solid #e0e0e0; */
+  cursor: pointer;
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+ z-index: 1; 
+}
+
+.network-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.network-dropdown-arrow {
+  background: none;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* Overview List */
+.network-overview-list {
+  list-style: none;
+  padding: 0;
+  /* margin: 10px 0; */
+}
+
+.network-overview-item {
+  background-color: #f3f3f3;
+  padding: 3px;
+  /* border-radius: 5px; */
+  margin-bottom: 5px;
+  height: 30px;
+  width: 300px;
+}
+/* Responsive styles with minimum widths for specific breakpoints */
+
+/* For screens up to 1600px */
+
+@media (min-width: 1600px) {
+  .flex-container {
+    display: flex;
+    font-family: 'Poppins';
+    margin-left: 130px;
+    margin-top: -240px;
+   /* width:% !important; */
+  }
+
+  .network-message-box {
+    
+    padding: 24px;
+  }
+  .network-header {
+   height: 70px;
+    width: 470px;
+  z-index: 1; 
+  }
+  .network-header h3 {
+    font-size: 30px !important; 
+  }
+
+  .network-overview-item {
+    font-size: 16px;
+    background-color: white;
+    height: 40px;
+    width: 400px;
+    margin-top: 2px;
+    margin-left: 2px;
+  }
+  .network-dropdown-arrow {
+    font-size: 23px;
+  }
+}
+
+/* For screens larger than 1200px */
+@media (min-width: 1200px) {
+  .network-message-box {
+    padding: 22px;
+  }
+
+  .network-header h3 {
+    font-size: 18px;
+  }
+
+  .network-overview-item {
+    font-size: 15px;
+  }
+}
+
+/* For screens larger than 1024px */
+@media (min-width: 1024px) {
+  .network-message-box {
+    padding: 20px;
+  }
+
+  .network-header h3 {
+    font-size: 17px;
+  }
+
+  .network-overview-item {
+    font-size: 14px;
+  }
+}
+
+/* For smaller screens like tablets and mobiles */
+@media (max-width: 768px) {
+  .network-message-box {
+    padding: 16px;
+  }
+
+  .network-header h3 {
+    font-size: 16px;
+  }
+
+  .network-dropdown-arrow {
+    font-size: 10px;
+  }
+
+  .network-overview-item {
+    font-size: 13px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .network-message-box {
+    padding: 12px;
+  }
+
+  .network-header h3 {
+    font-size: 14px;
+  }
+
+  .network-dropdown-arrow {
+    font-size: 8px;
+  }
+
+  .network-overview-item {
+    font-size: 12px;
+  }
+}
+
+/* Messages Section */
+.network-messages-wrapper {
+  margin-top: 10px;
+  background-color: white;
+  height: 230px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.network-message-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+.connection-requests-heading{
+  color: black;
+}
+.network-message-title h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5da3a3;
+ margin-left: 100px;
+}
+
+.network-expand-btn {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.network-message-list {
+  max-height: 180px;
+  /* overflow-y: auto; */
+margin-left: 10px;
+}
+
+.network-message-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.network-user-image {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.network-message-details {
+  flex-grow: 1;
+}
+
+.network-user-name {
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+}
+
+.network-message-text {
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.network-message-meta {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.network-time-stamp {
+  display: block;
+  font-size: 10px;
+  color: #6b6b6b;
+}
+
+.network-unread-count {
+  display: inline-block;
+  background-color: #5da3a3;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+
+/* For tablets and medium screens (768px and above) */
+@media (min-width: 768px) {
+  .network-messages-wrapper {
+    max-width: 400px;
+  }
+
+  .network-message-title h4 {
+    font-size: 18px;
+  }
+
+  .network-user-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .network-message-text {
+    font-size: 13px;
+  }
+}
+
+/* For larger screens (1200px and above) */
+@media (min-width: 1200px) {
+  .network-messages-wrapper {
+    max-width: 500px;
+  }
+
+  .network-message-title h4 {
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  .network-user-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .network-message-item {
+    margin-bottom: 15px;
+  }
+
+  .network-message-text {
+    font-size: 14px;
+  }
+
+  .network-unread-count {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+}
+
+/* For very large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .network-messages-wrapper {
+   width: 470px !important;
+    padding: 20px;
+    height: 290px;
+  }
+
+  .network-message-title h4 {
+    font-size: 27px;
+  }
+
+  .network-user-image {
+    width: 55px;
+    height: 55px;
+  }
+  .network-user-name {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+  }
+  .network-message-text {
+    font-size: 19px;
+  }
+  .network-time-stamp {
+    display: block;
+    font-size: 18px;
+    color: #6b6b6b;
+  }
+  .network-unread-count {
+    width: 28px;
+    height: 28px;
+    font-size: 17px;
+  }
+}
+/* Footer */
+.network-footer {
+  margin-top: 10px;
+  /* border-top: 1px solid #e0e0e0; */
+  /* padding-top: -10px; */
+  font-size: 12px;
+  text-align: center;
+}
+
+.network-footer-links {
+  margin-bottom: 5px;
+}
+
+.network-footer-links span {
+  margin-right: 10px;
+  color: #6b6b6b;
+  cursor: pointer;
+}
+
+.network-company-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.network-company-info img {
+  margin-right: 5px;
+}
+/* Responsive adjustments */
+
+/* For tablets and medium screens (768px and above) */
+@media (min-width: 768px) {
+  .network-footer {
+    font-size: 13px;
+  }
+
+  .network-footer-links span {
+    font-size: 13px;
+    margin-right: 15px;
+  }
+
+  .network-company-info {
+    flex-direction: row;
+  }
+
+  .network-company-info img {
+    margin-right: 5px;
+    width: 24px;
+  }
+}
+
+/* For larger screens (1200px and above) */
+@media (min-width: 1200px) {
+  .network-footer {
+    font-size: 12px;
+    /* padding: 15px 10px; */
+  }
+
+  .network-footer-links span {
+    font-size: 12px;
+    /* margin-right: 20px; */
+  }
+
+  .network-company-info img {
+    width: 28px;
+  }
+}
+
+/* For extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .network-footer {
+    width: 470px;
+    font-size: 19px;
+    /* padding: 20px 15px; */
+  }
+
+  .network-footer-links span {
+    font-size: 21px;
+    margin-right: 26px;
+  }
+
+  .network-company-info img {
+    width: 42px !important;
+    
+    height: 42px !important;
+  }
+}
+/* ================================================================ */
+.connection-requests-container {
+  width: 89%;
+  margin: 20px auto;
+  z-index: 1;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.tabs {
+  display: flex;
+  color: white;
+  border: 1px solid #58a4b0; /* Light border around both tabs */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.tab {
+  padding: px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: white; /* Background for non-active tab */
+  color: white;
+  height: 40px;
+  outline: none;
+  transition: background-color 0.3s ease;
+  
+}
+
+.active {
+  background-color: #00A8B0; /* Light turquoise color for active tab */
+  color: white;
+}
+
+.stay-updated-tab {
+  background-color: white; /* Background for inactive tab */
+  color: black;
+}
+
+.connect-tab {
+  background-color: #00A8B0; /* Active tab */
+}
+/* Responsive Styling */
+
+/* For small screens (Mobile) */
+@media (max-width: 600px) {
+  .tabs-container {
+    flex-direction: column; /* Stack tabs vertically on smaller screens */
+    margin-bottom: 15px;
+  }
+
+  .tabs {
+    width: 100%; /* Ensure tabs take up full width */
+    justify-content: space-around;
+  }
+
+  .tab {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 12px; /* Adjust padding for smaller screens */
+  }
+
+  .connection-requests-container {
+    width: 95%; /* Adjust container width for mobile */
+  }
+}
+
+/* For tablets (Medium screens) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .tabs-container {
+    flex-direction: row; /* Ensure tabs are in a row on tablets */
+  }
+
+  .tab {
+    font-size: 15px; /* Adjust font size for tablets */
+    padding: 12px 20px;
+  }
+
+  .connection-requests-container {
+    width: 90%; /* Adjust container width for tablets */
+  }
+}
+
+/* For larger tablets or smaller desktops (1025px to 1199px) */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .tabs-container {
+    justify-content: center;
+  }
+
+  .tab {
+    font-size: 16px; /* Default font size for medium-large screens */
+    padding: 15px 25px;
+  }
+
+  .connection-requests-container {
+    width: 85%; /* Adjust container width for larger tablets/smaller desktops */
+  }
+}
+
+/* For desktops (1200px to 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .tabs-container {
+    justify-content: center;
+  }
+
+  .tab {
+    font-size: 17px; /* Increase font size for larger screens */
+    /* padding: 15px 30px; */
+  }
+
+  .connection-requests-container {
+    width: 90%; /* Adjust container width for larger desktops */
+  }
+}
+
+/* For very large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .tabs-container {
+    justify-content: center;
+  }
+
+  .tab {
+    font-size: 28px; /* Increase font size for very large screens */
+    /* padding: 20px 35px; */
+    height: 80px;
+   
+  }
+
+  .connection-requests-container {
+    width: 90%; /* Adjust container width for very large desktops */
+  }
+}
+/* -------------------------------- */
+.connection-requests-heading {
+  font-size: 18px;
+  /* margin-bottom: 0px;  */
+  font-weight: 400;
+}
+
+.manage {
+  float: right;
+  font-size: 14px;
+  color: gray;
+  cursor: pointer;
+  margin-top: -25px;
+  border-bottom: 1px solid #494949;
+}
+
+.request-list {
+  /* margin-top: -20px; */
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  /* padding:10px 0; */
+  /* border-bottom: 1px solid #ddd; */
+}
+.request-item1 {
+  display: flex;
+  align-items: center;
+  padding:30px 0;
+    margin-top: -50px;
+}
+.profile-image-network {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.request-details {
+  flex: 1;
+  margin-top: 7px;
+}
+
+.user-name-detail {
+font-size: 14px;
+color: black;
+}
+.user-description {
+  font-size: 12px;
+  color: #666;
+  margin-top: -20px;
+}
+
+.user-follows {
+  font-size: 10px;
+  color: #999;
+  margin-top: -20px;
+}
+.user-follows svg{
+  margin-right: 5px;
+}
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.ignore-button, .accept-button {
+  padding: 5px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.ignore-button {
+  background-color:transparent;
+  color:rgb(79, 79, 79);
+font-weight: 200;
+}
+.ignore-button:hover{
+   background-color: #58a4b0;
+  color:white;
+  font-weight: 300;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.accept-button {
+  /* background-color: #58a4b0; */
+  color:rgb(74, 74, 74);
+  border: 0.5px solid #58a4b0;
+  font-weight: 200;
+}
+.accept-button:hover {
+  background-color: #58a4b0;
+  color:white;
+  font-weight: 300;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Responsive Styles */
+
+/* For Screens with max-width 1200px */
+@media (max-width: 1200px) {
+  .connection-requests-heading {
+    font-size: 16px;
+  }
+
+  .manage {
+    font-size: 13px;
+    margin-top: -20px;
+  }
+
+  .request-item1 {
+    padding: 25px 0;
+    margin-top: -40px;
+  }
+
+  .profile-image-network {
+    width: 60px;
+    height: 60px;
+  }
+
+  .request-details {
+    margin-top: 6px;
+  }
+
+  .user-name-detail {
+    font-size: 13px;
+  }
+
+  .user-description,
+  .user-follows {
+    font-size: 11px;
+  }
+
+  .ignore-button,
+  .accept-button {
+    padding: 4px 14px;
+    font-size: 12px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* For Screens with max-width 1600px */
+@media (min-width: 1600px) {
+  .connection-requests-heading {
+    font-size: 27px;
+  }
+
+  .manage {
+    font-size: 20px;
+    margin-top: -35px;
+  }
+
+  .request-item1 {
+    padding: 28px 0;
+    margin-top: -45px;
+  }
+
+  .profile-image-network {
+    width: 72px;
+    height: 72px;
+  }
+
+  .request-details {
+    margin-top: 7px;
+  }
+
+  .user-name-detail {
+    font-size: 21px;
+  }
+
+  .user-description,
+  .user-follows {
+    font-size: 15px;
+  }
+
+  .ignore-button,
+  .accept-button {
+    padding: 5px 15px;
+    font-size: 17px;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+  .connection-requests-heading {
+    font-size: 14px;
+  }
+
+  .manage {
+    font-size: 10px;
+    margin-top: -15px;
+  }
+
+  .request-item1 {
+    padding: 15px 0;
+    margin-top: -20px;
+  }
+
+  .profile-image-network {
+    width: 45px;
+    height: 45px;
+  }
+
+  .request-details {
+    margin-top: 3px;
+  }
+
+  .user-name-detail {
+    font-size: 11px;
+  }
+
+  .user-description,
+  .user-follows {
+    font-size: 9px;
+  }
+
+  .ignore-button,
+  .accept-button {
+    padding: 3px 10px;
+    font-size: 10px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+/* ------------------- */
+.boost-connections-container {
+  /* background-color: white; */
+  padding: 20px;
+  border-radius: 10px;
+  width: 750px;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  position: relative;
+  /* margin-top: -20px; */
+  z-index: 1;
+}
+
+.boost-connections-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+
+  margin-top: -45px;
+}
+
+.boost-connections-header h2 {
+  font-size: 18px;
+  font-weight: 400;
+ color: black;
+}
+
+.boost-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+.boost-subtext {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.boost-see-all {
+  text-align: right;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #6b6a6a;
+  margin-top: -20px;
+}
+
+.boost-connections-list {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    overflow-x: scroll;
+    max-width: 700px;
+    height: 160px;
+    -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;  
+}
+
+.boost-connection-item {
+  flex: 1;
+  width: 60%; /* Adjust the width as per your requirement */
+  max-width: 950px; /* You can increase this value for larger screens */
+  text-align: center;
+  height: 150px;
+}
+
+
+.boost-profile-image {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-bottom: 0px;
+}
+
+.boost-user-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.boost-user-role {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+  margin-top: -25px;
+}
+
+.boost-connect-button {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 2px 2px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 110px;
+}
+
+.boost-connect-button:hover {
+  background-color: #4d8e98;
+}
+.networking-main-container {
+  overflow-y: scroll;
+  height: 500px;
+  background-color: white !important; /* Ensures background stays white */
+  border-radius: 15px !important;
+  width: 800px !important;
+  margin-left: 580px !important;
+  margin-top: -540px !important;
+  transition: none !important;
+  position: absolute !important;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; 
+}
+/* Media Queries for Responsiveness */
+@media (min-width: 1200px) {
+ 
+  .boost-connections-container
+  {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .boost-connection-item {
+    min-width: 18%; /* Slightly larger on 1200px screens */
+    /* height: 150px; */
+  }
+
+  .boost-connections-header h2 {
+    font-size: 1.125rem;
+  }
+
+  .boost-user-name {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .boost-connections-container {
+    max-width: 1500px;
+  }
+  .networking-main-container{
+    margin-left: 750px!important;
+    width: 1000px !important;
+    height: 770px;
+  }
+  .boost-connection-item {
+    min-width: 20%; /* Slightly larger width for better layout on larger screens */
+    
+  }
+.boost-connections-list{
+  max-width: 890px;
+  height: 180px;
+}
+  .boost-connections-header h2 {
+    font-size: 25px;
+  }
+
+  .boost-user-name {
+    font-size: 23px;
+  }
+  .boost-user-role {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 5px;
+    margin-top: -25px;
+  }
+  .boost-connect-button {
+    width: 120px;
+    font-size: 17px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .boost-connections-container,
+  .networking-main-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .boost-connections-container,
+  .networking-main-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .boost-connections-header h2 {
+    font-size: 0.875rem;
+  }
+
+  .boost-connections-list {
+    gap: 10px;
+  }
+
+  .boost-profile-image {
+    width: 55px;
+    height: 55px;
+  }
+
+  .boost-connect-button {
+    font-size: 0.875rem;
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boost-connections-header h2,
+  .boost-user-name {
+    font-size: 0.8125rem;
+  }
+
+  .boost-connect-button {
+    font-size: 0.75rem;
+    width: 90px;
+  }
+
+  .boost-profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .boost-connection-item {
+    min-width: 100%;
+    max-width: none;
+  }
+}

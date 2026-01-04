@@ -1,0 +1,430 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'poppins';
+  background-color: #3c4357;
+}
+
+.app-container {
+  color: white;
+}
+
+.header {
+  padding: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.company-logo img {
+  height: 90px;
+  width: 120px;
+}
+
+.company-logo span {
+  font-size: 34px;
+  color: white;
+}
+
+.search-container1 {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-right: 0px;
+}
+
+.search-bar1 {
+  border: 0.1px solid #757575;
+  border-radius: 13px;
+  background-color: #4d5363;
+  color: #333;
+  padding-left: 40px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  height: 40px;
+}
+
+.search-bar1::placeholder {
+  color: #999;
+}
+
+.search-icon1 {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  align-items: left;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+
+
+.sign-in-btn,
+.sign-up-btn {
+  border-radius: 10px;
+  padding: 5px 20px;
+  font-size: 16px;
+  width: 200px;
+  height: 40px;
+}
+
+.sign-in-btn {
+  background-color: transparent;
+  color: #58a4b0;
+  border: 0.5px solid #58a4b0;
+}
+
+.sign-in-btn:hover {
+  background-color: #58a4b0;
+}
+
+.sign-up-btn {
+  background-color: #58a4b0;
+  color: white;
+}
+
+.sign-up-btn:hover {
+  background-color: #58a4b0;
+}
+
+.main-content {
+  padding: 40px 0;
+}
+
+.text-section {
+  padding: 10px;
+  gap: 0px;
+  /* font-family: 'poppins'; */
+  font-style: normal;
+}
+
+.text-section h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  margin-left: 30px;
+}
+
+.text-section h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: #58a4b0;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.text-section p {
+  font-size: 26px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #58a4b0;
+  font-family: 'poppins';
+  font-style: normal;
+  margin-left: 30px;
+}
+
+.graduation-image {
+  width: 100%;
+  border-radius: 0;
+  height: auto;
+  max-height: 500px;
+}
+
+.about-btn {
+  padding: 10px 0px;
+  margin-top: -20px;
+  background-color: transparent;
+  border: 1px solid #58a4b0;
+  width: 150px;
+  border-radius: 13px;
+  cursor: pointer;
+  color: #58a4b0;
+  margin-left: 220px;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.about-btn:hover {
+  background-color: #3f7982;
+}
+
+/* Responsive Styles */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+  .search-container1 {
+    max-width: 400px;
+  }
+
+  .sign-in-btn,
+  .sign-up-btn {
+    width: 120px;
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+
+  .text-section h1 {
+    font-size: 40px;
+    margin-left: 20px;
+  }
+
+  .text-section h2 {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
+  .text-section p {
+    font-size: 20px;
+    margin-left: 20px;
+  }
+
+  .about-btn {
+    width: 180px;
+    margin-left: 150px;
+  }
+
+  .graduation-image {
+    max-height: 450px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header .row {
+    flex-wrap: wrap;
+  }
+
+  .header .col-md-6:first-child {
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+
+  .header .col-md-6:last-child {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .search-container1 {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .search-bar1 {
+    font-size: 14px;
+    height: 45px;
+    padding-left: 45px;
+  }
+
+  .search-icon1 {
+    left: 15px;
+  }
+
+  .sign-in-btn,
+  .sign-up-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    height: 45px;
+  }
+
+  .main-content {
+    padding: 30px 0;
+  }
+
+  .text-section {
+    padding: 20px 10px;
+    margin-bottom: 30px;
+  }
+
+  .text-section h1 {
+    font-size: 36px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .text-section h2 {
+    font-size: 22px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .text-section p {
+    font-size: 18px;
+    margin-left: 15px;
+    line-height: 1.5;
+  }
+
+  .image-section {
+    padding: 0 10px;
+  }
+
+  .graduation-image {
+    margin-left: 0;
+    height: auto;
+    max-height: 350px;
+    margin-top: 20px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .aboutus-btb-div {
+    text-align: center;
+    margin-top: 20px !important;
+  }
+
+  .about-btn {
+    width: 200px;
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .header .col-md-6:first-child {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header .col-md-6:first-child img {
+    height: 60px;
+    width: 70px;
+    margin-bottom: 5px;
+  }
+
+  .header .col-md-6:first-child span {
+    font-size: 20px !important;
+  }
+
+  .search-container1 {
+    margin-bottom: 10px;
+  }
+
+  .search-bar1 {
+    font-size: 14px;
+    height: 42px;
+  }
+
+  .sign-in-btn,
+  .sign-up-btn {
+    font-size: 15px;
+    height: 42px;
+    border-radius: 8px;
+  }
+
+  .main-content {
+    padding: 20px 0;
+  }
+
+  .text-section {
+    padding: 15px 5px;
+    text-align: center;
+  }
+
+  .text-section h1 {
+    font-size: 28px;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .text-section h2 {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 12px;
+  }
+
+  .text-section p {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .image-section {
+    padding: 0 5px;
+    margin-top: 20px;
+  }
+
+  .graduation-image {
+    max-height: 280px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  .aboutus-btb-div {
+    margin-top: 15px !important;
+  }
+
+  .about-btn {
+    width: 160px;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 400px) {
+  .header .col-md-6:first-child img {
+    height: 50px;
+    width: 60px;
+  }
+
+  .header .col-md-6:first-child span {
+    font-size: 18px !important;
+  }
+
+  .search-bar1 {
+    font-size: 13px;
+    height: 40px;
+    padding-left: 40px;
+  }
+
+  .sign-in-btn,
+  .sign-up-btn {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .text-section h1 {
+    font-size: 24px;
+    margin-left: 5px;
+  }
+
+  .text-section h2 {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+
+  .text-section p {
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .graduation-image {
+    max-height: 220px;
+  }
+
+  .about-btn {
+    width: 140px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}

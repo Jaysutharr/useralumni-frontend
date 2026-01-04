@@ -1,0 +1,415 @@
+
+
+
+.profile-header-acc {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: -520px;
+  margin-left: 520px;
+  max-width: 805px;
+  
+}
+
+.profile-picture-acc {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info-acc h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-left: 0px
+}
+
+.profile-info-acc p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Edit button */
+.edit-button-acc {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+  background-color: transparent; /* Remove default button styling */
+  border: 1px solid #1B1B1E; /* Border around the button */
+  padding: 10px 15px; /* Padding inside the button */
+  border-radius: 12px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+ margin-left: 480px;
+ margin-bottom: 30px;
+height: 20px;
+}
+
+.edit-button-acc:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.edit-button-acc svg {
+  fill: #1B1B1E; /* Color for the icon */
+}
+
+.edit-button-acc h2 {
+  margin: 0; /* Removes default margin from h2 */
+  font-size: 16px; /* Text size for the Edit text */
+  color: #1B1B1E; /* Text color */
+ 
+}
+
+.edit-button-acc:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adds focus effect */
+}
+
+/* Large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .profile-header-acc {
+    width: 68%;
+    height: 120px;
+    max-width: 1100px;
+    margin-top: -790px;
+    margin-left: 700px;
+    margin-right: auto;
+    padding: 10px;
+  }
+  .profile-picture-acc {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .profile-info-acc h2 {
+    font-size: 30px;
+  }
+  .profile-info-acc p {
+    margin: 5px 0 0;
+    font-size: 21px;
+    color: #6c757d;
+  }
+  .edit-button-acc {
+    padding: 15px 20px;
+    font-size: 21px;
+    margin-left: 590px;
+  }
+}
+
+/* Desktops (between 1200px and 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .profile-header-acc {
+    max-width: 53%;
+    margin-top: -530px;
+    margin-left: 530px;
+    margin-right: auto;
+  }
+
+  .profile-picture-acc{
+    width: 65px;
+    height: 65px;
+  }
+
+  .profile-info-acc h2 {
+    font-size: 18px;
+  }
+
+  .edit-button-acc {
+    padding: 8px 12px;
+    /* margin-left: 30px; */
+    /* align-items: end; */
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .profile-header-acc {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 0;
+  }
+
+  .profile-picture-acc {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 10px 0;
+  }
+
+  .profile-info-acc h2 {
+    font-size: 16px;
+  }
+
+  .edit-button-acc {
+    padding: 8px 12px;
+    margin: 15px 0;
+  }
+}
+
+/* Small screens (480px and below) */
+@media (max-width: 480px) {
+  .profile-header-acc {
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .profile-picture-acc {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-info-acc h2 {
+    font-size: 14px;
+  }
+
+  .edit-button-acc {
+    padding: 6px 10px;
+  }
+}
+/* 
+/* ===================== */
+  /* Profile section (Personal Information & Address) */
+  .acade-section {
+    padding: 20px;
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    height: 150px;
+    max-width: 810px;
+    margin-left: 520px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+  }
+  
+  .acade-section h3 {
+    /* margin: 0 0 0px;
+    padding: 0px ; */
+    margin-top: -10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .acade-details {
+    display: flex;
+    justify-content: space-between;
+    /* height: 300px; */
+  }
+  
+  .acade-details div {
+    width: 48%;
+  }
+  
+  .acade-details p {
+    margin:10px 0;
+    font-size: 14px;
+  }
+  
+  .acade-details strong {
+    font-weight: 500;
+    color: black;
+    /* display: block; */
+    /* margin-bottom: 5px; */
+  }
+  /* Medium screens - tablets and small laptops (768px to 1199px) */
+@media (min-width: 768px) {
+  .acade-section {
+    max-width: 720px;
+    padding: 20px;
+  }
+
+  .acade-details div {
+    width: 48%;
+  }
+}
+
+/* Larger screens - laptops and desktops (1200px to 1599px) */
+@media (min-width: 1200px) {
+  .acade-section {
+    max-width: 810px;
+    padding: 20px;
+    margin-left: 530px;
+    height: 160px;
+  }
+
+  .acade-section h3 {
+    font-size: 18px;
+  }
+
+  .acade-details p {
+    font-size: 15px;
+  }
+}
+
+/* Extra large screens - 1600px and above */
+@media (min-width: 1600px) {
+  .acade-section {
+    max-width: 1100px;
+    padding: 30px;
+    margin-left: 700px;
+    height: 300px;
+  }
+
+  .acade-section h3 {
+    font-size: 35px;
+  }
+
+  .acade-details p {
+    font-size: 26px;
+  }
+}
+/* ======================================= */
+  .acade-section1 {
+    padding: 5px;
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    position: relative;
+    height: 155px;
+    max-width: 810px;
+    margin-left: 520px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .acade-section1 h3 {
+    margin: 10px 10px 10px;
+    padding: 0px ;
+  
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .acade-details1 {
+    display: flex;
+    justify-content: space-between;
+    /* height: 300px; */
+  }
+  
+  .acade-details1 div {
+    width: 48%;
+  }
+  
+  .acade-details1 p {
+    margin:10px 10px;
+    font-size: 14px;
+  }
+  
+  .acade-details1 strong {
+    font-weight: 500;
+    /* display: block; */
+    /* margin-bottom: 5px; */
+    color: black;
+  }
+  
+  .share-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 3px 10px;
+    /* margin-right: 20px; */
+  }
+  .share-button svg{
+    margin-right: 5px;
+  }
+  .certificate-button{
+     display: flex;
+    align-items: center;
+    margin-left: 13px;
+    padding-top: 10px;
+    border: 0.1px solid rgb(89,158,158); /* Adjust the color based on the design */
+    border-radius: 10px; /* Rounded border */
+    padding: 4px 8px;
+    background-color: white;
+    font-size: 12px;
+    cursor: pointer;
+    /* outline: none; */
+    color: #333; /* Adjust based on design */
+    gap: 8px;
+  }
+  .certificate-button:hover {
+    background-color: rgb(89,158,158); /* Slight hover effect */
+    color: white;
+  }
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .acade-section1 {
+      max-width: 700px;
+      padding: 10px;
+  }
+
+  .acade-details1 div {
+      width: 48%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .acade-section1 {
+      max-width: 810px;
+      padding: 5px;
+      margin-left: 530px;
+      height: 170px;
+  }
+
+  .acade-section1 h3 {
+      font-size: 18px;
+  }
+
+  .acade-details1 p {
+      font-size: 15px;
+  }
+
+  .certificate-button {
+      font-size: 13px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .acade-section1 {
+      max-width: 1100px;
+      padding: 10px;
+      margin-left: 700px;
+      height: 250px;
+  }
+
+  .acade-section1 h3 {
+      font-size: 35px;
+  }
+
+  .acade-details1 p {
+      font-size: 24px;
+  }
+
+  .certificate-button {
+      font-size: 22px;
+  }
+}
+
+/* Adjustments for extra-large screens (1600px) */
+@media (min-width: 1600px) {
+  .share-button {
+    padding: 6px 18px; /* Slightly larger padding */
+    font-size: 18px; /* Increase font size for larger screens */
+    right: 25px; /* Adjust position slightly to align visually */
+    top: 15px;
+  }
+}
+  /* =============================== */
+  
+  

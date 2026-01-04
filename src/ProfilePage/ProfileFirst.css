@@ -1,0 +1,907 @@
+/* Container for the entire profile page */
+/* .profile-container {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin-top: -485px;
+  margin-left: 550px;
+  overflow: hidden;
+} */
+
+
+
+
+/* Profile header section */
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  position: relative;
+  margin-top: -495px;
+  margin-left: 530px;
+  max-width: 850px;
+  
+}
+
+.profile-picture {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  margin-left: -20px
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Edit button */
+.edit-button {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+  background-color: transparent; /* Remove default button styling */
+  border: 1px solid #1B1B1E; /* Border around the button */
+  padding: 10px 15px; /* Padding inside the button */
+  border-radius: 15px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+ margin-left: 710px;
+ margin-top: -130px;
+height: 20px;
+}
+
+.edit-button:hover {
+  color: #343a40;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+/* =================================== */
+/* Profile section (Personal Information & Address) */
+.profile-section {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 200px;
+  max-width: 810px;
+  margin-left: 520px;
+  /* overflow: hidden; */
+}
+
+.profile-section h3 {
+  
+  margin-top: -10px;
+  font-size: 18px;
+  margin-left: -10px;
+  font-weight: 600;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: space-between;
+  /* height: 300px; */
+}
+
+.profile-details div {
+  width: 48%;
+}
+
+.profile-details p {
+  margin:5px 0;
+  font-size: 14px;
+  
+}
+
+.profile-details strong {
+  font-weight: 500;
+  /* display: block; */
+  /* margin-bottom: 5px; */
+  color: black;
+}
+.edit-button-set1 {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+  background-color: transparent; /* Remove default button styling */
+  border: 1px solid #1B1B1E; /* Border around the button */
+  padding: 10px 15px; /* Padding inside the button */
+  border-radius: 15px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+ margin-left: 695px;
+ margin-top: -170px;
+height: 20px;
+}
+/* Responsive styles */
+
+/* Responsive styles */
+
+/* Large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .edit-button-set1 {
+    padding: 12px 18px;
+    font-size: 18px;
+    margin-top: -300px;
+    margin-left: 970px;
+  }
+}
+
+/* Between 1200px and 1599px */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .edit-button1 {
+    margin-left: auto; /* Keeps it aligned to the right */
+    margin-right: 0;
+  }
+}
+
+/* Tablets (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .edit-button1 {
+    margin-left: auto;
+    margin-top: -150px;
+    margin-right: 0;
+    padding: 8px 12px; /* Slightly reduce padding for smaller screens */
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media (max-width: 767px) {
+  .edit-button1 {
+    margin: 10px auto 0; /* Centers the button on mobile */
+    margin-top: 0;
+    padding: 8px 10px;
+    width: fit-content; /* Shrinks button width to fit content */
+  }
+}
+/* Large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .profile-section {
+    padding: 30px;
+    max-width: 1100px;
+    margin-left: 700px;
+    height: 330px;
+  }
+
+  .profile-section h3 {
+    font-size: 35px;
+  }
+
+  .profile-details p {
+    font-size: 26px;
+  }
+}
+
+/* Desktops (between 1200px and 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .profile-section {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  .profile-details div {
+    width: 48%;
+  }
+}
+
+/* Tablets (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .profile-section {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .profile-section h3 {
+    font-size: 18px;
+  }
+
+  .profile-details div {
+    width: 100%; /* Stacks elements on smaller screens */
+    margin-bottom: 15px;
+  }
+
+  .profile-details p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media (max-width: 767px) {
+  .profile-section {
+    padding: 15px;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .profile-section h3 {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  .profile-details div {
+    width: 100%; /* Stacks items vertically */
+    margin-bottom: 10px;
+  }
+
+  .profile-details p {
+    font-size: 12px;
+  }
+}
+/* ============================================== */
+.profile-section1 {
+  /* padding: 20px; */
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  /* margin-bottom: 20px; */
+  position: relative;
+  height: 150px;
+  max-width: 810px;
+  margin-left: 520px;
+}
+.profile-section1 h3 {
+  /* margin: 10px 10px 10px; */
+  padding: 10px ;
+  margin-top: -10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.profile-details1 {
+  display: flex;
+  justify-content: space-between;
+  /* height: 300px; */
+  margin-top: -20px;
+}
+
+.profile-details1 div {
+  width: 48%;
+}
+
+.profile-details1 p {
+  margin:10px 10px;
+  font-size: 14px;
+}
+
+.profile-details1 strong {
+  font-weight: bold;
+  /* display: block; */
+  /* margin-bottom: 5px; */
+  color: #000;
+ 
+  font-weight: 500;
+}
+.edit-button-set2 {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+  background-color: transparent; /* Remove default button styling */
+  border: 1px solid #1B1B1E; /* Border around the button */
+  padding: 10px 15px; /* Padding inside the button */
+  border-radius: 15px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+ margin-left: 695px;
+ margin-top: -120px;
+height: 20px;
+}
+/* Responsive styles */
+
+/* Responsive styles */
+
+/* Large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .edit-button-set2 {
+    padding: 12px 18px;
+    font-size: 18px;
+    margin-top: -220px;
+    margin-left: 980px;
+  }
+}
+
+/* Between 1200px and 1599px */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .edit-button2 {
+    margin-left: auto; /* Keeps it aligned to the right */
+    margin-right: 0;
+  }
+}
+
+/* Tablets (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .edit-button2 {
+    margin-left: auto;
+    margin-top: -150px;
+    margin-right: 0;
+    padding: 8px 12px; /* Slightly reduce padding for smaller screens */
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media (max-width: 767px) {
+  .edit-button2 {
+    margin: 10px auto 0; /* Centers the button on mobile */
+    margin-top: 0;
+    padding: 8px 10px;
+    width: fit-content; /* Shrinks button width to fit content */
+  }
+}
+/* Responsive adjustments */
+
+/* Between 1200px and 1599px */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .profile-section1 {
+    padding: 10px;
+    max-width: 90%; /* Narrows the width for screens between 1200px and 1599px */
+  }
+
+  .profile-section1 h3 {
+    font-size: 20px; /* Slightly larger font size for larger screens */
+  }
+
+  .profile-details1 p {
+    font-size: 14px;
+  }
+}
+
+/* 1600px and above */
+@media (min-width: 1600px) {
+  .profile-section1 {
+    padding: 10px;
+    max-width: 1100px; /* Increases width for very large screens */
+    margin-left: 700px;
+    margin-right: auto;
+    height: 240px;
+  }
+
+  .profile-section1 h3 {
+    font-size: 35px; /* Larger font size for more readability */
+  }
+
+  .profile-details1 p {
+    font-size: 26px;
+  }
+}
+
+/* Tablets (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .profile-section1 {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .profile-details1 div {
+    width: 100%; /* Makes each div full-width on tablets */
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media (max-width: 767px) {
+  .profile-section1 {
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .profile-details1 {
+    flex-direction: column;
+  }
+
+  .profile-details1 div {
+    width: 100%;
+  }
+
+  .profile-section1 h3 {
+    font-size: 16px;
+  }
+
+  .profile-details1 p {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Profile Section */
+
+
+/* Modal Styles */
+.modal-overlay-add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-add {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 450px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #e0e0e0; */
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
+.modal-add h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.modal-field-add {
+  margin-bottom: 15px;
+}
+
+.modal-field-add label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-field-add input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.modal-field-add input:focus {
+  border-color: #007bff;
+}
+
+.modal-buttons-add {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.discard-button-add,
+.save-button-add {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.discard-button-add {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #000;
+}
+
+.save-button-add {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.save-button-add:hover {
+  background-color: #0056b3;
+}
+
+.discard-button-add:hover {
+  border-color: #999;
+}
+
+/* Modal border radius */
+.modal-add {
+  border-radius: 20px; /* More rounded like in the image */
+}
+
+.save-button-add, .discard-button-add {
+  border-radius: 50px; /* Make the buttons more rounded */
+}
+
+.modal-add h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* ============================================================================ */
+/* Modal Overlay */
+.profilenameedit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.profilenameedit-modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Close button */
+.profilenameedit-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+/* Header Section */
+.profilenameedit-modal-header {
+  text-align: center;
+}
+
+.profilenameedit-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profilenameedit-modal-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: black;
+ text-align: center;
+}
+
+/* Body Section */
+.profilenameedit-modal-body {
+  margin: 20px 0;
+}
+
+.profilenameedit-modal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.profilenameedit-field {
+  font-weight:500;
+  margin-right: 10px;
+  min-width: 70px;
+}
+
+.profilenameedit-modal-row p {
+  margin: 0;
+  flex-grow: 1;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.profilenameedit-edit-icon {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* Footer Section */
+.profilenameedit-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.profilenameedit-discard-button {
+  background: none;
+  border: 1px solid #58a4b0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 60px;
+}
+.profilenameedit-discard-button:hover {
+  background-color: #4a8d96;
+}
+.profilenameedit-save-button {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  padding: 2px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 120px;
+}
+
+.profilenameedit-save-button:hover {
+  background-color: #4a8d96;
+}
+/* ============================================================== */
+/* Modal Overlay */
+.profilepersonal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.profilepersonal-modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 450px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+.profilepersonal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Header */
+.profilepersonal-modal-content h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: black;
+}
+
+/* Modal Body */
+.profilepersonal-modal-body {
+  margin-bottom: 20px;
+}
+
+.profilepersonal-modal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.profilepersonal-field {
+  font-weight: 500;
+  margin-right: 10px;
+  min-width: 120px;
+}
+
+.profilepersonal-modal-row p {
+  margin: 0;
+  flex-grow: 1;
+  color: #6c757d;
+  color: black;
+  font-size: 14px;
+}
+
+.profilepersonal-edit-icon {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Modal Footer */
+.profilepersonal-modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profilepersonal-discard-button {
+  background: none;
+  border: 1px solid #58a4b0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 80px;
+}
+.profilepersonal-discard-button:hover{
+  background-color: #58a4b0;
+  color: white;
+}
+.profilepersonal-save-button {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 60px;
+}
+
+.profilepersonal-save-button:hover {
+  background-color: #4a8d96;
+}
+/* ====================================================================== */
+.profileaddress-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.profileaddress-modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+ 
+}
+
+.profileaddress-modal h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.profileaddress-modal-content {
+  margin-bottom: 0px;
+  /* margin-top: -30px; */
+}
+
+.profileaddress-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; margin-top: -25px;
+  /* margin-bottom: 15px; */
+}
+.profileaddress-field-row p{
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+
+  /* margin-bottom: 15px; */
+}
+.profileaddress-field-row label {
+  font-weight:500;
+  margin-right: -70px;
+  font-size: 14px;
+  color: black;
+}
+
+.profileaddress-edit-icon {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profileaddress-modal-footer {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 20px; */
+}
+
+.profileaddress-discard-button {
+  background-color: transparent;
+  border: 1px solid #58a4b0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 70px;
+}
+
+.profileaddress-save-button {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 50px;
+  font-size: 12px;
+}
+
+.profileaddress-edit-button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+}

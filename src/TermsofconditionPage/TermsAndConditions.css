@@ -1,0 +1,281 @@
+/* Base Styles */
+.terms-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #2b3241; Dark background color */
+  color: #fff;
+  padding: 40px;
+  height: 100vh;
+}
+
+.terms-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms-image {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+}
+
+.terms-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.terms-content h1,
+.terms-content h2 {
+  margin: 0;
+  font-size: 36px;
+  color: #c9d1d9; /* Light color for headings */
+}
+
+.terms-content p {
+  margin-top: 20px;
+  margin-right: 120px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: rgb(89,158,158); /* Slightly lighter text color */
+}
+
+.download-section1 {
+  margin-top: -10px;
+
+}
+
+.download-section1 p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(243, 241, 248);
+  text-align: center;
+}
+
+.download-form1 {
+  display: flex;
+}
+
+.email {
+  padding: 10px;
+  border: 0.5px solid yellow;
+  border-radius: 5px 0 0 5px;
+  width: 300px;
+  max-width: 100%;
+  font-size: 16px;
+  outline: none;
+}
+
+.download-button1 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #4c9aff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+}
+
+.download-form-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-right: 120px;
+  /* background-color: #2b3241; Match background color if necessary */
+}
+
+.download-form1 {
+  display: flex;
+  border: 1px solid #57b0e4;
+  border-radius: 25px; /* Round the entire form */
+  overflow: hidden;
+}
+
+.email {
+  padding: 10px 10px;
+  border: none;
+  font-size: 16px;
+  color: #fff; /* Text color */
+  background-color: transparent;
+  flex-grow: 1;
+}
+
+.download-button1 {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  border-left: 1px solid #57b0e4; /* Matching the separation border */
+  transition: background-color 0.3s ease;
+}
+
+.download-button1:hover {
+  background-color: rgb(89,158,158); /* Highlight color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) { /* Laptop */
+  .terms-container {
+    flex-direction: column;
+    padding: 20px;
+    height: auto; /* Adjust height for better mobile view */
+  }
+
+  .terms-image-container {
+    margin-bottom: 20px;
+  }
+
+  .terms-content {
+    padding: 10px;
+  }
+
+  .terms-content h1,
+  .terms-content h2 {
+    font-size: 28px;
+  }
+
+  .terms-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) { /* Tablet */
+  .terms-container {
+    padding: 15px;
+  }
+
+  .terms-image-container {
+    margin-bottom: 15px;
+  }
+
+  .terms-content {
+    padding: 10px;
+  }
+
+  .terms-content h1,
+  .terms-content h2 {
+    font-size: 34px;
+  }
+
+  .terms-content p {
+    font-size: 24px;
+  }
+
+  .download-form1 {
+    display: flex;
+    flex-direction: row;
+  }
+  
+.download-form-container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+  .email,
+  .download-button1 {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .download-button1 {
+    /* margin-top: 10px; */
+  }
+
+  .download-button1:hover{
+    background-color: rgb(89,158,158);
+  }
+}
+
+@media (max-width: 600px) { /* Mobile */
+  .terms-container {
+    padding: 20px;
+    height: auto; /* Adjust height for mobile view */
+    flex-direction: column;
+  }
+  .terms-image-container {
+    width: 100%;
+    height: 200px; /* Set a fixed height for the container */
+    overflow: hidden; /* Ensures the image is cropped */
+  }
+
+  .terms-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fit the container */
+  }
+
+  .terms-content {
+    padding: 0;
+  }
+
+  .terms-content h1,
+  .terms-content h2 {
+    font-size: 50px;
+  }
+
+  .terms-content p {
+    font-size: 22px;
+  }
+.download-form-container1{
+  height: 80px;
+  align-items: center;
+}
+  .download-form1 {
+    display: flex;
+    flex-direction: row; /* Keeps email and button side by side */
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+  }
+
+  .email {
+    width: 50%; /* Adjust width as per your preference */
+    margin-right: 10px; /* Adds space between input and button */
+  }
+
+  .download-button1 {
+    width: 30%; /* Adjust width as per your preference */
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+ 
+  .download-button1:hover {
+    background-color: rgb(0, 0, 0);
+  }
+  .back-icon-container1 {
+    top: 20px; /* Adjust top for mobile view */
+    left: 20px; /* Adjust left for mobile view */
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+}
+.back-icon-container1 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 120px; /* Adjust the top positioning as needed */
+  left: 180px; /* Adjust the left positioning as needed */
+  z-index: 10; /* Ensure the back icon appears above other elements */
+  /* background-color: white; Optional: adds background to the icon */
+  padding: 5px; /* Optional: adds some padding around the icon */
+  border-radius: 50%; /* Optional: makes the background circular */
+}
+@media (max-width: 768px) {
+  .back-icon-container1 {
+    top: 0px; /* Adjust top for mobile view */
+    left: 20px; /* Adjust left for mobile view */
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+ 
+}

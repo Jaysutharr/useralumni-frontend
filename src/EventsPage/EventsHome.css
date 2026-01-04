@@ -1,0 +1,1383 @@
+.main-container-eventall {
+  max-height:500px; /* Ensures the container doesn't exceed the viewport height */
+  overflow-y: auto;  /* Enables vertical scrolling */
+  overflow-x: hidden; /* Disables horizontal scrolling (if not needed) */
+  padding: 10px; /* Add padding as needed */
+  margin-top: -550px;
+  -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; 
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+ .events-container {
+    width: 81%;
+    margin: 20px auto;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: -0px;
+    margin-left: 240px;
+    
+  }
+  
+  .events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);  
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); 
+    box-shadow: 
+    0px -2px 4px rgba(0, 0, 0, 0.05), 
+    0px 2px 4px rgba(0, 0, 0, 0.05);  
+    background-color:white;
+   margin-left: -60px;
+  }
+  
+  .events-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: black;
+  }
+  
+  .create-event-btn {
+    background-color: transparent;
+    color: #58A4B0;
+    border-radius: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border:  0.01px solid #58A4B0;
+  }
+  
+  .create-event-btn:hover {
+    background-color:  #58A4B0;
+    color: #fff;
+  } 
+  
+  .registered-events {
+    padding: 16px;
+    border-radius: 10px;
+    background-color:white;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);  
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); 
+    box-shadow: 
+    0px -2px 4px rgba(0, 0, 0, 0.05),
+    0px 2px 4px rgba(0, 0, 0, 0.05);
+    margin-left: -60px;  
+  }
+  
+  .registered-events p {
+    margin: 0;
+    color: #777; 
+  }
+  @media (max-width: 600px) {
+    .events-container {
+      width: 105%; /* Full width with some padding */
+      margin-left: 0; /* No margin on the left */
+    }
+  
+    .events-header {
+      flex-direction: column; /* Stack the header elements */
+      text-align: center; /* Center the header text */
+    }
+  
+    .events-header h2 {
+      font-size: 1.2rem; /* Smaller font size for the header */
+    }
+  
+    .create-event-btn {
+      font-size: 0.8rem;
+      padding: 6px 12px; /* Smaller padding */
+    }
+  
+    .registered-events {
+      padding: 12px; /* Reduce padding for smaller screens */
+    }
+  
+    .registered-events p {
+      font-size: 14px; /* Smaller font size for better readability */
+    }
+  }
+  
+  /* For Medium Screens (max-width: 768px, e.g., tablets) */
+  @media (max-width: 768px) {
+    .events-container {
+      width: 90%; /* Slightly reduced width */
+      margin-left: 20px; /* Small margin on the left */
+    }
+  
+    .events-header h2 {
+      font-size: 1.3rem; /* Medium size for tablets */
+    }
+  
+    .create-event-btn {
+      font-size: 0.85rem;
+      padding: 7px 14px;
+    }
+  
+    .registered-events {
+      padding: 14px;
+    }
+  }
+  
+  /* For Medium Screens (max-width: 1200px) */
+  @media (max-width: 1200px) {
+    .events-container {
+      width: 90%;
+      margin-left: 180px;
+    }
+  
+    .events-header h2 {
+      font-size: 1.3rem;
+    }
+  
+    .create-event-btn {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* For Large Screens (1201px to 1599px) */
+  @media (min-width: 1201px) and (max-width: 1599px) {
+    .events-container {
+      width: 80.5%;
+      margin-left: 240px;
+    }
+  
+    .events-header h2 {
+      font-size: 1.4rem;
+    }
+  
+    .create-event-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  /* For Extra Large Screens (min-width: 1600px) */
+  @media (min-width: 1600px) {
+    .events-container {
+      width: 100%;
+      /* margin-top: -70px; */
+      margin-left: 380px;
+    }
+  .events-header{
+    height: 100px;
+  }
+
+    .events-header h2 {
+      font-size:45px;
+    }
+  
+    .create-event-btn {
+      font-size:30px;
+      padding: 10px 20px;
+    }
+    .registered-events {
+    
+      height: 100px;
+       
+    }
+    .registered-events p{
+    
+   font-size: 45px;
+       
+    }
+  }
+  /* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  .main-container-eventall {
+    max-height: 400px; /* Adjust max-height for small screens */
+    margin-top: -450px; /* Adjust margin-top to better fit the screen */
+    padding: 8px; /* Reduced padding for smaller screens */
+  }
+}
+
+/* Medium screens (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main-container-eventall {
+    max-height: 450px; /* Adjust max-height for medium screens */
+    margin-top: -500px; /* Adjust margin-top for medium screens */
+    padding: 9px; /* Adjust padding for medium screens */
+  }
+}
+
+/* Large screens (1025px - 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .main-container-eventall {
+    max-height: 500px; /* Keep max-height the same for larger screens */
+    margin-top: -550px; /* Default margin for larger screens */
+    padding: 10px; /* Default padding */
+  }
+}
+
+/* Extra large screens (1201px - 1600px) */
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .main-container-eventall {
+    max-height: 550px; /* Increase max-height for extra-large screens */
+    margin-top: -680px; /* Adjust margin-top */
+    padding: 12px; /* Increase padding for extra-large screens */
+  }
+}
+
+/* Ultra large screens (above 1600px) */
+@media (min-width: 1601px) {
+  .main-container-eventall {
+    max-height: 960px; /* Further increase max-height for ultra-large screens */
+    margin-top: -950px; /* Further adjust margin-top */
+    padding: 15px; /* Larger padding for ultra-large screens */
+    width: 100%;
+   
+  }
+}
+  /* ===================================================================== */
+
+  
+   
+ /* Modal overlay to cover the background */
+.modal-overlay-event {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+} 
+
+/* Modal content styling */
+ .modal-content-event { 
+  background: white;
+  width: 450px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; 
+  overflow: hidden;
+  
+}
+
+.modal-header-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header-event h2 {
+  font-size: 20px;
+  margin-left: 20px;
+  color: black;
+}
+
+.close-btn-event {
+ font-size: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  /* padding-left: 650px; */
+  margin-left: 200px;
+  margin-top: -4px;
+
+} 
+
+/* Scrollable modal body */
+.modal-body-event { 
+  padding: 10px;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  max-height: 60vh; 
+  box-sizing: border-box; 
+  -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;  
+}
+
+/* Footer is fixed at the bottom */
+.modal-footer-event {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.cancel-btn-event,
+.create-btn-event {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cancel-btn-event {
+  background: #f0f0f0;
+  margin-left: 90px;
+}
+
+.create-btn-event {
+  background: #58a4b0;
+  color: white;
+  margin-right: 100px;
+}
+
+.upload-cover-image-event {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 10px;
+  height: 120px;
+
+}
+
+.upload-cover-image-event p {
+  margin: 0;
+}
+
+.image-requirement-event {
+  font-size: 12px;
+  color: #888;
+}
+
+.event-type-section {
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px; 
+  margin-top: 10px;
+}
+
+.event-format-section,
+.event-name-section,
+.description-section-event,
+.speakers-section-event {
+  margin-bottom: 5px;
+  font-size: 13px;
+ 
+}
+
+.event-format-section select,
+.event-name-section input,
+.date-section-event input,
+.speakers-section-event input {
+  width: 100%;
+  padding: 2px 10px;
+  height: 30px;
+  border: 0.1px solid rgb(34, 34, 34);
+  border-radius: 10px;
+  box-sizing: border-box; 
+  color: rgb(37, 37, 37);
+  background-color: transparent;
+} 
+
+/* Date section with two columns */
+.date-section-event {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.start-date-event,
+.end-date-event {
+  width: 50%;
+}
+
+.description-section-event textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 0.1px solid rgb(34, 34, 34);
+  border-radius: 14px;
+  resize: vertical;
+  margin-left: 0px;
+}
+
+.char-counter-event {
+  text-align: right;
+  font-size: 12px;
+  color: #888;
+}
+
+.speakers-input-event {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.event-search-icon {
+  position: absolute;
+  top: 50%;
+  /* right: 15px; */
+  transform: translateY(-50%);
+  color: #272727;
+  font-size:10px;
+  margin-left: 6px;
+}
+.speakers-input-event input {
+  width: 30%;
+  padding: 10px;
+  padding-right: 40px;
+}
+
+.search-icon-event {
+  position: absolute;
+  right: 0px;
+  font-size: 18px;
+}
+
+.info-text-event {
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+}
+
+  
+ 
+
+
+
+   
+
+
+
+
+
+
+
+
+
+/* ============================= */
+
+  /* Container for featured discussion */
+.featured-discussion-wrapper {
+  padding: 20px !important;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 185px;
+  width: 1090px;
+  height: 370px;
+  margin-top: -30px;
+}
+
+/* Header for the discussion section */
+.featured-discussion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.featured-discussion-header h3 {
+  font-size: 22px;
+  /* font-weight: bold; */
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.see-all {
+  font-size: 14px;
+  color: black;
+  text-decoration: underline;
+  margin-top: -10px;
+}
+
+/* Cards container */
+
+
+/* Individual card */
+
+.card-feautred {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width:88%; /* Keep this responsive */
+  height: 240px; /* Decrease the height of the card */
+  padding: 5px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+margin-left: 0px;
+  margin-top:   10px;
+}
+
+/* Card image */
+.card-image-feautred {
+  width: 100%; /* Keep the width of the image as is */
+  height: 140px; /* Ensures image keeps its original height */
+  border-radius: 5px;
+
+}
+
+/* Card content */
+.card-content-feautred {
+  flex-grow: 1;
+  margin-top: -10px;
+}
+
+.card-date-feautred {
+  font-size: 12px;
+  color:black;
+}
+
+.card-title-feautred {
+  font-size: 12px;
+  /* font-weight: bold; */
+  text-align: left;
+  margin-top: -24px;
+  padding-top: -40px;
+}
+
+.card-speaker-feautred {
+  font-size: 12px;
+  color: #848282;
+  /* margin-right: 150px; Adjust this value */
+  margin-top: -8px;
+}
+
+/* Action buttons inside the card */
+.card-actions-feautred {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.view-btn-feautred {
+  background-color:transparent;
+  color: #58A4B0;
+  border: none;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 210px;
+  border: 1px solid #58A4B0;
+  cursor: pointer;
+  margin-top: -20px;
+  height: 25px;
+}
+
+.share-btn-feautred-event {
+  border: 1px solid #58A4B0;
+  background-color: transparent;
+  /* border: 2px solid #007BFF; */
+  margin-top: -20px;
+  padding: 2px 5px;
+  display: block;
+  align-items: center;
+  border-radius: 50%;
+  height: 30px;
+  /* color: #007BFF; */
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Show more section */
+.show-more-section-feautred {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.show-more-link-feautred {
+  font-size: 14px;
+  color: #58A4B0;
+  text-decoration: none;
+}
+
+.show-more-link-feautred i {
+  margin-left: 5px;
+}
+.featured-discussion-wrapper {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 540px; 
+  overflow-y: auto;
+}
+
+/* Cards container */
+.discussion-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* justify-content: space-between; */
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.card-feautred {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* width: 80%; */
+  /* height: auto; Let height adjust based on content */
+  /* padding: 5px; */
+  /* text-align: left; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+.card-content-feautred {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling within the card if necessary */
+  max-height: 200px; /* Optional: Limit height for scrolling within the card */
+}
+/* Responsive Design */
+@media (min-width: 600px) {
+  /* Tablets */
+  .discussion-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Laptops */
+  .discussion-cards {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on laptops */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Desktop */
+  .discussion-cards {
+    grid-template-columns: repeat(3, 1fr); /* 4 columns on large desktops */
+  }
+}
+
+@media (min-width: 1600px) {
+  /* Extra-large screens */
+  .featured-discussion-wrapper {
+    width: 76.1%;
+    height: 500px;
+    margin-left: 400px;
+  }
+
+  
+  .discussion-cards {
+    grid-template-columns: repeat(3, 1fr); /* 5 columns on extra-large screens */
+    gap: 0px; /* Adds space between cards */
+  }
+  
+  .card-feautred {
+    width:90%; /* Let the grid system handle the width */
+    max-width: calc(100% - 20px); /* Adjust card width to respect gap */
+    height: 350px;
+  }
+  .featured-discussion-header h3 {
+    font-size: 42px;
+    /* font-weight: bold; */
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  .card-image-feautred {
+    width: 100%; /* Keep the width of the image as is */
+    height: 180px; /* Ensures image keeps its original height */
+    border-radius: 5px;
+  
+  }
+  
+  /* Card content */
+  .card-content-feautred {
+    flex-grow: 1;
+    margin-top: -10px;
+  }
+  
+  .card-date-feautred {
+    font-size: 20px;
+    color:black;
+  }
+  .see-all1 {
+    font-size: 24px !important;
+    color: black;
+    text-decoration: underline;
+    margin-top: -10px;
+  }
+  .card-title-feautred {
+    font-size: 20px;
+    /* font-weight: bold; */
+    text-align: left;
+    margin-top: -24px;
+    padding-top: -40px;
+  }
+  .see-all{
+    font-size: 24px !important;
+    color: black;
+    text-decoration: underline;
+    margin-top: -10px;
+  }
+  .card-speaker-feautred {
+    font-size: 16px;
+    color: #848282;
+    /* margin-right: 150px; Adjust this value */
+    margin-top: -8px;
+  }
+  .view-btn-feautred {
+    color: #58A4B0;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 360px;
+    border: 1px solid #58A4B0; 
+    height: 35px;
+  }
+  
+  .share-btn-feautred-event {
+    margin-right: 900px;
+  }
+  .show-more-link-feautred {
+    font-size: 24px;
+   
+  }
+}
+/* Other styles remain unchanged */
+/* -----------------------------------============================--------------- */
+
+
+/* Container for featured discussion */
+.featured-discussion-wrapper1 {
+  /* padding: 0px; */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 238px;
+  width: 1040px;
+  height: 370px;
+  margin-top: 4px;
+}
+
+/* Header for the discussion section */
+.featured-discussion-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-discussion-header1 h3 {
+  font-size: 22px;
+  /* font-weight: bold; */
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.see-all1 {
+  font-size: 14px;
+  color: black;
+  text-decoration: underline;
+  margin-top: -10px;
+}
+
+/* Cards container */
+
+
+/* Individual card */
+
+.card-feautred1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width:88%; /* Keep this responsive */
+  height: 260px; /* Decrease the height of the card */
+  padding: 5px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 5px;
+}
+
+/* Card image */
+.card-image-feautred1 {
+  width: 100%; /* Keep the width of the image as is */
+  height: 140px; /* Ensures image keeps its original height */
+  border-radius: 5px;
+
+}
+
+/* Card content */
+.card-content-feautred1 {
+  flex-grow: 1;
+  margin-top: -10px;
+}
+
+.card-date-feautred1 {
+  font-size: 12px;
+  color:black;
+}
+
+.card-title-feautred1 {
+  font-size: 12px;
+  /* font-weight: bold; */
+  text-align: left;
+  margin-top: -24px;
+  padding-top: -40px;
+}
+
+.card-speaker-feautred1 {
+  font-size: 12px;
+  color: #848282;
+  /* margin-right: 150px; Adjust this value */
+  margin-top: -8px;
+}
+
+/* Action buttons inside the card */
+.card-actions-feautred1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.view-btn-feautred1 {
+  background-color:transparent;
+  color: #58A4B0;
+  border: none;
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 210px;
+  border: 1px solid #58A4B0;
+  cursor: pointer;
+  margin-top: -20px;
+  height: 25px;
+}
+
+.share-btn-feautred1 {
+  border: 1px solid #58A4B0;
+  background-color: transparent;
+  /* border: 2px solid #007BFF; */
+  margin-top: -20px;
+  padding: 2px 5px;
+  display: block;
+  align-items: center;
+  border-radius: 50%;
+  height: 30px;
+  /* color: #007BFF; */
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Show more section */
+.show-more-section-feautred1 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.show-more-link-feautred1 {
+  font-size: 14px;
+  color: #58A4B0;
+  text-decoration: none;
+}
+
+.show-more-link-feautred1 i {
+  margin-left: 5px;
+}
+.featured-discussion-wrapper1 {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 540px; 
+  overflow-y: auto;
+}
+
+/* Cards container */
+.discussion-cards1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* justify-content: space-between; */
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.card-feautred1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* width: 80%; */
+  /* height: auto; Let height adjust based on content */
+  /* padding: 5px; */
+  /* text-align: left; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+.card-content-feautred1 {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling within the card if necessary */
+  max-height: 200px; /* Optional: Limit height for scrolling within the card */
+}
+/* Responsive layout adjustments */
+/* Responsive Design */
+@media (min-width: 600px) {
+  /* Tablets */
+  .discussion-cards1 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Laptops */
+  .discussion-cards1 {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on laptops */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Desktop */
+  .discussion-cards1 {
+    grid-template-columns: repeat(3, 1fr); /* 4 columns on large desktops */
+  }
+}
+
+@media (min-width: 1600px) {
+  /* Extra-large screens */
+  .featured-discussion-wrapper1 {
+    width: 76.1%;
+    height: 580px;
+    margin-left: 400px;
+  }
+
+  
+  .discussion-cards1 {
+    grid-template-columns: repeat(3, 1fr); /* 5 columns on extra-large screens */
+    gap: 0px; /* Adds space between cards */
+  }
+  
+  .card-feautred1 {
+    width:90%; /* Let the grid system handle the width */
+    max-width: calc(100% - 20px); /* Adjust card width to respect gap */
+    height: 390px;
+  }
+  .featured-discussion-header1 h3 {
+    font-size: 42px;
+    /* font-weight: bold; */
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+  .card-image-feautred1 {
+    width: 100%; /* Keep the width of the image as is */
+    height: 180px; /* Ensures image keeps its original height */
+    border-radius: 5px;
+  
+  }
+  
+  /* Card content */
+  .card-content-feautred1 {
+    flex-grow: 1;
+    margin-top: -10px;
+  }
+  
+  .card-date-feautred1 {
+    font-size: 20px;
+    color:black;
+  }
+  
+  .card-title-feautred1 {
+    font-size: 20px;
+    /* font-weight: bold; */
+    text-align: left;
+    margin-top: -24px;
+    padding-top: -40px;
+  }
+  
+  .card-speaker-feautred1 {
+    font-size: 16px;
+    color: #848282;
+    /* margin-right: 150px; Adjust this value */
+    margin-top: -8px;
+  }
+  .view-btn-feautred1 {
+    color: #58A4B0;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 360px;
+    border: 1px solid #58A4B0; 
+    height: 35px;
+  }
+  
+  .share-btn-feautred-event1 {
+    margin-right: 50px;
+  }
+  .show-more-link-feautred1 {
+    font-size: 24px;
+   
+  }
+}
+.discussion-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 3 horizontal blocks */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.featured-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  background: #eaeaea;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card-date {
+  font-size: 12px;
+  color: #555;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.card-footer {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.view-btn {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #4fa3b5;
+  background: transparent;
+  color: #4fa3b5;
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* ============================================================================ */
+/* COMPREHENSIVE RESPONSIVE DESIGN FOR EVENTS HOME */
+/* ============================================================================ */
+
+/* Tablets (1024px) */
+@media (max-width: 1024px) {
+  .featured-discussion-wrapper {
+    width: 90%;
+    margin-left: 50px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .discussion-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .events-container {
+    width: 85%;
+    margin-left: 200px;
+  }
+
+  .modal-content-event {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+  .main-container-eventall {
+    margin-top: -500px;
+    padding: 10px;
+  }
+
+  .events-container {
+    width: 95%;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .events-header {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+    padding: 15px 10px;
+  }
+
+  .events-header h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .create-event-btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 14px;
+  }
+
+  .registered-events {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .featured-discussion-wrapper {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    height: auto;
+  }
+
+  .featured-discussion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .featured-discussion-header h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .see-all-link {
+    font-size: 13px;
+  }
+
+  .discussion-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .card-feautred {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .card-image-feautred {
+    height: 180px;
+  }
+
+  .card-title-feautred {
+    font-size: 14px;
+  }
+
+  .card-actions-feautred {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .view-btn-feautred {
+    width: auto;
+    min-width: 80px;
+    padding: 5px 15px;
+  }
+
+  .show-more-section {
+    margin-top: 15px;
+  }
+
+  .show-more-link {
+    margin-left: 0 !important;
+  }
+
+  /* Modal responsive */
+  .modal-content-event {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .modal-header-event h2 {
+    font-size: 18px;
+  }
+
+  .close-btn-event {
+    margin-left: auto;
+  }
+
+  .modal-body-event {
+    padding: 15px;
+  }
+
+  .modal-footer-event {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cancel-btn-event,
+  .create-btn-event {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .date-section-event {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .start-date-event,
+  .end-date-event {
+    width: 100%;
+  }
+}
+
+/* Mobile Devices (576px) */
+@media (max-width: 576px) {
+  .main-container-eventall {
+    margin-top: -450px;
+    padding: 5px;
+  }
+
+  .events-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .events-header {
+    padding: 10px 5px;
+  }
+
+  .events-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .create-event-btn {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .registered-events {
+    padding: 10px;
+  }
+
+  .registered-events p {
+    font-size: 13px;
+  }
+
+  .featured-discussion-wrapper {
+    padding: 8px;
+    margin: 0;
+  }
+
+  .featured-discussion-header h3 {
+    font-size: 16px;
+  }
+
+  .see-all-link {
+    font-size: 12px;
+  }
+
+  .card-feautred {
+    padding: 8px;
+  }
+
+  .card-image-feautred {
+    height: 150px;
+  }
+
+  .card-date-feautred,
+  .card-title-feautred,
+  .card-speaker-feautred {
+    font-size: 11px;
+  }
+
+  .card-actions-feautred {
+    margin-top: 10px;
+  }
+
+  .view-btn-feautred {
+    font-size: 12px;
+    padding: 4px 10px;
+    height: auto;
+  }
+
+  .share-btn-feautred-event {
+    height: 28px;
+    padding: 3px 5px;
+  }
+
+  .show-more-section {
+    margin-top: 12px;
+  }
+
+  .show-more-link {
+    font-size: 13px;
+  }
+
+  /* Modal */
+  .modal-content-event {
+    width: 98%;
+    border-radius: 10px;
+  }
+
+  .modal-header-event h2 {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .close-btn-event {
+    font-size: 24px;
+  }
+
+  .modal-body-event {
+    padding: 10px;
+  }
+
+  .upload-cover-image-event {
+    padding: 15px;
+    height: auto;
+  }
+
+  .event-format-section select,
+  .event-name-section input,
+  .speakers-section-event input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .description-section-event textarea {
+    height: 80px;
+    font-size: 13px;
+  }
+
+  .radio-group1 {
+    gap: 15px;
+  }
+}
+
+/* Extra Small Mobile (400px) */
+@media (max-width: 400px) {
+  .events-header h2 {
+    font-size: 1rem;
+  }
+
+  .create-event-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .featured-discussion-header h3 {
+    font-size: 14px;
+  }
+
+  .card-image-feautred {
+    height: 120px;
+  }
+
+  .view-btn-feautred {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .modal-header-event h2 {
+    font-size: 14px;
+  }
+}
+

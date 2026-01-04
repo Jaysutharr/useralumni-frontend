@@ -1,0 +1,1174 @@
+.flex-container1 {
+  display: flex;
+}
+.networking-data-all{
+    height: 520px;
+    overflow-y: scroll;
+    margin-top: -540px;
+    -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; 
+}
+.back-icon-network {
+  position: absolute;
+margin-top: -550px;
+margin-left: 250px;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+.networking-main-data-container{
+ background-color: white;   
+ width: 650px;
+ margin-left: 300px;
+ border-radius: 15px;
+ /* margin-top: 50px   ; */
+ margin-bottom: 10px;
+}
+  .banner-profile-wrapper {
+    /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  
+
+  }
+  
+  .banner-profile-img {
+    height: 150px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .banner-profile-image {
+    height:140px;
+    width: 140px;
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-top: -110px;
+  }
+/* Responsive Adjustments for min-width: 1200px Screens */
+@media (min-width: 1200px) {
+  .networking-main-data-container {
+    width: 68.5%;
+    margin-left: 300px;
+    margin-right: auto;
+  }
+
+  .back-icon-network {
+    margin-top: -540px;
+    margin-left: 260px;
+    font-size: 22px;
+  }
+
+  .banner-profile-image {
+    margin-left: 20px;
+  }
+}
+
+/* Responsive Adjustments for min-width: 1600px Screens */
+@media (min-width: 1600px) {
+  .networking-data-all{
+    height: 720px;
+    overflow-y: scroll;
+    margin-top: -750px;
+    -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;
+  width: 100%; 
+}
+  .networking-main-data-container {
+    width: 65%;
+    margin-left: 450px;
+
+    /* margin-right: auto; */
+    /* margin-top: -300px; */
+  }
+
+  .back-icon-network {
+    margin-left: 400px;
+  
+    margin-top: -730px;
+  }
+}
+
+/* Mobile and Tablet Screens */
+@media (max-width: 768px) {
+  .networking-data-all {
+    height: 300px;
+    margin-top: -400px;
+  }
+
+  .back-icon-network {
+    margin-top: -420px;
+    margin-left: 15px;
+    font-size: 20px;
+  }
+
+  .networking-main-data-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .banner-profile-img {
+    height: 120px;
+  }
+
+  .banner-profile-image {
+    height: 100px;
+    width: 100px;
+    margin-left: 15px;
+    margin-top: -80px;
+  }
+}
+
+  /* NetworkingDataProfileLayout.css */
+
+.networkingData-profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* padding-top: 200px; */
+  }
+  
+  .networkingData-profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+  
+  .networkingData-profile-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .networkingData-profile-role  {
+    font-size: 16px;
+    color: #5e5e5e;
+    margin: 3px 0;
+    margin-top: -5px;
+  }
+  .networkingData-profile-location{
+    font-size: 14px;
+    color: #5e5e5e;
+    margin: 3px 0;
+    margin-top: -5px;
+  }
+  .networkingData-connections {
+    font-size: 14px;
+    color: #5e5e5e;
+    margin: 3px 0;
+    /* margin-top: -10px; */
+  }
+
+  .networkingData-contact-info {
+    color: #58a4b0;
+    text-decoration: none;
+    text-decoration: underline;
+   
+  }
+  
+  
+  .networkingData-connections {
+    color: #58a4b0;
+    margin-top: 0px;
+  }
+  
+  .networkingData-button-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .networkingData-message-btn{
+    padding: 2px 12px;
+    border: 1px solid black;
+    border-radius: 13px;
+    background-color:transparent;
+    cursor: pointer;
+    height: 30px;
+  }
+  .networkingData-message-btn svg{
+    margin-right: 10px;
+  }
+  .networkingData-message-btn:hover {
+    background-color: #58a4b0;
+    color: white;
+  }
+  /* Responsive adjustments */
+@media (min-width: 1600px) {
+  .networkingData-profile-container {
+    padding: 8px;
+  }
+  .networkingData-profile-name {
+    font-size: 32px;
+  }
+  .networkingData-profile-role,
+  .networkingData-profile-location,
+  .networkingData-connections {
+    font-size: 21px;
+  }
+  .networkingData-message-btn {
+    padding: 6px 18px;
+    font-size: 18px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .networkingData-profile-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .networkingData-profile-info {
+    align-items: flex-start;
+  }
+  .networkingData-profile-name {
+    font-size: 20px;
+  }
+  .networkingData-profile-role,
+  .networkingData-profile-location,
+  .networkingData-connections {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .networkingData-profile-container {
+    padding: 5px;
+  }
+  .networkingData-profile-name {
+    font-size: 18px;
+  }
+  .networkingData-profile-role,
+  .networkingData-profile-location,
+  .networkingData-connections {
+    font-size: 12px;
+  }
+  .networkingData-message-btn {
+    padding: 2px 8px;
+    height: 26px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .networkingData-profile-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .networkingData-profile-info {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .networkingData-profile-name {
+    font-size: 18px;
+  }
+  .networkingData-button-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .networkingData-message-btn {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+ 
+  /* NetworkingDataProfileLayout.css */
+
+.networkingData-dropdown {
+    position: relative;
+    
+  }
+  .networkingData-more-btn{
+    padding: 2px 12px;
+    border: 1px solid black;
+    border-radius: 13px;
+    background-color:transparent;
+    cursor: pointer;
+    height: 30px;   
+}
+  .networkingData-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
+  }
+  
+  .networkingData-dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .networkingData-dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  /* Responsive Styling */
+
+/* For Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  .networkingData-more-btn {
+    padding: 4px 16px;
+    font-size: 16px;
+    height: 35px;
+  }
+
+  .networkingData-dropdown-menu {
+    width: 140px;
+    top: 110%;
+  }
+
+  .networkingData-dropdown-item {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+
+/* For Extra Large Screens (1600px and above) */
+@media (min-width: 1600px) {
+  .networkingData-more-btn {
+    padding: 6px 18px;
+    font-size: 18px;
+    height: 40px;
+  }
+
+  .networkingData-dropdown-menu {
+    width: 160px;
+    top: 115%;
+  }
+
+  .networkingData-dropdown-item {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+  /* ========================================================================= */
+  /* ExactUserHighlights.css */
+
+.exact-highlights-container {
+    /* width: 100%; */
+    /* background-color: #f9f9f9; */
+    font-family: 'poppins';
+    color: #333;
+    margin-left: 300px;
+  }
+  
+  .exact-highlights-section {
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 650px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding box shadow */
+  }
+  
+  .exact-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    /* margin-top: -13px; */
+  }
+  
+  .exact-highlight-item {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+
+
+  
+  .exact-highlight-text {
+    margin-left: 10px;
+    flex: 1;
+    font-size: 15px;
+    margin-top: 0px;
+  }
+  
+  .exact-share-btn {
+    padding: 1px 1px;
+    background-color: transparent;
+    border: 1px solid #050505;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 25px;
+    width: 180px;
+    margin-top: -30px;
+    margin-left: 5px;
+    font-size: 13px;
+  }
+  .exact-share-btn svg{
+margin-right: 8px;
+  }
+  .exact-about-section {
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 650px;
+    height: 110px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding box shadow */
+  }
+  .exact-about-text {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #555;
+    text-align: justify;
+    font-family: 'poppins';
+  }
+  .book-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  /* For screens smaller than 1200px */
+@media (max-width: 1200px) {
+  .exact-highlights-container {
+      margin-left: 50px;
+      padding: 0 20px;
+  }
+
+  .exact-highlights-section {
+      width: 92%;
+  }
+
+  .exact-share-btn {
+      width: 150px;
+  }
+}
+
+/* For screens smaller than 1600px */
+@media (min-width: 1600px) {
+  .exact-highlights-container {
+      margin-left: 450px;
+  }
+
+  .exact-highlights-section {
+      width: 93.5%;
+      height: 130px;
+  }
+  .exact-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    /* margin-top: -13px; */
+  }
+  .exact-highlight-text {
+    margin-left: 10px;
+    flex: 1;
+    font-size: 21px;
+    margin-top: 0px;
+  }
+  
+  .exact-share-btn {
+    font-size: 20px;
+    width: 250px;
+    height: 30px;
+    margin-top: -20px;
+  }
+  .exact-about-section {
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 970px;
+    height: 190px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding box shadow */
+  }
+  .exact-about-text {
+    font-size: 22px;
+    line-height: 1.2;
+    color: #555;
+    text-align: justify;
+    font-family: 'poppins';
+  }
+}
+  /* =============================================================== */
+  /* UserProfileCustom.css */
+
+.profile-container-custom {
+    font-family: 'poppins';
+    color: #333;
+    margin-left: 300px;
+  }
+  
+  .activity-section-custom {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    width: 650px;
+    height: 160px;
+  }
+  
+  .activity-section-custom h3 {
+    font-size: 18px;
+    /* margin-bottom: 10px; */
+    color: black;
+    font-weight: 600;
+  }
+  
+  .activity-section-custom p {
+    margin-top: -10px;
+    font-size: 10px;
+  }
+  
+  .activity-btn-group-custom {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  
+  }
+  
+  .activity-btn-custom {
+    padding: 0px 15px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #58a4b0;
+    cursor: pointer;
+    color :#58a4b0;
+    margin-top: -20px;
+  }
+  .activity-content-custom{
+    height: 60px;
+  }
+  .activity-content-custom p{
+  
+    color: black;
+    line-height: 1.2;
+    font-size: 13px;
+    text-align: justify;
+  }
+  .activity-content-custom h7{
+    /* margin-bottom: 10px; */
+    color: black;
+    line-height: 1.2;
+    font-size: 12px;
+    margin-left: 20px;
+  }
+  .show-posts-btn-custom {
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+  margin-left: 200px;
+  margin-top: -40px;
+  }
+  /* Responsive adjustments */
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .profile-container-custom {
+      margin-left: 0;
+      padding: 0 10px;
+      max-width: 100%;
+  }
+
+  .activity-section-custom {
+      width: 100%;
+      max-width: 100%;
+  }
+
+  .activity-btn-group-custom {
+      gap: 5px;
+      justify-content: center;
+  }
+
+  .show-posts-btn-custom {
+      margin-left: 0;
+      text-align: center;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1200px) {
+  .profile-container-custom {
+      padding: 0 15px;
+      max-width: 90%;
+  }
+
+  .activity-section-custom {
+      max-width: 90%;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .profile-container-custom {
+      max-width: 95%;
+  }
+
+  .activity-section-custom {
+      max-width: 99%;
+  }
+}
+/* For screens 1600px and above */
+@media (min-width: 1600px) {
+  .profile-container-custom {
+    margin-left: 450px;
+      /* max-width: 95%; Increase container width for larger screens */
+  }
+
+  .activity-section-custom {
+     width: 970px; /* Make section wider */
+     height: 260px;
+  }
+  .activity-section-custom h3 {
+    font-size: 28px;
+    /* margin-bottom: 10px; */
+    color: black;
+    font-weight: 600;
+  }
+   
+  .activity-section-custom p {
+    margin-top: -10px;
+    font-size: 17px;
+  }
+  .activity-btn-custom {
+    padding: 0px 15px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #58a4b0;
+    cursor: pointer;
+    color :#58a4b0;
+    margin-top: -20px;
+    font-size: 25px;
+  }
+  .activity-content-custom h7{
+    /* margin-bottom: 10px; */
+    color: black;
+    line-height: 1.2;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  .show-posts-btn-custom {
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+  margin-left: 350px;
+  margin-top: 40px;
+  }
+  .activity-content-custom p{
+  
+    color: black;
+    line-height: 1.2;
+    font-size: 23px;
+    text-align: justify;
+  }
+}
+  /* -------------------------------------------------- */
+  .experience-section-custom{
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    width: 650px;
+    /* margin-left: 300px; */
+    
+  }
+  .experience-section-custom h3 {
+    font-size: 18px;
+    /* margin-bottom: 10px; */
+    color: black;
+    font-weight: 600;
+  }
+  .experience-item-custom, .education-item-custom {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .experience-logo-custom, .education-logo-custom {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .logo-custom{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  
+  .experience-details-custom h4{
+    font-size: 15px;
+    color: #000000;
+    /* margin-top: 5px; */
+    margin-left: -10px;
+  }
+  .experience-details-custom h5{
+    font-size: 15px;
+    color: #5b5b5b;
+    margin-top: -5px;
+    font-weight: 400;
+    margin-left: -10px;
+  }
+  .experience-details-custom h6{
+    font-size: 15px;
+    color: #5b5b5b;
+    margin-top: -10px;
+    font-weight: 400;
+    margin-left: -10px;
+  }
+  .experience-details-custom h6{
+    font-size: 15px;
+    color: #5b5b5b;
+font-weight: 400;
+    margin-left: -10px;
+  }
+  .experience-details-custom p{
+    font-size: 15px;
+    color: #3e3e3e;
+/* margin-top: -5px;     */
+line-height: 1.3;
+text-align: justify;
+    margin-left: -10px;
+  }
+
+  .experience-description-custom {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .read-more-btn-custom {
+    background: none;
+    border: none;
+    color: #0073b1;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 10px;
+  }
+  .education-section-custom{
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    width: 650px;
+  }
+  .education-details-custom h4{
+    font-size: 15px;
+    color: #000000;
+    /* margin-top: 5px; */
+    margin-left: -10px;
+  }
+  .education-details-custom h5{
+    font-size: 15px;
+    color: #5b5b5b;
+    margin-top: -5px;
+    font-weight: 400;
+    margin-left: -10px;
+  }
+  .education-details-custom h6{
+    font-size: 15px;
+    color: #5b5b5b;
+    margin-top: -10px;
+    font-weight: 400;
+    margin-left: -10px;
+  }
+  .education-details-custom h6{
+    font-size: 15px;
+    color: #5b5b5b;
+font-weight: 400;
+    margin-left: -10px;
+  }
+  .education-details-custom p{
+    font-size: 15px;
+    color: #3e3e3e;
+/* margin-top: -5px;     */
+line-height: 1.3;
+text-align: justify;
+    margin-left: -10px;
+  }
+  .education-section-custom h3 {
+    font-size: 18px;
+    /* margin-bottom: 10px; */
+    color: black;
+    font-weight: 600;
+  }
+  /* For screens larger than 1200px and 1600px */
+@media (min-width: 1600px) {
+  .experience-section-custom, .education-section-custom {
+    width: 990px !important; /* Increased width for larger screens */
+    padding: 20px; /* Increased padding */
+    /* margin-left: 135px; */
+  }
+
+  .experience-section-custom h3, .education-section-custom h3 {
+    font-size: 30px !important; /* Larger headings */
+  }
+
+  .experience-details-custom h4, .education-details-custom h4 {
+    font-size: 26px !important;
+  }
+
+  .experience-details-custom h5, .education-details-custom h5,
+  .experience-details-custom h6, .education-details-custom h6 {
+    font-size: 22px !important;
+  }
+
+  .experience-details-custom p, .education-details-custom p {
+    font-size: 20px !important;
+  }
+
+  .experience-description-custom {
+    font-size: 20px !important;
+  }
+
+  .read-more-btn-custom {
+    font-size: 20px !important;
+  }
+}
+
+/* For medium-sized screens (tablets and smaller desktops) */
+@media (min-width: 1200px) {
+  .experience-section-custom, .education-section-custom {
+    width: 660px; /* Adjusted width for medium screens */
+  }
+
+  .experience-section-custom h3, .education-section-custom h3 {
+    font-size: 18px;
+  }
+
+  .experience-details-custom h4, .education-details-custom h4 {
+    font-size: 14px;
+  }
+
+  .experience-details-custom h5, .education-details-custom h5,
+  .experience-details-custom h6, .education-details-custom h6 {
+    font-size: 14px;
+  }
+
+  .experience-details-custom p, .education-details-custom p {
+    font-size: 14px;
+  }
+
+  .experience-description-custom {
+    font-size: 13px;
+  }
+
+  .read-more-btn-custom {
+    font-size: 14px;
+  }
+}
+
+/* For smaller screens (max-width: 768px, tablets and mobile phones) */
+@media (max-width: 768px) {
+  .experience-section-custom, .education-section-custom {
+    width: 100%; /* Full width for smaller screens */
+    padding: 10px; /* Reduced padding */
+  }
+
+  .experience-section-custom h3, .education-section-custom h3 {
+    font-size: 16px;
+  }
+
+  .experience-details-custom h4, .education-details-custom h4 {
+    font-size: 13px;
+  }
+
+  .experience-details-custom h5, .education-details-custom h5,
+  .experience-details-custom h6, .education-details-custom h6 {
+    font-size: 13px;
+  }
+
+  .experience-details-custom p, .education-details-custom p {
+    font-size: 13px;
+  }
+
+  .experience-description-custom {
+    font-size: 12px;
+  }
+
+  .read-more-btn-custom {
+    font-size: 13px;
+  }
+}
+
+/* For very small screens (mobile phones, max-width: 480px) */
+@media (max-width: 480px) {
+  .experience-section-custom, .education-section-custom {
+    width: 100%; /* Full width for very small screens */
+    padding: 8px; /* Reduced padding */
+  }
+
+  .experience-section-custom h3, .education-section-custom h3 {
+    font-size: 14px; /* Even smaller font size for small devices */
+  }
+
+  .experience-details-custom h4, .education-details-custom h4 {
+    font-size: 12px;
+  }
+
+  .experience-details-custom h5, .education-details-custom h5,
+  .experience-details-custom h6, .education-details-custom h6 {
+    font-size: 12px;
+  }
+
+  .experience-details-custom p, .education-details-custom p {
+    font-size: 12px;
+  }
+
+  .experience-description-custom {
+    font-size: 11px;
+  }
+
+  .read-more-btn-custom {
+    font-size: 12px;
+  }
+}
+  /* ========================================================================== */
+  
+/* ===================================================================== */
+.custom-profile-list-wrapper {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    width: 400px;
+    height: 520px;
+    overflow-y: scroll;
+    margin-top: -540px;
+    margin-left: 20px;
+    -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; 
+  }
+  
+  .custom-profile-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .custom-profile-list-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .custom-profile-list-seeall {
+    color:black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .custom-profile-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .custom-profile-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    /* width: 500px; */
+    /* border-bottom: 1px solid #e1e1e1; */
+  }
+  
+  .custom-profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-profile-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .custom-profile-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .custom-profile-name {
+    font-size: 18px;
+    color: black;
+    margin: 0;
+  }
+  
+  .custom-profile-title {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+  }
+  
+  .custom-message-btn {
+    background-color: white;
+    border: 1px solid #58a4b0;
+    color: black;
+    border-radius: 50px;
+    padding: 3px 20px;
+    cursor: pointer;
+    height: 30px;
+    font-size: 14px;
+    /* font-weight: bold; */
+  }
+  /* Responsive for 1024px Screens */
+@media (max-width: 1024px) {
+  .custom-profile-list-wrapper {
+    width: 90%;
+    margin-left: 10px;
+    margin-top: -420px;
+  }
+
+  .custom-profile-list-header h3 {
+    font-size: 16px;
+  }
+
+  .custom-profile-list-seeall {
+    font-size: 12px;
+  }
+
+  .custom-profile-name {
+    font-size: 16px;
+  }
+
+  .custom-profile-title {
+    font-size: 12px;
+  }
+
+  .custom-message-btn {
+    font-size: 12px;
+    padding: 3px 15px;
+  }
+}
+
+/* Responsive for 1200px Screens */
+@media (max-width: 1200px) {
+  .custom-profile-list-wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -480px;
+  }
+
+  .custom-profile-list-header h3 {
+    font-size: 17px;
+  }
+
+  .custom-profile-list-seeall {
+    font-size: 13px;
+  }
+
+  .custom-profile-name {
+    font-size: 17px;
+  }
+
+  .custom-profile-title {
+    font-size: 13px;
+  }
+
+  .custom-message-btn {
+    font-size: 13px;
+    padding: 3px 18px;
+  }
+}
+
+/* Responsive for 1600px Screens */
+@media (min-width: 1600px) {
+  .custom-profile-list-wrapper {
+    width: 30%;
+    margin-left: -40px;
+    margin-right: 20px;
+    margin-top: -750px;
+    height: 730px;
+  }
+
+  .custom-profile-list-header h3 {
+    font-size: 25px!important;
+  }
+
+  .custom-profile-list-seeall {
+    font-size: 21px;
+  }
+
+  .custom-profile-name {
+    font-size: 22px;
+  }
+
+  .custom-profile-title {
+    font-size: 19px;
+  }
+
+  .custom-message-btn {
+    font-size: 21px;
+height: 40px;
+/* height: 30px;  */  
+/* padding: -2px 1px;  */
+  }
+  .custom-profile-image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+}
+
+/* Responsive for Small Screens (Mobile/Tablet) */
+@media (max-width: 768px) {
+  .custom-profile-list-wrapper {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -350px;
+    padding: 15px;
+  }
+
+  .custom-profile-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .custom-profile-list-header h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .custom-profile-list-seeall {
+    font-size: 12px;
+  }
+
+  .custom-profile-name {
+    font-size: 15px;
+  }
+
+  .custom-profile-title {
+    font-size: 12px;
+  }
+
+  .custom-profile-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .custom-message-btn {
+    font-size: 12px;
+    padding: 3px 15px;
+  }
+}

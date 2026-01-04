@@ -1,0 +1,55 @@
+/* Container for the profile dashboard, adjust as needed */
+.dashboard-container-profile {
+  /* Additional styles can be added here */
+}
+
+/* Wrapper for the sidebar and profile content */
+.siderbar2 {
+  background-color:white; /* Background color for the container */
+  padding: 20px;
+  margin-top: -550px; /* Adjust the position as per your layout */
+  margin-left: 230px; /* Adjust the position as per your layout */
+  height: 85vh; /* Full height of the viewport */
+  display: flex; /* Ensure that the sidebar1 and other content align properly */
+  width: 270px;
+}
+
+/* Sidebar styling */
+.sidebar1 {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: white; /* Set background color to white */
+  padding: 0px; /* Adjust padding to create space inside */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);  */
+  /* height: auto; Automatically adjusts height based on content */
+  padding-top: 120px;
+}
+
+/* List styling */
+.sidebar1 ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+/* List item styling */
+.sidebar1 ul li {
+  padding: 10px 20px;
+  margin: 5px 10px;
+  color: #aba7a7; /* Light grey text */
+  background-color: white; /* Ensure background is white */
+  cursor: pointer;
+  border-radius: 13px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Active and hover state */
+.sidebar1 ul li.active1, 
+.sidebar1 ul li:hover {
+  background-color: #d2faff; /* Light blue background on hover/active */
+  color: rgb(89, 158, 158); /* Blue text */
+}
+
+.sidebar1 ul li.active1 {
+  /* Optional: Additional styling for the active item */
+}

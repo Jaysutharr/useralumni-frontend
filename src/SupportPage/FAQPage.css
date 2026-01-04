@@ -1,0 +1,84 @@
+.faq-page {
+  padding: 20px 30px;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.back-arrow {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.faq-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+
+/* LEFT SIDE */
+.faq-left h4 {
+  margin: 16px 0 8px;
+  font-weight: 600;
+}
+
+.faq-select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;   /* ✅ fixed */
+  border: 1px solid #cfcfcf;
+  font-size: 14px;
+  background: #fff;
+}
+
+
+/* RIGHT SIDE */
+.faq-right h4 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.support-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.support-card .icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.support-card h5 {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.support-card button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #6ab7bb;
+  background: transparent;
+  color: #6ab7bb;
+  cursor: pointer;
+}
+
+.support-card button:hover {
+  background: #6ab7bb;
+  color: #fff;
+}

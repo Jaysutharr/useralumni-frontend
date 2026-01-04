@@ -1,0 +1,1734 @@
+.profile-header-set {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: -520px;
+  margin-left: 520px;
+  max-width: 805px;
+  
+}
+
+.profile-picture-set {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-info-set h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-left: 0px
+}
+
+.profile-info-set p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Edit button */
+.edit-button-set {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 10px; /* Adds spacing between icon and text */
+  background-color: transparent; /* Remove default button styling */
+  border: 1px solid #1B1B1E; /* Border around the button */
+  padding: 10px 15px; /* Padding inside the button */
+  border-radius: 15px; /* Rounded corners for the button */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+ margin-left: 480px;
+ margin-bottom: 20px;
+height: 20px;
+}
+
+.edit-button-set:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.edit-button-set svg {
+  fill: #1B1B1E; /* Color for the icon */
+}
+
+.edit-button-set h2 {
+  margin: 0; /* Removes default margin from h2 */
+  font-size: 16px; /* Text size for the Edit text */
+  color: #1B1B1E; /* Text color */
+ 
+}
+
+.edit-button-set:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adds focus effect */
+}
+
+/* Large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .profile-header-set {
+    width: 68%;
+    height: 120px;
+    max-width: 1100px;
+    margin-top: -780px;
+    margin-left: 700px;
+    margin-right: auto;
+    padding: 10px;
+  }
+  .profile-picture-set {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .profile-info-set h2 {
+    font-size: 24px;
+  }
+  .profile-info-set p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #6c757d;
+  }
+  .edit-button-set {
+    padding: 12px 18px;
+    font-size: 18px;
+    margin-left: 680px;
+  }
+}
+
+/* Desktops (between 1200px and 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .profile-header-set {
+    max-width: 60%;
+    margin-top: -530px;
+    margin-left: 520px;
+    margin-right: auto;
+  }
+
+  .profile-picture-set {
+    width: 65px;
+    height: 65px;
+  }
+
+  .profile-info-set h2 {
+    font-size: 18px;
+  }
+
+  .edit-button-set {
+    padding: 8px 12px;
+    /* align-items: end; */
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .profile-header-set {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 0;
+  }
+
+  .profile-picture-set {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 10px 0;
+  }
+
+  .profile-info-set h2 {
+    font-size: 16px;
+  }
+
+  .edit-button-set {
+    padding: 8px 12px;
+    margin: 15px 0;
+  }
+}
+
+/* Small screens (480px and below) */
+@media (max-width: 480px) {
+  .profile-header-set {
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .profile-picture-set {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-info-set h2 {
+    font-size: 14px;
+  }
+
+  .edit-button-set {
+    padding: 6px 10px;
+  }
+}
+/* ========================================================== */
+/* Flex container for dropdowns */
+.settings-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  /* flex-wrap: wrap; */
+  /* background-color: white; */
+}
+
+/* LanguageSelect.css */
+
+.language-container {
+  width: 100%;
+  margin-bottom: 70px;
+  /* margin-right: 400px; */
+  margin-left: 400px;
+
+}
+
+.language-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.language-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 45px;
+}
+
+.language-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #666;
+  flex: 1;
+}
+
+.language-select {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  /* width: 100%;   */
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+}
+
+.language-select option {
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  .settings-container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .language-container {
+    margin-left: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .language-box {
+    width: 100%;
+  }
+
+  .language-title {
+    font-size: 14px;
+  }
+
+  .language-input,
+  .language-select {
+    font-size: 12px;
+  }
+}
+
+/* Medium screens (600px - 1200px) */
+@media (min-width: 600px) and (max-width: 1200px) {
+  .settings-container {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .language-container {
+    margin-left: 200px;
+    margin-bottom: 50px;
+  }
+
+  .language-box {
+    width: 350px;
+    height: 50px;
+  }
+
+  .language-title {
+    font-size: 15px;
+  }
+
+  .language-input,
+  .language-select {
+    font-size: 13px;
+  }
+}
+
+/* Large screens (1200px - 1600px) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .settings-container {
+    padding: 20px;
+    gap: 15px;
+    overflow-x:hidden ;
+    margin-left: 100px;
+  }
+
+  .language-container {
+    margin-left: 300px;
+    margin-bottom: 60px;
+  }
+
+  .language-box {
+    width: 400px;
+    height: 45px;
+  }
+
+  .language-title {
+    font-size: 16px;
+  }
+
+  .language-input,
+  .language-select {
+    font-size: 14px;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .settings-container {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .language-container {
+    margin-left: 570px;
+    margin-bottom: 70px;
+  }
+
+  .language-box {
+    width: 500px;
+    padding: 15px;
+    height: 60px;
+  }
+
+  .language-title {
+    font-size: 25px;
+  }
+
+  .language-input,
+  .language-select {
+    font-size: 20px;
+    height: 35px;
+  }
+}
+/* ======================================= */
+/*contactSelect.css */
+
+.contact-container {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 100px;
+}
+
+.contact-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 45px;
+}
+
+.contact-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #666;
+  flex: 1;
+}
+
+.contact-select {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  /* width: 100%;   */
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+}
+
+.contact-select option {
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+
+
+/* Responsive Styling */
+
+/* Small screens (up to 480px) */
+@media screen and (max-width: 480px) {
+  .contact-title {
+    font-size: 14px; /* Slightly smaller font size for titles */
+  }
+
+  .contact-box {
+    flex-direction: column; /* Stacks input and select on smaller screens */
+    height: auto;
+    padding: 8px;
+  }
+
+  .contact-input {
+    font-size: 13px;
+    margin-bottom: 8px; /* Adds spacing between input and select */
+    padding-left: 5px;
+  }
+
+  .contact-select {
+    font-size: 13px;
+    padding: 2px 8px;
+  }
+}
+
+/* Medium screens (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contact-box {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .contact-title {
+    font-size: 15px;
+  }
+
+  .contact-input {
+    font-size: 13px;
+  }
+
+  .contact-select {
+    font-size: 13px;
+  }
+}
+
+/* Large screens (769px to 1200px) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .contact-box {
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+/* Extra-large screens (1201px and above) */
+@media screen and (min-width: 1201px) {
+  .contact-box {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media screen and (min-width: 1600px) {
+  .contact-box {
+    width: 140%;
+    height: 55px;
+    max-width: 570px; /* Sets a slightly larger max width for very large screens */
+    padding: 15px; /* Increases padding for better spacing */
+  }
+
+  .contact-title {
+    font-size: 26px; /* Increases font size for readability */
+  }
+
+  .contact-input, .contact-select {
+    height: 40px;
+    font-size: 20px; /* Slightly larger input and select text */
+  }
+
+  .contact-select {
+    padding: 3px 12px; /* Adjust padding for select on larger screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* VisibilityOptions.css */
+
+.visibility-container {
+
+  margin-bottom: 10px;
+  margin-left: 420px;
+  margin-top: -90px;
+}
+
+.visibility-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  /* margin-bottom: 8px; */
+}
+
+.visibility-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 75px;
+}
+
+.profile-visibility {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-visibility-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.profile-visibility-select {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  /* width: 100%;   */
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+ 
+}
+
+.search-visibility {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.search-visibility-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaa;
+}
+
+/* Base styles for toggle switch (the track) */
+.toggle-switch-call {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #8c8c8c; /* Default inactive background color */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Active state for the switch's background (optional) */
+.toggle-switch-call.active {
+  background-color: #78ed74; /* Keep the background color grey even when active */
+}
+
+/* Base styles for the thumb (small circle) */
+.toggle-thumb-call {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #535353; /* White thumb color when inactive */
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Active state for the thumb (green circle) */
+.toggle-thumb-call.active {
+  left: 21px; /* Moves the thumb to the right when active */
+  background-color: #4caf50; /* Green color for the thumb when active */
+}
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  .visibility-container {
+    margin-left: 0;
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .visibility-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .visibility-title,
+  .profile-visibility-label,
+  .search-visibility-label {
+    font-size: 12px;
+  }
+
+  .profile-visibility-select {
+    font-size: 12px;
+    padding: 2px 8px;
+    height: 22px;
+  }
+
+  .toggle-switch-call {
+    width: 30px;
+    height: 15px;
+  }
+
+  .toggle-thumb-call {
+    width: 13px;
+    height: 13px;
+    left: 1px;
+    top: 1px;
+  }
+
+  .toggle-thumb-call.active {
+    left: 15px;
+  }
+}
+
+/* Medium screens (600px - 1200px) */
+@media (min-width: 600px) and (max-width: 1200px) {
+  .visibility-container {
+    margin-left: 50px;
+    margin-top: -50px;
+  }
+
+  .visibility-box {
+    width: 350px;
+    height: 65px;
+  }
+
+  .visibility-title,
+  .profile-visibility-label,
+  .search-visibility-label {
+    font-size: 14px;
+  }
+
+  .profile-visibility-select {
+    font-size: 13px;
+    padding: 2px 8px;
+    height: 23px;
+  }
+
+  .toggle-switch-call {
+    width: 35px;
+    height: 18px;
+  }
+
+  .toggle-thumb-call {
+    width: 16px;
+    height: 16px;
+    left: 1px;
+    top: 1px;
+  }
+
+  .toggle-thumb-call.active {
+    left: 18px;
+  }
+}
+
+/* Large screens (1200px - 1600px) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .visibility-container {
+    margin-left: 420px;
+    margin-top: -70px;
+  }
+
+  .visibility-box {
+    width: 400px;
+    height: 75px;
+  }
+
+  .visibility-title,
+  .profile-visibility-label,
+  .search-visibility-label {
+    font-size: 15px;
+  }
+
+  .profile-visibility-select {
+    font-size: 14px;
+    padding: 2px 10px;
+    height: 25px;
+  }
+
+  .toggle-switch-call {
+    width: 40px;
+    height: 20px;
+  }
+
+  .toggle-thumb-call {
+    width: 18px;
+    height: 18px;
+    left: 1px;
+    top: 1px;
+  }
+
+  .toggle-thumb-call.active {
+    left: 21px;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .visibility-container {
+    margin-left: 600px;
+    margin-top: -80px;
+  }
+
+  .visibility-box {
+    width: 500px;
+    height: 100px;
+  }
+
+  .visibility-title{
+    font-size: 25px;
+  }
+  .profile-visibility-label,
+  .search-visibility-label {
+    font-size: 23px;
+  }
+  .profile-visibility-select {
+    font-size: 18px;
+    padding: 3px 12px;
+    height: 30px;
+  }
+
+  .toggle-switch-call {
+    width: 45px;
+    height: 22px;
+  }
+
+  .toggle-thumb-call {
+    width: 20px;
+    height: 20px;
+    left: 1px;
+    top: 1px;
+  }
+
+  .toggle-thumb-call.active {
+    left: 24px;
+  }
+}
+/* =========================================================================== */
+
+/* Container for Activity Status section */
+.activity-status-container {
+  /* width: 100%; */
+  margin-bottom: 20px;
+  margin-left: 420px;
+  margin-top: -80px;
+}
+
+.activity-status-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.activity-status-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 85px;
+  margin-top: -10px;
+}
+
+/* Activity Status Toggle Section */
+.activity-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.activity-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Common toggle-switch style */
+.toggle-switch-acti {
+  width: 45px;
+  height: 22px;
+  border-radius: 15px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Toggle thumb (circle) */
+.toggle-thumb-acti {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s ease;
+}
+
+/* When toggle is active (ON) */
+.toggle-switch-acti.active {
+  background-color: #7ef182; /* Green background for active status */
+}
+
+.toggle-switch-acti.active .toggle-thumb-acti {
+  left: 22px; /* Move thumb to the right for active status */
+  background-color: #44d149;
+}
+
+/* Recent Activity Toggle */
+.recent-activity-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recent-activity-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.toggle-options {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.show {
+  background-color:  #969696; /* Green when active */
+}
+
+.toggle-switch.hide {
+  background-color: #969696; /* Grey when inactive */
+}
+
+.toggle-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: #3d3d3d;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: left 0.3s ease;
+}
+
+.toggle-switch.show .toggle-thumb {
+  left: 22px; /* Move thumb to the right */
+}
+
+.toggle-switch.hide .toggle-thumb {
+  left: 1px; /* Move thumb to the left */
+}
+/* Default styles for mobile (up to 600px) */
+.activity-status-container {
+  width: 100%;
+  margin: 0 auto 20px auto;
+  padding: 0 15px;
+}
+
+.activity-status-box {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
+/* Medium screens (min-width: 600px) */
+@media screen and (min-width: 600px) {
+  .activity-status-container {
+    margin-left: 20px;
+  }
+  
+  .activity-status-box {
+    width: 80%;
+  }
+}
+
+/* Large screens (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  .activity-status-container {
+    margin-left: 150px;
+    margin-top: -40px;
+  }
+  
+  .activity-status-box {
+    width: 400px;
+  }
+}
+
+/* For screens 1200px and above */
+@media screen and (min-width: 1200px) {
+  .activity-status-container {
+    margin-left: 405px;
+    margin-top: -80px;
+  }
+
+  .activity-status-box {
+    width: 400px;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media screen and (min-width: 1600px) {
+  .activity-status-container {
+    margin-left: 580px;
+    margin-top: -80px;
+  }
+  .activity-status-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+    margin-left: 10px;
+  }
+  .activity-status-box {
+    width: 510px;
+  }
+  .activity-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+  }
+  .recent-activity-label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #666;
+  }
+}
+
+/* =============================================================== */
+/* Notifications.css */
+
+.notifications-container {
+  width: 31%;
+  margin-bottom: 20px;
+  margin-left: 845px;
+  margin-top: -110px;
+}
+
+.notifications-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  /* margin-bottom: 8px; */
+}
+
+.notifications-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+  border-radius: 12px;
+  padding: 10px;
+  height: 140px;
+  margin-left: -10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  margin-top: -5px;
+}
+
+.push-notifications {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 10px; */
+}
+
+.push-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaa;
+}
+
+.toggle-switch-noti {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch-noti {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #8c8c8c; /* Default inactive background color */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Active state for the switch's background (optional) */
+.toggle-switch-noti.active {
+  background-color: #78ed74; /* Keep the background color grey even when active */
+}
+
+/* Base styles for the thumb (small circle) */
+.toggle-thumb-noti {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #535353; /* White thumb color when inactive */
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Active state for the thumb (green circle) */
+.toggle-thumb-noti.active {
+  left: 21px; /* Moves the thumb to the right when active */
+  background-color: #4caf50; /* Green color for the thumb when active */
+}
+
+.notification-settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.notification-item label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.notification-item select {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  width: 25%;  
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+}
+@media (min-width: 1600px) {
+  .notifications-container {
+    margin-left: 1130px;
+    width: 33% !important; /* Adjusted for larger desktops */
+    margin-top: -170px !important; /* Adjusted margin for better placement */
+  }
+  .notifications-box {
+    height: 200px;
+    padding: 12px; /* Adjusted padding for large screens */
+  }
+  .notifications-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+    /* margin-bottom: 8px; */
+  }
+  .push-label {
+    font-size: 24px;
+    font-weight: 500;
+    color: #aaa;
+  }
+  .notification-item label {
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .notification-item select {
+    border: 1px solid #000000; 
+    background: transparent;
+    outline: none;
+    font-size: 20px;
+    padding: 2px 10px;  
+    cursor: pointer;
+    width: 25%;  
+    border-radius: 5px;
+    height: 35px;
+    border-radius: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .notifications-container {
+    width: 31%; /* Adjusted for smaller desktops or large tablets */
+    margin-top: -120px;
+  }
+  .notifications-box {
+    padding: 10px; /* Adjusted padding for medium screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .notifications-container {
+    width: 60%; /* Adjusted width for tablets */
+    margin-top: -50px;
+  }
+  .notifications-box {
+    padding: 8px; /* Adjusted padding for smaller tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .notifications-container {
+    width: 80%; /* Adjusted width for mobile */
+    margin-top: 0;
+  }
+  .notifications-box {
+    padding: 8px; /* Reduced padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .notifications-container {
+    width: 90%; /* Wider for smaller mobile screens */
+    margin-top: 0;
+  }
+  .notifications-box {
+    padding: 5px; /* Further reduced padding for small mobile screens */
+  }
+}
+
+
+/* Responsive select element */
+@media (min-width: 1600px) {
+  .notification-item select {
+    width: 20%; /* Slightly larger for very large screens */
+  }
+}
+
+@media (max-width: 1200px) {
+  .notification-item select {
+    width: 35%; /* Adjusted width for tablets and smaller desktops */
+  }
+}
+
+@media (max-width: 1024px) {
+  .notification-item select {
+    width: 40%; /* Adjusted width for smaller tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .notification-item select {
+    width: 50%; /* Larger width for better readability on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-item select {
+    width: 80%; /* Even larger width on very small screens */
+  }
+}
+
+/* Adjusting font size and layout for smaller screens */
+@media (max-width: 1200px) {
+  .push-label, .notification-item label {
+    font-size: 15px;
+  }
+  .notification-item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .push-label, .notification-item label {
+    font-size: 13px;
+  }
+  .notification-item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .push-label, .notification-item label {
+    font-size: 12px; /* Even smaller font size for mobile */
+  }
+  .notification-item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+}
+/* ========================================================================== */
+/* Container for download options */
+
+/* ======================================================================== */
+.download-options-container {
+  font-family: 'poppins';
+  font-size: 14px;
+  margin-left: 420px;
+  margin-top: -20px;
+}
+
+.download-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+ 
+}
+
+.download-option {
+  display: flex;
+  border: 1px solid #ccc;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.download-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.download-data-label {
+  font-weight: 600;
+}
+
+.download-select {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  width: 25%;  
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+}
+
+.data-format {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data-format-label {
+  font-weight: 600;
+}
+
+.toggle-options {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.csv {
+  background-color: #ccc; /* Inactive state (CSV) */
+}
+
+.toggle-switch.json {
+  background-color: #ccc; /* Inactive state (JSON) */
+}
+
+.toggle-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s ease;
+}
+
+.toggle-switch.json .toggle-thumb {
+  left: 22px; /* Move thumb right when JSON is active */
+}
+
+.toggle-switch.csv .toggle-thumb {
+  left: 1px; /* Move thumb left when CSV is active */
+}
+
+.toggle-options span {
+  font-size: 14px;
+  color: #666;
+}
+/* Medium screens (600px and above) */
+@media screen and (min-width: 600px) {
+  .download-options-container {
+    margin-top: -10px;
+  }
+
+  .download-option {
+    max-width: 90%;
+  }
+}
+
+/* Large screens (1024px and above) */
+@media screen and (min-width: 1024px) {
+  .download-options-container {
+    margin-left: 150px;
+  }
+
+  .download-option {
+    max-width: 80%;
+  }
+}
+
+/* For screens 1200px and above */
+@media screen and (min-width: 1200px) {
+  .download-options-container {
+    margin-left: 420px;
+    margin-top: -20px;
+  }
+
+  .download-option {
+    max-width: 400px;
+    /* height: 70px; */
+  }
+
+  .download-select {
+    width: 20%;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media screen and (min-width: 1600px) {
+  .download-options-container {
+    margin-left: 595px;
+  }
+
+  .download-option {
+    max-width: 515px;
+    height: 90px;
+  }
+  .download-title {
+    font-size: 25px;
+   margin-left: 10px;
+   
+  }
+  .download-data-label,.data-format-label {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .toggle-switch {
+    width: 55px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .toggle-thumb {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    /* left: 1px; */
+    transition: all 0.3s ease;
+  }
+  .toggle-options span {
+    font-size: 18px;
+    color: #666;
+  }
+}
+/* ========================================================================= */
+
+
+
+.free-up-storage-container {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 35%;
+margin-left: 840px;
+margin-top: -140px;
+}
+
+.free-up-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.storage-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid#ccc;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  max-width: 410px;
+  margin-top: -10px;
+  /* width: 900px; */
+  height: 40px;
+}
+
+.clear-cache {
+  flex-grow: 1;
+}
+
+.clear-cache-label {
+  font-weight: 600;
+}
+
+.select-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-select-storage {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  width: 100%;  
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+}
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  .free-up-storage-container {
+    width: 90%;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .free-up-title {
+    font-size: 12px;
+  }
+
+  .storage-option {
+    max-width: 100%;
+    padding: 10px;
+    height: auto;
+  }
+
+  .clear-cache-label,
+  .dropdown-select-storage {
+    font-size: 12px;
+  }
+}
+
+/* Medium screens (600px - 1200px) */
+@media (min-width: 600px) and (max-width: 1200px) {
+  .free-up-storage-container {
+    width: 70%;
+    margin-left: 0;
+    margin-top: -20px;
+  }
+
+  .free-up-title {
+    font-size: 13px;
+  }
+
+  .storage-option {
+    max-width: 100%;
+    padding: 12px;
+    height: auto;
+  }
+
+  .clear-cache-label,
+  .dropdown-select-storage {
+    font-size: 13px;
+  }
+}
+
+/* Large screens (1200px - 1600px) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .free-up-storage-container {
+    width: 40%;
+    margin-left: 840px;
+    margin-top: -150px;
+  }
+
+  .free-up-title {
+    font-size: 14px;
+  }
+
+  .storage-option {
+    max-width: 390px;
+    padding: 15px;
+  }
+}
+
+/* Extra-large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .free-up-storage-container {
+    width: 50%;
+    margin-left: 1130px;
+    margin-top: -220px;
+  }
+
+  .free-up-title {
+    font-size: 25px;
+  }
+  .clear-cache-label {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .storage-option {
+    max-width: 560px;
+    padding: 18px;
+    height: 60px;
+  }
+}
+/* =================================================================== */
+.deleted-storage-container {
+  font-family:'poppins';
+  font-size: 14px;
+  width: 35%;
+margin-left: 840px;
+margin-top: 10px;
+}
+
+.deleted-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.deleted-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  max-width: 410px;
+  margin-top: -10px;
+  /* width: 900px; */
+  height: 40px;
+}
+
+.deleted-clear-cache {
+  flex-grow: 1;
+}
+
+.clear-cache-label {
+  font-weight: 600;
+}
+
+.deleted-select-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.deleted-dropdown-select-storage {
+  border: 1px solid #000000; 
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  padding: 2px 10px;  
+  cursor: pointer;
+  width: 100%;  
+  border-radius: 5px;
+  height: 25px;
+  border-radius: 15px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1600px) {
+  .deleted-storage-container {
+    width: 70%;
+    font-size: 20px;
+    margin-left:1130px;
+  }
+  .deleted-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  .deleted-option {
+    max-width: 550px;
+    height: 60px;
+  }
+  .clear-cache-label {
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .deleted-storage-container {
+    width: 39%;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .deleted-option {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .deleted-storage-container {
+    width: 60%;
+    font-size: 13px;
+  }
+
+  .deleted-option {
+    padding: 10px;
+    height: auto;
+  }
+
+  .deleted-dropdown-select-storage {
+    font-size: 13px;
+    padding: 2px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .deleted-storage-container {
+    width: 80%;
+    font-size: 12px;
+  }
+
+  .deleted-option {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    margin-top: 5px;
+  }
+
+  .clear-cache-label, .deleted-dropdown-select-storage {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .deleted-dropdown-select-storage {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .deleted-storage-container {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .deleted-option {
+    padding: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .deleted-dropdown-select-storage {
+    padding: 4px;
+    font-size: 12px;
+  }
+}
+

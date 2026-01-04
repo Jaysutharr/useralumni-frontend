@@ -1,0 +1,827 @@
+/* Main Wrapper - Clears the sidebar and header */
+.donation-home-main-wrapper {
+  position: absolute;
+  /* Overlay the dashboard shell */
+  top: 70px;
+  /* Below the header */
+  left: 250px;
+  /* Right of the sidebar */
+  right: 0;
+  padding: 30px;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+  font-family: 'Poppins', sans-serif;
+  margin-left: 0;
+  /* Reset margin since we use left/right properties */
+}
+
+/* Header Section */
+.donation-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.donation-header-section h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.start-fundraiser-btn {
+  background-color: #58a4b0;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(88, 164, 176, 0.3);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.start-fundraiser-btn:hover {
+  background-color: #468e9a;
+  transform: translateY(-2px);
+}
+
+/* Layout Grid */
+.donation-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* 2/3 for campaigns, 1/3 for aid */
+  gap: 30px;
+}
+
+/* Left Column: Campaigns Feed */
+.donation-feed-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-heading {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 12px;
+  color: #777;
+}
+
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Campaign Card Styles */
+.campaign-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-wrapper {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.campaign-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.category-tag {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #58a4b0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+  height: 44px;
+  /* Limit to 2 lines */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.progress-section {
+  margin-bottom: 20px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #58a4b0;
+  border-radius: 3px;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #777;
+  font-weight: 500;
+}
+
+.percentage-text {
+  color: #58a4b0;
+  font-weight: 700;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  font-weight: 500;
+}
+
+.view-btn {
+  background-color: #58a4b0;
+  color: white;
+}
+
+.view-btn:hover {
+  background-color: #458994;
+}
+
+.edit-btn {
+  background-color: #f0f2f5;
+  color: #555;
+}
+
+.edit-btn:hover {
+  background-color: #e4e6e9;
+}
+
+/* Right Column: Aid Sidebar */
+.aid-sidebar-section {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  align-self: start;
+  /* Don't stretch height */
+  position: sticky;
+  top: 90px;
+  /* If header is fixed, adjust this */
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  border: 1px solid #f0f0f0;
+}
+
+.aid-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.aid-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e74c3c;
+  /* Red for urgent */
+  margin: 0;
+}
+
+.aid-subtitle {
+  font-size: 13px;
+  color: #999;
+}
+
+.aid-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.aid-item-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fdfdfd;
+  border: 1px solid #f7f7f7;
+  transition: background 0.2s;
+}
+
+.aid-item-card:hover {
+  background: #fff5f5;
+  /* Slight red tint on hover */
+  border-color: #ffebeb;
+}
+
+.aid-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aid-content {
+  flex: 1;
+}
+
+.aid-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: #333;
+}
+
+.aid-desc {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
+}
+
+.aid-mini-progress {
+  width: 100%;
+  height: 3px;
+  background: #eee;
+  border-radius: 2px;
+}
+
+.mini-progress-bar {
+  height: 100%;
+  background: #e74c3c;
+  border-radius: 2px;
+}
+
+.aid-action-btn {
+  background: white;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.aid-action-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .donation-content-grid {
+    grid-template-columns: 1fr;
+    /* Stack vertically */
+  }
+
+  .aid-sidebar-section {
+    position: static;
+    /* Remove sticky */
+    max-height: none;
+  }
+
+  .aid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Grid for aid items too */
+  }
+}
+
+@media (max-width: 768px) {
+  .donation-home-main-wrapper {
+    margin-left: 0;
+    /* Full width on mobile */
+    padding: 15px;
+  }
+
+  .campaigns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-header-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+/* Popup Styles (Preserved/Updated) */
+.center-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.center-popup-box {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  animation: popupSlideIn 0.3s ease;
+}
+
+@keyframes popupSlideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.donation-amounts-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.donation-amounts-group button {
+  border: 1px solid #eee;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.donation-amounts-group button:hover {
+  background: #f0f8ff;
+  border-color: #58a4b0;
+  color: #58a4b0;
+}
+
+.donation-input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  font-family: inherit;
+  box-sizing: border-box;
+  /* Fix sizing */
+  margin-left: 0;
+  /* Reset margins */
+}
+
+.center-donate-btn {
+  width: 100%;
+  padding: 14px;
+  background: #58a4b0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* ============================================================================ */
+/* COMPREHENSIVE RESPONSIVE ENHANCEMENTS FOR DONATION HOME */
+/* ============================================================================ */
+
+/* Tablets (1024px) */
+@media (max-width: 1024px) {
+  .donation-home-main-wrapper {
+    left: 200px;
+    padding: 25px;
+  }
+
+  .donation-header-section h3 {
+    font-size: 24px;
+  }
+
+  .start-fundraiser-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .campaigns-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card-image-wrapper {
+    height: 160px;
+  }
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+  .donation-home-main-wrapper {
+    left: 0;
+    top: 60px;
+    padding: 15px;
+  }
+
+  .donation-header-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .donation-header-section h3 {
+    font-size: 22px;
+  }
+
+  .start-fundraiser-btn {
+    width: 100%;
+  }
+
+  .donation-content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-heading {
+    font-size: 18px;
+  }
+
+  .campaigns-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card-image-wrapper {
+    height: 200px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .aid-sidebar-section {
+    position: static;
+    max-height: none;
+    padding: 20px;
+  }
+
+  .aid-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .center-popup-box {
+    width: 85%;
+    max-width: 350px;
+    padding: 25px;
+  }
+}
+
+/* Mobile Devices (576px) */
+@media (max-width: 576px) {
+  .donation-home-main-wrapper {
+    padding: 12px;
+    top: 50px;
+  }
+
+  .donation-header-section h3 {
+    font-size: 20px;
+  }
+
+  .start-fundraiser-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .section-heading {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .campaign-card {
+    border-radius: 12px;
+  }
+
+  .card-image-wrapper {
+    height: 180px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    height: auto;
+  }
+
+  .progress-stats {
+    font-size: 11px;
+  }
+
+  .action-btn {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  .aid-sidebar-section {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .aid-title {
+    font-size: 16px;
+  }
+
+  .aid-subtitle {
+    font-size: 12px;
+  }
+
+  .aid-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .aid-name {
+    font-size: 13px;
+  }
+
+  .aid-desc {
+    font-size: 10px;
+  }
+
+  .aid-action-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .center-popup-box {
+    width: 90%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .center-popup-box h2 {
+    font-size: 18px;
+  }
+
+  .donation-amounts-group {
+    gap: 6px;
+    margin: 15px 0;
+  }
+
+  .donation-amounts-group button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .donation-input,
+  textarea {
+    padding: 10px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .center-donate-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Mobile (400px) */
+@media (max-width: 400px) {
+  .donation-home-main-wrapper {
+    padding: 10px;
+  }
+
+  .donation-header-section h3 {
+    font-size: 18px;
+  }
+
+  .start-fundraiser-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .section-heading {
+    font-size: 15px;
+  }
+
+  .card-image-wrapper {
+    height: 160px;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 13px;
+  }
+
+  .progress-bar-bg {
+    height: 5px;
+  }
+
+  .progress-stats {
+    font-size: 10px;
+  }
+
+  .action-btn {
+    padding: 6px 0;
+    font-size: 11px;
+  }
+
+  .aid-sidebar-section {
+    padding: 12px;
+  }
+
+  .aid-title {
+    font-size: 15px;
+  }
+
+  .aid-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .aid-item-card {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .center-popup-box {
+    padding: 15px;
+  }
+
+  .center-popup-box h2 {
+    font-size: 16px;
+  }
+
+  .donation-amounts-group button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Extra-Wide Screens (1600px) */
+@media (min-width: 1600px) {
+  .donation-home-main-wrapper {
+    left: 380px;
+    padding: 40px;
+  }
+
+  .donation-header-section h3 {
+    font-size: 32px;
+  }
+
+  .start-fundraiser-btn {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+  }
+
+  .campaigns-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .card-image-wrapper {
+    height: 220px;
+  }
+
+  .card-body {
+    padding: 25px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .progress-stats {
+    font-size: 14px;
+  }
+
+  .action-btn {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .aid-sidebar-section {
+    padding: 30px;
+  }
+
+  .aid-title {
+    font-size: 20px;
+  }
+
+  .aid-subtitle {
+    font-size: 14px;
+  }
+
+  .aid-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .aid-name {
+    font-size: 16px;
+  }
+
+  .aid-desc {
+    font-size: 13px;
+  }
+
+  .aid-action-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+

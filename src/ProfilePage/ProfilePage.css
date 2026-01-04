@@ -1,0 +1,699 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the layout takes full height */
+  background-color: rgb(252, 252, 255);
+}
+/* Main header */
+.header2 {
+position: fixed;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: white;
+height: 100px;
+width: 100%;
+/* box-sizing: border-box; */
+}
+
+/* Logo and Company Name Section */
+.logo-section1 {
+display: flex;
+align-items: center;
+}
+
+.logo1 {
+height: 70px;
+margin-right: 10px;
+margin-left: 80px;
+}
+
+.company-name1 {
+font-size: 24px;
+font-weight: inherit;
+margin-right: 10px;
+color: #000;
+}
+
+/* Search Bar Section */
+.search-section2 {
+flex-grow: 1;
+display: flex;
+justify-content: center;
+margin-left: 120px;
+}
+
+.search-input2 {
+width: 80%;
+padding: 8px 16px;
+font-size: 16px;
+border: 2px solid #ddd;
+border-radius: 15px;
+padding-left: 40px;
+}
+.company-name1 {
+font-size: 24px;
+font-weight: inherit;
+margin-right: 10px;
+color: #000;
+}
+
+.dashboard-text1 {
+font-size: 30px;
+font-weight: 600;
+color: #69b3b7;
+margin-top: -10px;
+margin-left: 50px;
+}
+/* User Section */
+.user-section1 {
+display: flex;
+align-items: center;
+margin-right: 50px;
+}
+
+.user-section-noti1 {
+height: 40px;
+width: 40px;
+margin-right: 20px;
+border-radius: 10px;
+background-color: rgb(255, 244, 221);
+padding: 5px 11px;
+}
+
+.notification-icon1 {
+width: 18px;
+height: 20px;
+margin-right: 20px;
+}
+
+.profile-image1 {
+width: 45px;
+height: 45px;
+border-radius: 50%;
+object-fit: cover;
+}
+.search-icon-profiledash {
+position: absolute;
+left: 680px;
+top: 40px;
+width: 20px;
+height: 20px;
+color: rgb(89, 158, 158);
+}
+/* Media Queries for Responsiveness */
+
+/* Tablet View (768px to 1024px) */
+@media (max-width: 1024px) {
+.logo1 {
+  height: 60px;
+}
+.user-section-noti1 {
+  height: 35px;
+  width: 35px;
+  margin-right: 15px;
+  padding: 4px 9px;
+}
+.search-input2 {
+  width: 70%; /* Slightly reduce the width */
+}
+.search-icon {
+  position: absolute;
+  left: 610px;
+  width: 20px;
+  height: 20px;
+  color: rgb(89, 158, 158);
+}
+.profile-image1 {
+  width: 40px;
+  height: 40px;
+}
+}
+
+/* Mobile View (up to 767px) */
+@media (max-width: 767px) {
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the layout takes full height */
+    background-color: rgb(252, 252, 255);
+    position: fixed;
+  }
+.header2 {
+  justify-content: space-between; /* Maintain all elements in one line */
+  padding: 13px;
+  margin-left: 0px;
+  height: 80px;
+ max-width:  800px;
+  position: fixed;
+  /* background-color: rgb(180, 14, 14); */
+}
+
+.logo1 {
+  height: 40px;
+  margin-left: 0px; /* Reduce the left margin */
+}
+.search-icon {
+  position: absolute;
+  left: 260px;
+  width: 0px;
+  height: 20px;
+  color: rgb(89, 158, 158);
+}
+.company-name1 {
+  font-size: 20px; /* Slightly smaller font size */
+}
+.dashboard-text1{
+color: #008080;
+font-size: 20px;
+margin-top: 5px;
+margin-left: 5px;
+}
+.search-section2 {
+  margin-left: 25px; /* Reduce margin to fit in smaller screens */
+  margin-right: 10px;
+  height: 30px;
+}
+
+.search-input2 {
+  width: 10%; /* Reduce width to fit the mobile screen */
+  border-radius: 12px;
+}
+
+.user-section1 {
+  margin-right: 0px; /* Reduce margin to fit the mobile screen */
+}
+.user-section-noti1 {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  padding: 3px 7px;
+}
+.notification-icon1{
+margin-bottom: 6px;
+margin-right: 200px;
+}
+.profile-image1 {
+  width: 35px;
+  height: 35px; /* Reduce the size for mobile */
+  margin-right: 170px;
+}
+}
+@media (max-width: 1024px) {
+.notification-icon1 {
+  width: 16px;
+  height: 18px;
+  margin-right: 15px;
+}
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+.notification-icon1 {
+  width: 14px;
+  height: 16px;
+  /* margin-right:-0px; */
+}
+}
+  
+  /* sidebar */
+ /* Sidebar styling */
+.sidebar-dash {
+  width: 250px;
+  background-color: white;
+  padding: 20px 0;
+  border-right: 1px solid #e5e5e5;
+  position: fixed; /* Keeps the sidebar fixed on the left */
+  height: 100vh;   /* Full height of the viewport */
+  top: 0;
+  left: 0;
+  /* overflow-y: auto; Allows scrolling if content overflows */
+  margin-top: 100px;
+
+}
+
+.sidebar-menu-dash {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+
+}
+
+.menu-item-dash {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  color: rgb(89, 158, 158);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 20px;
+  border-radius: 15px;
+  z-index: 1000;
+}
+
+.menu-item-dash:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+  border-radius: 15px;
+}
+
+.menu-icon {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-dash:hover .menu-icon path {
+  fill: white; /* Change icon color to white on hover */
+}
+
+.menu-icon1 {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-dash:hover .menu-icon1 path {
+  stroke: white; /* Change color on hover */
+}
+
+.menu-item:hover .menu-icon path {
+  fill: white;
+}
+
+
+
+
+.toggle-button {
+position: fixed;
+top: 20px;
+left: 0px;
+color: rgb(89, 158, 158);
+padding: 5px;
+border-radius: 10%;
+cursor: pointer;
+z-index: 1000;
+height: 30px;
+width: 30px;
+}
+
+.toggle-button:hover {
+background-color: rgb(70, 140, 140);
+color: white;
+}
+
+
+@media (max-width: 768px) {
+.sidebar {
+    width: 150px;
+    position: fixed;
+    transform: translateX(-250px); 
+    z-index: 999;
+    /* width: 250px; */
+    background-color: white;
+    padding: 20px 0;
+    border-right: 1px solid #e5e5e5;
+    position: fixed; /* Keeps the sidebar fixed on the left */
+    height: 00px;   /* Full height of the viewport */
+    top: -20px;
+    left: 0;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    margin-top: 100px;
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+}
+.menu-item-dash {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: rgb(89, 158, 158);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0px 0px;
+  border-radius: 15px;
+}
+
+.menu-item-dash:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+  border-radius: 15px;
+}
+
+.menu-icon {
+  margin-right: 15px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.menu-item-dash:hover .menu-icon path {
+  fill: white; /* Change icon color to white on hover */
+}
+
+.menu-icon1 {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-dash:hover .menu-icon1 path {
+  stroke: white; /* Change color on hover */
+}
+
+.menu-item:hover .menu-icon path {
+  fill: white;
+}
+
+
+.toggle-button {
+    display: block;
+}
+} 
+
+@media (min-width: 769px) {
+.toggle-button {
+    display: none;
+}
+} 
+
+.profile-container-acc{
+  margin-top: -625px;
+  margin-left: 20px;
+  height: auto;
+  position: fixed;
+}
+/* Wrapper for the sidebar and profile content */
+.sidebar-profile {
+  background-color:white; /* Background color for the container */
+  padding: 20px;
+  margin-top: 80px; 
+  margin-left: 230px; 
+  height: 85vh; 
+  display: flex; /* Ensure that the sidebar1 and other content align properly */
+  width: 270px;
+  z-index: 100;  /* Lower than the overlay */
+  box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar styling */
+.sidebar1-profile{
+  width: 250px; /* Fixed width for the sidebar */
+  /* background-color: white; Set background color to white */
+  padding: 0px; /* Adjust padding to create space inside */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  position: fixed;
+  top: 230px;
+  right: 200;
+  height: 84vh;
+  display: block; /* Visible on larger screens */
+  transform: translateX(0); /* Always visible on larger screens */
+  transition: transform 0.3s ease;
+
+  z-index: 100;  /* Lower than the overlay */
+}
+.sidebar-profile {
+  z-index: 100;  /* Lower than the overlay */
+}
+
+
+/* List styling */
+.sidebar1-profile ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+/* List item styling */
+.sidebar1-profile ul li {
+  padding: 10px 20px;
+  margin: 5px 10px;
+  color: #aba7a7; /* Light grey text */
+  background-color: white; /* Ensure background is white */
+  cursor: pointer;
+  border-radius: 13px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  z-index: 100;  /* Lower than the overlay */
+}
+
+/* Active and hover state */
+.sidebar1-profile ul li.active1, 
+.sidebar1-profile ul li:hover {
+  background-color: #d2faff; /* Light blue background on hover/active */
+  color: rgb(89, 158, 158); /* Blue text */
+}
+/* Responsive adjustments for screens up to 1600px */
+@media (max-width: 1600px) {
+  .profile-container-acc {
+    margin-top: -600px;
+    margin-left: 10px;
+  }
+  .sidebar-profile {
+    margin-left: 200px;
+    width: 300px;
+    padding: 18px;
+    margin-top: -50px;
+  }
+  .sidebar1-profile1 {
+    width: 280px;
+    top: 210px;
+    height: 83vh;
+  }
+}
+@media (min-width: 1600px) {
+  .profile-container-acc {
+    margin-top: -500px;
+    margin-left: 10px;
+  }
+  .sidebar-profile {
+    margin-left: 360px;
+    width: 300px;
+    padding: 18px;
+    margin-top: -305px;
+    height: 89vh;
+  }
+  .sidebar1-profile1 {
+    width: 280px;
+    top: 210px;
+    height: 86vh;
+  }
+}
+.myprofile{
+ margin-left: 510px;
+ margin-top: -550px;
+  color: #000;
+  z-index: 100;  /* Lower than the overlay */
+}
+
+
+
+
+
+
+/* ==================================== */
+.popup-logout1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2001;
+}
+
+.popup-content-logout1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup-content-logout1 h2 {
+  margin-bottom: 20px;
+}
+
+.cancel-button-logout1,
+.confirm-button-logout1 {
+  background-color: #6bb9b7;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.confirm-button-logout1 {
+  background-color: #db5353;
+}
+
+.cancel-button-logout1:hover,
+.confirm-button-logout1:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Background overlay to fade the rest of the screen */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black */
+  z-index: 999;  /* Sits just below the popup box */
+}
+
+/* Popup Box Styling */
+/* Popup Box Styling */
+.popup-box {
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1000;  /* High z-index to ensure the popup appears above the overlay */
+  margin-top: 120px;
+}
+
+/* Title Styling */
+.popup-box h2 {
+  margin-bottom: 1px;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+ text-align: center;
+}
+
+/* Paragraphs inside the popup */
+.popup-box p {
+  margin-bottom: 2px; /* Reduce the margin between paragraphs to 2px */
+  color: black;
+  font-size: 14px;
+}
+
+/* Small reminder text */
+.popup-box .reminder {
+  font-size: 12px;
+  color: black;
+  margin-bottom: 2px; /* Reduce the margin below the reminder text to 2px */
+}
+
+/* Button Container */
+.popup-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  gap: 0; /* Ensure no gap between buttons */
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Cancel Button */
+.popup-buttons .cancel-button {
+  padding: 15px 20px;
+  background-color: transparent;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  /* color: #060606; */
+  cursor: pointer;
+  height: 35px;
+  width: 100px;
+
+/* padding-bottom: 30px; */
+  /* transition: background-color 0.3s ease; */
+}
+.popup-buttons .cancel-button h2{
+  font-size: 14px;
+  margin-top: -10px;
+
+  font-weight: 300;
+}
+/* Confirm Button */
+.popup-buttons .confirm-button {
+  padding: 16px 20px;
+  background-color: rgb(89, 158, 158);
+
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  height: 35px;
+  width: 100px;
+ 
+}
+.popup-buttons .confirm-button h2{
+  font-size: 16px;
+  margin-top: -10px;
+  /* height: 20px; */
+  font-weight: 500;
+  color: white;
+}
+
+
+.popup-buttons .confirm-button:hover {
+  background-color: rgb(48, 110, 110);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .popup-box {
+      width: 90%;
+      padding: 15px;
+  }
+
+  .popup-box h2 {
+      font-size: 18px;
+  }
+
+  .popup-box p {
+      font-size: 13px;
+  }
+
+  .cancel-button, .confirm-button {
+      padding: 8px 16px;
+  }
+}
+

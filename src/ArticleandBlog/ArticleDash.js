@@ -1,0 +1,612 @@
+import React, { useState, useEffect } from 'react';
+import './ArticleDash.css'; // Your CSS file for styling
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+// import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import cl from '../assets/companylogo1.png';
+import ni from '../assets/notificationI.jpeg';
+import pi from '../assets/profilei.jpeg';
+import { Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+const NewsDash = () => {
+  const [events, setEvents] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Set the body background color to white when this component mounts
+    document.body.style.backgroundColor = "white";
+
+    // Reset the body background color when this component unmounts
+    return () => {
+      document.body.style.backgroundColor = ""; // or set to the default color you want for other pages
+    };
+  }, []);
+  const handleLogoutClick = () => {
+    setShowPopup(true); // Show the popup when logout is clicked
+  };
+  const handleNetworkingClick = () => {
+    navigate('/networking'); // Navigate to the networking page
+  };
+  const handleNavigation = () => {
+    window.location.href = '/events';  // This will trigger a full-page reload to /events
+  };
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close the popup
+  };
+  const handleNewsClick = () => {
+    navigate('/news'); // This navigates to the /news route
+  };
+  const handleJobsNavigation = () => {
+    navigate('/jobs');  // This will navigate to the '/jobs' route
+  };
+  const handleArticleNavigation = () => {
+    navigate('/articles-blogs');  // This will navigate to the '/jobs' route
+  };
+  const handleDonationNavigation = () => {
+    navigate('/donation')
+  }
+  const handleSupportNavigation = () => {
+    navigate('/dashboard-support')
+  }
+  const handleDashboardNavigation = () => {
+    navigate('/dashboard-dashboard')
+  }
+  const handleCreateBlogNavigation = () => {
+    navigate('/create-blog')
+  }
+
+  // Fetch blogs function
+  const fetchBlogs = async () => {
+    try {
+      setLoading(true);
+      // Add timestamp to prevent caching
+      const timestamp = new Date().getTime();
+      const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
+      const response = await axios.get(`${baseUrl}/api/v1/blogs?t=${timestamp}`);
+
+      // Sort blogs by createdAt date (newest first)
+      const sortedBlogs = response.data.sort((a, b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+      });
+
+      setBlogs(sortedBlogs);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching blogs:', err);
+      setError('Failed to load blogs');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
+
+    // Fetch events data
+    axios.get(`${baseUrl}/api/v1/events`)
+      .then(response => setEvents(response.data))
+      .catch(error => console.error('Error fetching events:', error));
+
+    // Fetch announcements data
+    axios.get(`${baseUrl}/api/v1/announcements`)
+      .then(response => setAnnouncements(response.data))
+      .catch(error => console.error('Error fetching announcements:', error));
+
+    // Note: fetchBlogs() is called in the pathname-based useEffect below
+  }, []);
+
+  // Re-fetch blogs when component becomes visible (e.g., after navigating back)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        fetchBlogs();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Also fetch when component mounts or location changes
+    fetchBlogs();
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [location.pathname]); // Re-fetch when pathname changes
+  const handleNotifyNavigation = () => {
+    navigate('/dashboard-noti')
+  }
+  // const jobs = [
+  //   { id: 1, date: '27/07/2024', dept: 'Front. Dev', salary: '20k - 35k' },
+  //   { id: 2, date: '27/07/2024', dept: 'Back. Dev', salary: '40k - 90k' },
+  //   { id: 3, date: '27/07/2024', dept: 'Full Stack', salary: '40k - 90k' },
+  //   { id: 4, date: '27/07/2024', dept: 'UI Designer', salary: '40k - 100k' },
+  // ];
+
+  // const mentors = [
+  //   { name: 'Ananya Sharma', title: 'Senior Software Engineer' },
+  //   { name: 'Ananya Sharma', title: 'Senior Software Engineer' },
+  //   { name: 'Ananya Sharma', title: 'Senior Software Engineer' },
+  //   { name: 'Ananya Sharma', title: 'Senior Software Engineer' },
+  // ];
+  return (
+
+    <div className="dashboard-container-newsdash">
+      <div
+        className="sidebar-toggle-newsdash"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        ☰
+      </div>
+
+      <header className="header1-newsdash">
+        <div className="logo-section-newsdash">
+          <img src={cl} alt="Company Logo" className="logo-newsdash" />
+          <h1 className="company-name-newsdash">University</h1>
+          <h2 className="dashboard-text-newsdash">Article/Blog</h2>
+        </div>
+        <div className="search-section1-newsdash">
+          <input type="text" placeholder="Search anything..." className="search-input1-newsdash" />
+        </div>
+        <button
+          onClick={handleCreateBlogNavigation}
+          className="create-blog-btn-header"
+          style={{
+            padding: '10px 20px',
+            background: 'linear-gradient(135deg, #58a4b0 0%, #3d7a85 100%)',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontWeight: '600',
+            fontSize: '14px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 2px 8px rgba(88, 164, 176, 0.3)',
+            marginRight: '15px'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(88, 164, 176, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 2px 8px rgba(88, 164, 176, 0.3)';
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Create Blog
+        </button>
+        <div className="user-section-newsdash">
+          <div className='user-section-noti-newsdash' onClick={handleNotifyNavigation}>
+            <img src={ni} alt="Notifications" className="notification-icon-newsdash" />
+          </div>
+          <Link to="/profile">
+            <img src={pi} alt="User Profile" className="profile-image-newsdash" />
+          </Link>
+        </div>
+      </header>
+
+      <div className="content-container-newsdash">
+        <div className="news-layout">
+
+          {/* Main Content */}
+          <div className="news-main">
+            <h3 className="news-title">Today's Best Article</h3>
+
+            {loading ? (
+              <div className="headline-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <p>Loading latest article...</p>
+              </div>
+            ) : error ? (
+              <div className="headline-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <p style={{ color: '#e53e3e' }}>{error}</p>
+              </div>
+            ) : blogs.length > 0 ? (
+              <div className="headline-card">
+                {blogs[0].tags && blogs[0].tags.length > 0 && (
+                  <span className="tag">{blogs[0].tags[0]}</span>
+                )}
+
+                <h2>
+                  {blogs[0].title}
+                </h2>
+
+                <p style={{
+                  color: '#666',
+                  fontSize: '0.95rem',
+                  marginTop: '0.5rem',
+                  lineHeight: '1.6'
+                }}>
+                  {blogs[0].content.substring(0, 150)}{blogs[0].content.length > 150 ? '...' : ''}
+                </p>
+
+                <div className="headline-footer">
+                  <div className="stats">
+                    <span style={{ fontSize: '0.85rem', color: '#718096' }}>
+                      By {blogs[0].author} • {new Date(blogs[0].createdAt).toLocaleDateString()}
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.75rem' }}>
+                    <button
+                      className="read-btn"
+                      onClick={() => navigate('/readnow-article', { state: { blog: blogs[0] } })}
+                    >
+                      Read Now
+                    </button>
+                    <button
+                      style={{
+                        padding: '0.6rem 1.25rem',
+                        background: 'white',
+                        color: '#58a4b0',
+                        border: '2px solid #58a4b0',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
+                        fontWeight: '600',
+                        fontSize: '0.9rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        transition: 'all 0.3s ease'
+                      }}
+                      onClick={() => navigate('/edit-blog', { state: { blog: blogs[0] } })}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = '#58a4b0';
+                        e.currentTarget.style.color = 'white';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'white';
+                        e.currentTarget.style.color = '#58a4b0';
+                      }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M18.5 2.50001C18.8978 2.10219 19.4374 1.87869 20 1.87869C20.5626 1.87869 21.1022 2.10219 21.5 2.50001C21.8978 2.89784 22.1213 3.4374 22.1213 4.00001C22.1213 4.56262 21.8978 5.10219 21.5 5.50001L12 15L8 16L9 12L18.5 2.50001Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      Edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="headline-card" style={{ textAlign: 'center', padding: '3rem' }}>
+                <p>No articles available yet.</p>
+                <button
+                  onClick={handleCreateBlogNavigation}
+                  style={{
+                    marginTop: '1rem',
+                    padding: '0.75rem 1.5rem',
+                    background: 'linear-gradient(135deg, #58a4b0 0%, #3d7a85 100%)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    fontWeight: '600'
+                  }}
+                >
+                  Create Your First Blog
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Right Side Vertical Block */}
+          <div className="news-right">
+            <h3 className="news-title">More popular articles</h3>
+
+            {loading ? (
+              <div style={{ textAlign: 'center', padding: '2rem', color: '#718096' }}>
+                <p>Loading articles...</p>
+              </div>
+            ) : blogs.length > 1 ? (
+              blogs.slice(1, 6).map((blog) => (
+                <div className="recent-card" key={blog._id}>
+                  <div className="recent-img"></div>
+
+                  <div className="recent-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                      <p
+                        style={{
+                          cursor: "pointer",
+                          flex: 1,
+                          margin: 0,
+                          fontSize: '14px',
+                          lineHeight: '1.4',
+                          paddingRight: '8px'
+                        }}
+                        onClick={() => navigate("/readnow-article", { state: { blog } })}
+                      >
+                        {blog.title}
+                      </p>
+                      <button
+                        onClick={() => navigate('/edit-blog', { state: { blog } })}
+                        style={{
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          padding: '4px',
+                          color: '#58a4b0',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          transition: 'all 0.3s ease',
+                          flexShrink: 0,
+                          width: '24px',
+                          height: '24px'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.15)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                        }}
+                        title="Edit blog"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M18.5 2.50001C18.8978 2.10219 19.4374 1.87869 20 1.87869C20.5626 1.87869 21.1022 2.10219 21.5 2.50001C21.8978 2.89784 22.1213 3.4374 22.1213 4.00001C22.1213 4.56262 21.8978 5.10219 21.5 5.50001L12 15L8 16L9 12L18.5 2.50001Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className="recent-stats" style={{ fontSize: '12px', color: '#718096' }}>
+                      By {blog.author} • {new Date(blog.createdAt).toLocaleDateString()}
+                    </div>
+                    {blog.tags && blog.tags.length > 0 && (
+                      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '2px' }}>
+                        {blog.tags.slice(0, 3).map((tag, idx) => (
+                          <span
+                            key={idx}
+                            style={{
+                              fontSize: '0.7rem',
+                              padding: '0.2rem 0.6rem',
+                              background: '#e6f7f9',
+                              color: '#58a4b0',
+                              borderRadius: '12px',
+                              fontWeight: '500'
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div style={{ textAlign: 'center', padding: '2rem', color: '#718096' }}>
+                <p>No more articles available.</p>
+              </div>
+            )}
+          </div>
+
+        </div>
+
+
+        <aside
+          className={`sidebar-newsdash ${sidebarOpen ? "active-newsdash" : ""
+            }`}
+        >
+
+
+
+          <ul className="sidebar-menu-newsdash">
+            <li className="menu-item-newsdash " onClick={handleDashboardNavigation}>
+              <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <path d="M26.6823 6.27732C26.6823 5.50854 26.6743 4.87377 26.6845 4.24013C26.6925 3.78818 26.6766 3.32714 26.7563 2.88541C26.8644 2.2881 27.3698 1.91905 27.9812 1.89861C28.5629 1.87817 29.0865 2.25858 29.2368 2.85248C29.3005 3.10571 29.3119 3.3771 29.3131 3.64055C29.3199 4.96575 29.2937 6.29208 29.3347 7.615C29.3438 7.91025 29.5032 8.2759 29.7183 8.47689C31.1664 9.83274 31.9473 11.4986 31.9666 13.4574C32.0076 17.6408 32.0042 21.8254 31.9701 26.0087C31.9405 29.5744 28.9146 32.5007 25.3344 32.5019C24.0435 32.5019 22.7526 32.5041 21.4616 32.5019C20.5521 32.4996 20.0546 32.0227 20.0523 31.104C20.0432 27.7155 20.0478 24.327 20.0466 20.9385C20.0466 19.6281 19.5343 19.1148 18.2241 19.1125C16.7055 19.1091 15.1868 19.1057 13.6682 19.1136C12.498 19.1193 11.9573 19.661 11.9561 20.8102C11.955 24.1794 11.9561 27.5497 11.9538 30.9189C11.9538 32.0545 11.5053 32.5019 10.3806 32.5019C9.12723 32.5019 7.875 32.5019 6.62164 32.5019C3.10973 32.5019 0.0907303 29.6471 0.0417798 26.1473C-0.0185546 21.8322 -0.0219698 17.5148 0.0486101 13.1997C0.0816232 11.1489 0.984362 9.40123 2.68511 8.21231C5.86803 5.98661 9.07828 3.79726 12.3284 1.67263C14.8886 -0.00231332 17.4784 0.174834 19.9942 1.86568C21.991 3.20791 23.99 4.549 25.9901 5.88668C26.1688 6.00592 26.3646 6.1013 26.68 6.27959L26.6823 6.27732ZM2.61339 19.611C2.61339 21.6175 2.61339 23.6241 2.61339 25.6306C2.61339 25.6681 2.61339 25.7067 2.61339 25.7442C2.64299 27.7598 3.77796 29.3064 5.73029 29.7413C6.65693 29.948 7.64733 29.8867 8.60926 29.9151C9.36743 29.9378 9.37995 29.9094 9.38109 29.1667C9.38223 26.2892 9.3754 23.4117 9.39019 20.5342C9.39247 20.1243 9.44028 19.6962 9.56664 19.309C10.1256 17.5852 11.6135 16.5314 13.4337 16.5303C15.18 16.528 16.9274 16.4939 18.6726 16.5496C19.2589 16.5677 19.8838 16.7244 20.4132 16.9788C22.008 17.7453 22.6216 19.1284 22.6239 20.8283C22.6285 23.6298 22.6342 26.4312 22.6171 29.2337C22.6137 29.7379 22.7571 29.9628 23.2967 29.9298C23.9399 29.8912 24.5865 29.923 25.232 29.9207C27.4916 29.9139 29.3654 28.1334 29.3825 25.8838C29.4132 21.7765 29.4121 17.6681 29.3802 13.5608C29.3688 12.1175 28.7496 10.9183 27.5326 10.0905C24.4931 8.02267 21.4445 5.97072 18.3982 3.91422C16.8102 2.84226 15.213 2.83317 13.6216 3.90627C10.5741 5.96163 7.52552 8.01472 4.48717 10.0837C3.23836 10.9342 2.62136 12.1413 2.61567 13.6494C2.60884 15.6366 2.61453 17.6249 2.61453 19.6122L2.61339 19.611Z" fill="#58a4b0" />
+              </svg>
+
+              <span>Dashboard</span>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleNetworkingClick}>
+              <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <path d="M22.5714 19.6429C21.9612 19.646 21.363 19.8136 20.84 20.128L15.212 14.5L20.8409 8.87114C21.3634 9.18611 21.9613 9.35403 22.5714 9.35714C23.2495 9.35714 23.9124 9.15606 24.4762 8.77933C25.0401 8.40259 25.4795 7.86712 25.739 7.24063C25.9985 6.61414 26.0664 5.92477 25.9341 5.25969C25.8018 4.59461 25.4753 3.9837 24.9958 3.50421C24.5163 3.02471 23.9054 2.69817 23.2403 2.56588C22.5752 2.43359 21.8859 2.50149 21.2594 2.76099C20.6329 3.02049 20.0974 3.45993 19.7207 4.02376C19.3439 4.58759 19.1429 5.25047 19.1429 5.92857C19.146 6.53868 19.3139 7.13661 19.6289 7.65914L14 13.288L8.372 7.66C8.68642 7.13697 8.85402 6.53883 8.85714 5.92857C8.85714 5.25047 8.65606 4.58759 8.27933 4.02376C7.90259 3.45993 7.36712 3.02049 6.74063 2.76099C6.11414 2.50149 5.42477 2.43359 4.75969 2.56588C4.09461 2.69817 3.4837 3.02471 3.00421 3.50421C2.52471 3.9837 2.19817 4.59461 2.06588 5.25969C1.93359 5.92477 2.00149 6.61414 2.26099 7.24063C2.52049 7.86712 2.95993 8.40259 3.52376 8.77933C4.08759 9.15606 4.75047 9.35714 5.42857 9.35714C6.03883 9.35402 6.63697 9.18642 7.16 8.872L12.788 14.5L7.15914 20.1289C6.63661 19.8139 6.03868 19.646 5.42857 19.6429C4.75047 19.6429 4.08759 19.8439 3.52376 20.2207C2.95993 20.5974 2.52049 21.1329 2.26099 21.7594C2.00149 22.3859 1.93359 23.0752 2.06588 23.7403C2.19817 24.4054 2.52471 25.0163 3.00421 25.4958C3.4837 25.9753 4.09461 26.3018 4.75969 26.4341C5.42477 26.5664 6.11414 26.4985 6.74063 26.239C7.36712 25.9795 7.90259 25.5401 8.27933 24.9762C8.65606 24.4124 8.85714 23.7495 8.85714 23.0714C8.85403 22.4613 8.68611 21.8634 8.37114 21.3409L14 15.712L19.628 21.34C19.3136 21.863 19.146 22.4612 19.1429 23.0714C19.1429 23.7495 19.3439 24.4124 19.7207 24.9762C20.0974 25.5401 20.6329 25.9795 21.2594 26.239C21.8859 26.4985 22.5752 26.5664 23.2403 26.4341C23.9054 26.3018 24.5163 25.9753 24.9958 25.4958C25.4753 25.0163 25.8018 24.4054 25.9341 23.7403C26.0664 23.0752 25.9985 22.3859 25.739 21.7594C25.4795 21.1329 25.0401 20.5974 24.4762 20.2207C23.9124 19.8439 23.2495 19.6429 22.5714 19.6429ZM22.5714 4.21429C22.9105 4.21429 23.2419 4.31483 23.5238 4.5032C23.8057 4.69156 24.0255 4.9593 24.1552 5.27254C24.285 5.58579 24.3189 5.93047 24.2528 6.26301C24.1866 6.59555 24.0234 6.90101 23.7836 7.14076C23.5439 7.3805 23.2384 7.54377 22.9059 7.60992C22.5733 7.67606 22.2286 7.64212 21.9154 7.51237C21.6022 7.38262 21.3344 7.16289 21.1461 6.88098C20.9577 6.59907 20.8571 6.26763 20.8571 5.92857C20.8571 5.47392 21.0378 5.03788 21.3592 4.71639C21.6807 4.3949 22.1168 4.21429 22.5714 4.21429ZM5.42857 24.7857C5.08952 24.7857 4.75808 24.6852 4.47617 24.4968C4.19425 24.3084 3.97453 24.0407 3.84478 23.7275C3.71503 23.4142 3.68108 23.0695 3.74723 22.737C3.81337 22.4044 3.97664 22.099 4.21639 21.8592C4.45614 21.6195 4.76159 21.4562 5.09413 21.3901C5.42667 21.3239 5.77136 21.3579 6.0846 21.4876C6.39785 21.6174 6.66558 21.8371 6.85395 22.119C7.04232 22.4009 7.14286 22.7324 7.14286 23.0714C7.14286 23.5261 6.96225 23.9621 6.64076 24.2836C6.31926 24.6051 5.88323 24.7857 5.42857 24.7857Z" fill="#58A4B0" />
+              </svg>
+
+              <span>Networking</span>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
+              <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <path d="M28.0006 23.1666V11.1666H9.33398V23.1666H28.0006ZM28.0006 4.49992C28.7079 4.49992 29.3862 4.78087 29.8863 5.28097C30.3864 5.78106 30.6673 6.45934 30.6673 7.16658V23.1666C30.6673 23.8738 30.3864 24.5521 29.8863 25.0522C29.3862 25.5523 28.7079 25.8332 28.0006 25.8332H9.33398C8.62674 25.8332 7.94846 25.5523 7.44837 25.0522C6.94827 24.5521 6.66732 23.8738 6.66732 23.1666V7.16658C6.66732 6.45934 6.94827 5.78106 7.44837 5.28097C7.94846 4.78087 8.62674 4.49992 9.33398 4.49992H10.6673V1.83325H13.334V4.49992H24.0006V1.83325H26.6673V4.49992H28.0006ZM23.374 15.2466L17.454 21.1666L13.8806 17.5932L15.294 16.1799L17.454 18.3399L21.9606 13.8333L23.374 15.2466ZM4.00065 28.4999H22.6673V31.1666H4.00065C3.29341 31.1666 2.61513 30.8856 2.11503 30.3855C1.61494 29.8854 1.33398 29.2072 1.33398 28.4999V12.4999H4.00065V28.4999Z" fill="#58A4B0" />
+              </svg>
+              <span>Events</span>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleJobsNavigation}>
+              <svg width="21" height="20  " viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <g clip-path="url(#clip0_1635_416)">
+                  <path d="M14.5944 3.47693C15.5416 2.41376 16.743 1.98968 18.0732 1.79172C19.5033 1.57926 20.9172 1.25843 22.3481 1.05194C25.4165 0.609088 28.3739 2.70216 28.9874 5.73213C29.0966 6.27054 29.1487 6.83029 29.1504 7.38065C29.1623 12.2571 29.1069 17.1335 29.1751 22.0091C29.2221 25.3548 27.1682 28.0366 23.6127 28.5955C21.3302 28.9539 19.0553 29.3729 16.7882 29.82C15.109 30.151 13.4613 30.0358 11.8008 29.7159C9.49017 29.2705 7.16074 28.9129 4.85862 28.4291C1.91142 27.8088 0.0205707 25.4239 0.00606507 22.4161C-0.00588072 19.8572 0.00350526 17.2982 0.00350526 14.7393C0.00350526 12.223 0.00350526 9.70666 0.00350526 7.19037C0.00350526 4.11689 1.95494 1.70469 4.9593 1.07924C5.85097 0.893228 6.73752 0.99818 7.62321 1.16627C8.98845 1.42482 10.3579 1.66288 11.7257 1.90862C12.701 2.08354 13.5577 2.49311 14.2745 3.18426C14.3649 3.27215 14.4613 3.35406 14.5953 3.47608L14.5944 3.47693ZM15.7677 27.5366C16.0194 27.5093 16.2046 27.5016 16.3846 27.4684C18.3514 27.1134 20.319 26.7601 22.2841 26.3941C22.994 26.2618 23.7202 26.1637 24.3994 25.9333C25.8627 25.4376 26.7715 24.0186 26.7723 22.3376C26.7766 17.3204 26.7749 12.3032 26.7706 7.28593C26.7706 6.989 26.7425 6.6895 26.6989 6.39512C26.4327 4.5896 24.6118 3.15354 22.8012 3.40526C21.1459 3.63564 19.5033 3.95988 17.8582 4.26365C16.5382 4.50768 15.7668 5.46505 15.7668 6.81152C15.7668 13.5481 15.7668 20.2855 15.7668 27.0221V27.5358L15.7677 27.5366ZM13.3939 27.5742C13.3939 27.3199 13.3939 27.1518 13.3939 26.9837C13.3939 22.1363 13.3939 17.288 13.3939 12.4405C13.3939 10.5642 13.3999 8.68701 13.3913 6.81066C13.3854 5.46505 12.5969 4.50768 11.2897 4.26024C9.79906 3.9778 8.30668 3.70305 6.81175 3.44366C4.44393 3.03323 2.40802 4.66127 2.39608 7.03849C2.36963 12.1991 2.37474 17.3597 2.39522 22.5202C2.40205 24.2814 3.50448 25.6731 5.21528 26.0622C6.7068 26.4018 8.22221 26.6398 9.72738 26.9163C10.9254 27.1364 12.1251 27.3463 13.3939 27.5733V27.5742Z" fill="white" />
+                  <path d="M19.5884 9.48653C18.8528 9.47458 18.3503 9.03942 18.2658 8.48223C18.1753 7.88409 18.5354 7.29192 19.1404 7.15795C19.9681 6.97365 20.8085 6.84224 21.643 6.68865C22.033 6.61698 22.4238 6.55298 22.8129 6.4779C23.4895 6.3482 24.0561 6.69804 24.2404 7.3653C24.3974 7.93528 24.0877 8.58889 23.4639 8.73138C22.1277 9.03686 20.7727 9.25956 19.5875 9.48568L19.5884 9.48653Z" fill="white" />
+                  <path d="M19.4167 19.1226C18.8305 19.1158 18.3237 18.6559 18.2614 18.0774C18.194 17.4511 18.5865 16.8982 19.2239 16.771C20.0294 16.6097 20.84 16.4758 21.648 16.3299C22.0525 16.2565 22.4561 16.1823 22.8597 16.1072C23.5048 15.9869 24.0961 16.3879 24.2582 17.0543C24.3956 17.6217 23.9988 18.2975 23.3896 18.4195C22.1122 18.6755 20.8272 18.8905 19.5447 19.1209C19.5038 19.1286 19.4594 19.1218 19.4176 19.1218L19.4167 19.1226Z" fill="white" />
+                  <path d="M19.4152 14.2598C18.8358 14.2692 18.3469 13.846 18.2659 13.27C18.1857 12.6975 18.515 12.107 19.0748 11.9841C20.1268 11.7529 21.1909 11.578 22.2506 11.3809C22.4878 11.3365 22.7242 11.2836 22.9631 11.2571C23.5937 11.1872 24.1705 11.6394 24.2772 12.2751C24.3693 12.8229 23.9666 13.45 23.3949 13.5618C22.1141 13.811 20.8282 14.0303 19.5432 14.2598C19.5023 14.2675 19.4579 14.2607 19.4152 14.2607V14.2598Z" fill="white" />
+                  <path d="M21.8352 22.586C21.8292 23.0792 21.5604 23.5229 21.0843 23.6552C20.5433 23.8053 19.9827 23.9154 19.4238 23.9683C18.8965 24.0178 18.3837 23.5494 18.2728 23.0169C18.1601 22.4751 18.4391 21.8752 18.9733 21.7123C19.5228 21.5442 20.1005 21.423 20.673 21.3846C21.3292 21.3411 21.8437 21.9256 21.8352 22.586Z" fill="white" />
+                  <path d="M9.61198 14.2616C8.82356 14.12 7.93275 13.9604 7.04193 13.8C6.62468 13.7249 6.20487 13.6584 5.79018 13.5696C5.18266 13.4399 4.77479 12.8179 4.89084 12.2232C5.01883 11.567 5.62636 11.1216 6.25863 11.2342C7.47027 11.4501 8.68107 11.6702 9.89015 11.8981C10.5583 12.0244 10.9772 12.6012 10.8962 13.2565C10.8236 13.841 10.3159 14.2753 9.61198 14.2616Z" fill="white" />
+                  <path d="M10.9007 17.9383C10.9033 18.6747 10.2335 19.2404 9.49454 19.109C8.29484 18.8957 7.09685 18.6738 5.89971 18.446C5.19918 18.3129 4.75206 17.6874 4.89029 17.062C5.04388 16.3683 5.64629 15.9928 6.36645 16.1259C7.52263 16.341 8.68137 16.544 9.83841 16.7557C10.4997 16.876 10.899 17.3248 10.9007 17.9391V17.9383Z" fill="white" />
+                  <path d="M10.8989 8.3219C10.8938 9.0267 10.241 9.58303 9.55671 9.45931C8.35958 9.24258 7.16329 9.01987 5.96615 8.80144C5.21698 8.66491 4.75877 8.08554 4.88932 7.43364C5.02926 6.73396 5.64532 6.35255 6.39279 6.48993C7.54811 6.70239 8.70515 6.90376 9.86048 7.11537C10.4987 7.23227 10.9032 7.70925 10.8989 8.3219Z" fill="white" />
+                  <path d="M6.26736 21.0083C6.62061 21.0766 7.14367 21.144 7.6471 21.2848C8.23671 21.4494 8.54986 22.0177 8.44405 22.6124C8.33825 23.2063 7.84591 23.6193 7.22473 23.5664C6.73239 23.5237 6.2392 23.4333 5.75881 23.3138C5.17176 23.1671 4.7912 22.5766 4.87738 22.0288C4.97295 21.4196 5.4687 21.0057 6.26736 21.0092V21.0083Z" fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1635_416">
+                    <rect width="29.175" height="29.0377" fill="white" transform="translate(0 0.981201)" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <span>News</span>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleJobsNavigation}>
+              <svg width="20" height="20" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <g clip-path="url(#clip0_1635_614)">
+                  <path d="M15.9539 32.4978C12.8803 32.4978 9.80667 32.5081 6.7321 32.495C3.81482 32.4828 1.32352 30.7283 0.391039 27.9758C0.15511 27.2802 0.0287194 26.5134 0.023102 25.7785C-0.00966592 21.41 -0.00123988 17.0407 0.00999484 12.6722C0.0184209 9.41321 2.17923 6.73186 5.36053 6.08118C6.10015 5.93044 6.87909 5.95385 7.64118 5.94168C7.99882 5.93606 8.17015 5.87146 8.28624 5.47825C9.03709 2.94107 10.7242 1.26897 13.3082 0.798983C15.4465 0.410449 17.6635 0.292484 19.7691 1.10232C21.7679 1.87096 23.0973 3.32399 23.6825 5.39305C23.8154 5.8621 24.0223 5.96228 24.4567 5.93981C25.715 5.87521 26.9555 5.98755 28.1062 6.5521C30.6059 7.77856 31.94 9.81579 31.9793 12.5795C32.0421 16.9948 32.0121 21.411 31.9915 25.8262C31.9737 29.5346 29.033 32.4528 25.3181 32.4978C25.2872 32.4978 25.2553 32.4978 25.2245 32.4978C22.1349 32.4978 19.0454 32.4978 15.9558 32.4978H15.9539ZM29.3551 19.2417H17.304C17.304 19.6677 17.3068 20.0553 17.304 20.4438C17.2955 21.2761 16.7675 21.8323 15.9923 21.8295C15.2255 21.8266 14.7069 21.2649 14.6994 20.4242C14.6956 20.0263 14.6994 19.6275 14.6994 19.2408H2.64922C2.63798 19.3681 2.623 19.4589 2.623 19.5497C2.62207 21.6085 2.61551 23.6682 2.62768 25.727C2.62956 26.0818 2.66888 26.4469 2.76063 26.7887C3.27743 28.7182 4.78288 29.8726 6.8613 29.8773C12.9608 29.8922 19.0603 29.8876 25.1599 29.8773C26.1092 29.8754 27.0014 29.6395 27.7766 29.0365C28.9132 28.1527 29.3776 26.9684 29.3804 25.5678C29.3841 23.6177 29.3822 21.6675 29.3804 19.7173C29.3804 19.5647 29.3654 19.4131 29.356 19.2408L29.3551 19.2417ZM2.62019 16.5594H29.3289C29.3289 15.1008 29.3691 13.6693 29.3195 12.2416C29.2493 10.2305 27.4873 8.61835 25.4323 8.54626C24.7002 8.52099 23.9662 8.53784 23.2322 8.53784C17.7711 8.53784 12.3101 8.53409 6.85007 8.53971C4.81752 8.54158 3.21657 9.72029 2.76625 11.6452C2.59492 12.3754 2.6436 13.1619 2.62581 13.923C2.60522 14.7918 2.62113 15.6616 2.62113 16.5594H2.62019ZM10.8871 5.89393H21.1144C20.5939 4.58696 19.7129 3.69567 18.4078 3.40825C16.8022 3.05435 15.1432 3.04874 13.5413 3.41948C12.2624 3.71533 11.3926 4.60568 10.8871 5.89393Z" fill="#58A4B0" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1635_614">
+                    <rect width="32.0152" height="32.0031" fill="white" transform="translate(0 0.498535)" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <span>Jobs</span>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleDonationNavigation}>
+              <svg width="20" height="20" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <g clip-path="url(#clip0_1635_982)">
+                  <path d="M7.99206 15.3792C8.51181 15.321 8.9573 15.2373 9.40468 15.226C10.4564 15.2016 11.3568 15.5944 12.1284 16.3003C13.4217 17.4845 14.7159 18.6669 16.0514 19.8878C16.2234 19.7393 16.4114 19.5842 16.5918 19.4197C17.7037 18.4075 18.8193 17.3981 19.9227 16.3764C21.06 15.3238 22.3654 14.9732 23.8674 15.3783C23.9256 15.3943 23.9867 15.398 24.1117 15.4187C24.1239 15.2213 24.1427 15.0446 24.1437 14.8679C24.1493 12.6903 24.1258 10.5117 24.1634 8.33492C24.1916 6.70237 25.0459 5.53788 26.4905 4.87433C27.8919 4.22958 29.2706 4.41568 30.5244 5.33487C31.6354 6.14973 32.11 7.30577 32.1175 8.63192C32.1419 13.0972 32.157 17.5635 32.1137 22.0278C32.0855 24.9574 31.0113 27.4875 28.9285 29.5703C28.1203 30.3786 27.311 31.1878 26.4971 31.9904C25.8336 32.6455 25.108 32.6784 24.5112 32.091C23.9707 31.5581 24.0177 30.7648 24.6409 30.1351C25.4116 29.355 26.1738 28.5656 26.9689 27.8108C28.6823 26.1839 29.4765 24.1613 29.4925 21.8408C29.5235 17.4535 29.5084 13.0662 29.4878 8.67985C29.4859 8.32834 29.3581 7.92984 29.1635 7.6366C28.8411 7.15069 28.2236 7.01535 27.6983 7.2052C27.0967 7.42231 26.7715 7.87251 26.7697 8.52571C26.7593 11.9262 26.7405 15.3256 26.7509 18.7261C26.7546 20.0936 26.3599 21.2553 25.3486 22.2252C24.3429 23.1895 23.419 24.2375 22.4397 25.23C21.6596 26.0213 20.5214 25.7835 20.1803 24.776C19.9913 24.2168 20.2197 23.7685 20.5976 23.3737C21.638 22.2872 22.6831 21.2064 23.7207 20.118C24.1409 19.6772 24.233 19.1208 23.9924 18.6058C23.7442 18.0757 23.2574 17.7505 22.6671 17.8398C22.3466 17.8887 21.9961 18.0447 21.7545 18.2599C20.4566 19.4169 19.1962 20.6143 17.9058 21.7797C17.6576 22.0034 17.6473 22.1839 17.7855 22.4611C18.4753 23.8493 18.7432 25.3249 18.7141 26.871C18.6877 28.2648 18.7131 29.6596 18.7065 31.0543C18.7028 31.9087 18.1389 32.5224 17.3926 32.5083C16.6323 32.4933 16.089 31.8842 16.0862 31.0224C16.0806 29.4866 16.0909 27.9509 16.0824 26.4161C16.0721 24.4818 15.3381 22.8521 13.9414 21.5306C12.7694 20.4216 11.5692 19.3426 10.3784 18.2543C9.76183 17.6913 8.95354 17.6716 8.44226 18.1969C7.86612 18.7891 7.87364 19.5635 8.48361 20.2017C9.55506 21.3229 10.65 22.4216 11.7083 23.5561C12.479 24.3813 12.1482 25.5664 11.0739 25.7676C10.7384 25.8305 10.2365 25.7206 10.0043 25.4931C8.71952 24.2318 7.46667 22.9357 6.26083 21.5993C5.59728 20.8643 5.39897 19.9103 5.39521 18.9319C5.38205 15.4694 5.37547 12.007 5.37077 8.54357C5.37077 7.99093 5.13017 7.58021 4.66399 7.30389C4.20252 7.03039 3.7307 7.06516 3.28615 7.34336C2.81997 7.63472 2.6367 8.08586 2.63576 8.62158C2.63482 9.46746 2.63576 10.3133 2.63576 11.1602C2.63576 14.6546 2.62918 18.1481 2.63764 21.6425C2.64328 24.0523 3.41115 26.1501 5.1922 27.8372C5.97699 28.5806 6.72324 29.3635 7.48829 30.1267C7.79751 30.4359 8.00992 30.7771 7.99206 31.2432C7.97138 31.7714 7.71198 32.1295 7.26272 32.3589C6.80501 32.5929 6.34259 32.5713 5.94033 32.2451C5.60104 31.9697 5.28994 31.6568 4.98637 31.3419C4.06342 30.3842 3.09347 29.4641 2.24665 28.4424C0.686474 26.5589 0.0276278 24.3249 0.0154096 21.9085C-0.00714724 17.4902 -0.00244791 13.0718 0.0135298 8.65354C0.0229285 5.98901 2.24007 4.11304 4.76738 4.59237C6.55124 4.93072 7.91405 6.43639 7.96292 8.26631C8.02026 10.443 7.98642 12.6217 7.99112 14.7993C7.99112 14.9854 7.99112 15.1715 7.99112 15.3802L7.99206 15.3792Z" fill="#58A4B0" />
+                  <path d="M22.7407 4.78401C22.7464 5.72951 22.4005 6.56505 21.9531 7.36112C21.033 8.99649 19.7416 10.3104 18.3036 11.4881C17.9079 11.8114 17.4916 12.1403 17.031 12.3481C16.1109 12.7635 15.203 12.5952 14.4276 11.9806C12.9266 10.7907 11.5159 9.50589 10.4811 7.86489C9.74894 6.70321 9.22825 5.48703 9.45006 4.06125C9.76586 2.04241 11.2931 0.59596 13.3289 0.502913C14.1983 0.463439 15.0338 0.709684 15.7556 1.23695C15.9464 1.37605 16.094 1.45406 16.3318 1.2877C17.6466 0.364753 19.0602 0.221893 20.4907 0.94841C22.0377 1.73414 22.6759 3.1054 22.7407 4.78495V4.78401ZM12.0215 4.87517C12.0854 5.07442 12.1559 5.46729 12.3289 5.8094C13.1635 7.45511 14.5366 8.63088 15.9051 9.80195C15.9737 9.86116 16.2152 9.82451 16.2942 9.74838C17.2256 8.84611 18.1701 7.95417 19.0499 7.00303C19.5809 6.42783 19.9597 5.72951 20.0912 4.9325C20.1918 4.32629 19.8713 3.60071 19.3779 3.3009C18.5207 2.77927 17.4464 3.37515 17.3788 4.40994C17.3299 5.15337 16.9662 5.62237 16.3534 5.73233C15.4727 5.88929 14.8092 5.3686 14.7613 4.46915C14.7321 3.92967 14.547 3.49827 14.0263 3.26048C13.0432 2.81123 12.0234 3.53586 12.0206 4.87611L12.0215 4.87517Z" fill="#58A4B0" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1635_982">
+                    <rect width="32.1397" height="32.0278" fill="white" transform="translate(0 0.486084)" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+
+              <span>Donations</span>
+            </li>
+            <li className="menu-item-newsdash active" onClick={handleNewsClick} style={{ cursor: 'pointer' }}>
+              <svg width="19" height="20" viewBox="0 0 36 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <g clip-path="url(#clip0_1635_772)">
+                  <path d="M17.8821 32.8408C14.5148 32.8408 11.1465 32.8335 7.77917 32.844C6.29865 32.8492 4.90084 32.5518 3.63601 31.7655C1.232 30.2724 0.0373167 28.0715 0.0174228 25.2686C-0.0160826 20.7841 0.00904647 16.2996 0.00904647 11.8151C0.00904647 10.4361 0.00171715 9.05823 0.0100935 7.67927C0.0320815 4.00728 2.51672 0.990745 6.11227 0.291319C6.60543 0.194991 7.11848 0.165673 7.62211 0.165673C14.4625 0.157297 21.3028 0.145779 28.1432 0.165673C31.589 0.176144 34.3113 2.08281 35.3615 5.24803C35.6358 6.0752 35.7594 6.98822 35.7646 7.86355C35.7991 13.6045 35.7834 19.3454 35.7824 25.0864C35.7813 29.5918 32.5931 32.8146 28.0898 32.8387C24.6869 32.8565 21.284 32.8419 17.8821 32.8419V32.8408ZM32.8297 12.0653H2.96695C2.95334 12.2475 2.93344 12.4004 2.9324 12.5522C2.9303 16.7572 2.92716 20.9621 2.93763 25.166C2.93868 25.5974 2.97742 26.0424 3.08945 26.457C3.68103 28.6621 5.38458 29.9374 7.76451 29.9415C14.5169 29.952 21.2683 29.9593 28.0206 29.9248C28.7651 29.9206 29.5661 29.7604 30.2414 29.4547C32.0685 28.6265 32.8486 27.0726 32.8549 25.1189C32.8685 20.9495 32.859 16.7791 32.858 12.6098C32.858 12.4391 32.8412 12.2695 32.8297 12.0664V12.0653ZM2.99627 9.06137H32.9229C32.8454 8.17766 32.8842 7.32013 32.679 6.52647C32.0978 4.28684 30.4927 3.11415 28.1044 3.10997C21.3018 3.09949 14.4981 3.09426 7.69541 3.12358C6.98237 3.12672 6.21279 3.24503 5.5699 3.53402C3.37844 4.52138 2.68425 6.62176 2.99731 9.06137H2.99627Z" fill="#58A4B0" />
+                  <path d="M17.949 16.5435C20.8797 16.5435 23.8103 16.5383 26.741 16.5466C27.81 16.5498 28.4613 17.3235 28.2634 18.3151C28.1294 18.9852 27.5095 19.4585 26.7138 19.4637C25.3359 19.4731 23.958 19.4668 22.579 19.4668C18.1134 19.4668 13.6467 19.4689 9.18102 19.4658C8.08895 19.4658 7.38743 18.7559 7.50994 17.7958C7.59789 17.1068 8.1434 16.5749 8.84178 16.5581C9.86998 16.5341 10.9003 16.5456 11.9295 16.5445C13.9356 16.5435 15.9418 16.5445 17.9479 16.5445L17.949 16.5435Z" fill="#58A4B0" />
+                  <path d="M14.8862 25.4066C12.9848 25.4066 11.0834 25.4129 9.18299 25.4035C8.23123 25.3993 7.63232 24.9397 7.51505 24.1586C7.40301 23.4141 7.85429 22.7168 8.58617 22.5335C8.80291 22.4791 9.03431 22.4634 9.25942 22.4634C13.0267 22.4592 16.795 22.4582 20.5623 22.4613C21.6156 22.4613 22.2355 22.9388 22.3224 23.7931C22.3988 24.5407 21.9014 25.2182 21.1622 25.349C20.9235 25.3909 20.6775 25.4035 20.4345 25.4035C18.5855 25.4077 16.7364 25.4056 14.8873 25.4056L14.8862 25.4066Z" fill="#58A4B0" />
+                  <path d="M8.99221 6.09393C8.98802 5.28247 9.63928 4.62388 10.4413 4.62807C11.2214 4.63226 11.9156 5.33273 11.903 6.10231C11.8904 6.87712 11.2371 7.52525 10.4591 7.53676C9.63928 7.54828 8.9964 6.91587 8.99221 6.09498V6.09393Z" fill="#58A4B0" />
+                  <path d="M7.41357 6.08035C7.41357 6.88867 6.76335 7.53783 5.95189 7.53574C5.14567 7.53469 4.49859 6.87506 4.50592 6.06464C4.51325 5.29611 5.17394 4.63438 5.94142 4.6281C6.73613 4.62181 7.41252 5.28983 7.41357 6.08035Z" fill="#58A4B0" />
+                  <path d="M14.8835 4.62698C15.6855 4.61546 16.3567 5.26882 16.3629 6.06876C16.3703 6.87603 15.7211 7.53462 14.9149 7.53777C14.1306 7.54091 13.4857 6.91373 13.4616 6.1274C13.4375 5.33164 14.094 4.63955 14.8835 4.62803V4.62698Z" fill="#58A4B0" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1635_772">
+                    <rect width="35.787" height="32.6919" fill="white" transform="translate(0 0.154053)" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <span>Articles/Blogs</span>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleSupportNavigation}>
+              <svg width="20" height="20" viewBox="0 0 24 31" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-newsdash'>
+                <g clip-path="url(#clip0_1635_136)">
+                  <path d="M2.45628 11.7561H0C0.132133 10.9893 0.194262 10.2331 0.3964 9.51717C1.68798 4.9587 4.60891 1.96797 9.2152 0.897656C13.58 -0.116508 17.3987 1.13979 20.4439 4.4367C22.7435 6.92649 23.8557 9.95319 23.6169 13.3466C23.3946 16.5058 21.0162 18.7534 18.181 19.1193C16.8019 19.2974 15.3887 19.1956 13.9921 19.2482C13.7366 19.2579 13.4505 19.3456 13.2387 19.4869C12.0591 20.2738 10.4525 19.9492 9.71223 18.749C9.00081 17.5954 9.38671 16.0136 10.5427 15.3486C11.8167 14.6161 13.3603 15.0574 13.9983 16.3768C14.1601 16.7119 14.3413 16.8155 14.6904 16.8014C15.6941 16.7602 16.7057 16.8146 17.7024 16.7119C19.6669 16.5093 21.1816 14.8442 21.2122 12.8658C21.2848 8.25035 18.1198 3.96734 13.3857 3.16373C8.23339 2.28906 3.5991 5.76143 2.64967 10.5691C2.57354 10.9542 2.52366 11.3437 2.45803 11.7561H2.45628Z" fill="#58A4B0" />
+                  <path d="M22.9528 30.4444H20.6007C20.6007 29.4829 20.6479 28.5354 20.5832 27.5949C20.5429 27.0115 20.4336 26.3921 20.1807 25.8736C19.6766 24.8393 18.764 24.2585 17.6176 24.2497C13.7674 24.2182 9.91715 24.2138 6.06691 24.2497C4.3728 24.2655 3.10835 25.678 3.08385 27.4607C3.07072 28.4389 3.08122 29.4179 3.08122 30.4295H0.708074C0.699323 30.419 0.665196 30.397 0.666071 30.376C0.687073 29.0337 0.598692 27.6783 0.757952 26.3518C1.05197 23.9041 3.44787 21.8205 5.91202 21.8012C9.86465 21.7705 13.8173 21.7696 17.769 21.8012C20.2533 21.8214 22.6431 23.912 22.9266 26.393C23.0771 27.7151 22.9537 29.0688 22.9537 30.4453L22.9528 30.4444Z" fill="#58A4B0" />
+                  <path d="M15.9201 14.2362C16.026 13.6405 16.187 13.1027 16.2063 12.5597C16.2973 9.9813 14.3013 7.97315 11.7269 8.00912C9.29422 8.04333 7.3341 10.1726 7.47585 12.6676C7.50298 13.1387 7.69112 13.5993 7.7865 14.0678C7.8145 14.2064 7.83025 14.3941 7.76025 14.4977C7.28509 15.2013 6.97795 15.9601 6.90007 16.8094C6.89657 16.8488 6.86069 16.8848 6.77056 17.0471C6.39779 16.476 5.99614 15.9935 5.73887 15.4425C4.5768 12.9562 4.74306 10.5243 6.38466 8.33109C7.91601 6.28434 10.0336 5.33685 12.615 5.63601C15.2455 5.94131 17.0656 7.3836 18.1489 9.7725C18.6223 10.8165 18.7501 11.9351 18.6363 13.0729C18.561 13.8256 18.1034 14.2239 17.3552 14.2353C16.8748 14.2424 16.3953 14.2371 15.9201 14.2371V14.2362Z" fill="#58A4B0" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1635_136">
+                    <rect width="23.6484" height="29.8889" fill="white" transform="translate(0 0.555542)" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <span>Support</span>
+            </li>
+            <li className="menu-item-newsdash">
+              <Link to="/settingsacc" style={{ textDecoration: 'none', color: '#58a4b0' }}>
+                <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon1-newsdash'>
+                  <path d="M27.1334 12.3973L26.6454 12.1253C26.216 11.9041 25.8547 11.5705 25.6001 11.16C25.5774 11.124 25.5561 11.0853 25.5134 11.0106C25.2261 10.5491 25.0866 10.0109 25.1134 9.46796L25.1214 8.9013C25.1374 7.99463 25.1454 7.53863 25.0174 7.13063C24.9043 6.76759 24.7147 6.43298 24.4614 6.1493C24.1761 5.8293 23.7801 5.59996 22.9868 5.14396L22.3281 4.76396C21.5388 4.3093 21.1428 4.0813 20.7228 3.99463C20.3517 3.91781 19.9685 3.92099 19.5988 4.00396C19.1814 4.0973 18.7908 4.33196 18.0108 4.79863L18.0068 4.8013L17.5348 5.08263C17.4601 5.12796 17.4214 5.1493 17.3841 5.17063C17.0134 5.3773 16.6001 5.49063 16.1748 5.50396C16.1321 5.50663 16.0881 5.50663 16.0014 5.50663L15.8281 5.5053C15.4026 5.4919 14.9865 5.37668 14.6148 5.1693C14.5774 5.1493 14.5414 5.12663 14.4668 5.0813L13.9908 4.79596C13.2054 4.32396 12.8121 4.0893 12.3921 3.99463C12.021 3.91148 11.6364 3.90875 11.2641 3.98663C10.8428 4.07463 10.4481 4.30396 9.65744 4.76263L9.65344 4.76396L9.00277 5.1413L8.99611 5.14663C8.21211 5.59996 7.81877 5.8293 7.53611 6.14796C7.28421 6.43116 7.09557 6.76479 6.98277 7.12663C6.85611 7.53596 6.86277 7.99196 6.87877 8.90396L6.88811 9.4693C6.88811 9.55596 6.89211 9.59863 6.89077 9.63996C6.88373 10.1244 6.745 10.5977 6.48944 11.0093C6.44544 11.084 6.42544 11.1213 6.40277 11.156C6.17796 11.5189 5.86931 11.8225 5.50277 12.0413L5.35344 12.1253L4.87211 12.392C4.06944 12.836 3.66811 13.0586 3.37744 13.376C3.11901 13.6557 2.92352 13.9876 2.80411 14.3493C2.67077 14.7586 2.67077 15.216 2.67211 16.1333L2.67477 16.884C2.67611 17.7946 2.67877 18.2493 2.81344 18.656C2.93235 19.0154 3.12643 19.3454 3.38277 19.624C3.67344 19.9386 4.07077 20.16 4.86677 20.6026L5.34411 20.868C5.42544 20.9133 5.46677 20.9346 5.50544 20.9586C5.92327 21.2091 6.26451 21.5692 6.49211 22L6.58144 22.16C6.80665 22.5852 6.91262 23.0634 6.88811 23.544L6.87877 24.0866C6.86277 25.0013 6.85611 25.46 6.98411 25.8693C7.09744 26.232 7.28677 26.5666 7.54011 26.8506C7.82544 27.1706 8.22277 27.3986 9.01477 27.856L9.67344 28.236C10.4641 28.6906 10.8588 28.9186 11.2788 29.0053C11.6498 29.0821 12.033 29.0789 12.4028 28.996C12.8214 28.9026 13.2121 28.668 13.9948 28.1986L14.4668 27.916C14.8733 27.6542 15.3435 27.5081 15.8268 27.4933H16.1734C16.5974 27.5066 17.0134 27.6226 17.3868 27.8293L17.5094 27.9026L18.0108 28.204C18.7974 28.676 19.1894 28.9106 19.6094 29.004C19.9804 29.0879 20.365 29.0915 20.7374 29.0146C21.1574 28.9266 21.5548 28.696 22.3454 28.2373L23.0054 27.8546C23.7894 27.3986 24.1828 27.1706 24.4654 26.852C24.7188 26.568 24.9054 26.2346 25.0188 25.8733C25.1454 25.4666 25.1388 25.0146 25.1228 24.116L25.1121 23.5293C25.0856 22.9872 25.2252 22.45 25.5121 21.9893L25.5988 21.8426C25.8236 21.4797 26.1322 21.1761 26.4988 20.9573L26.6454 20.876L26.6481 20.8746L27.1294 20.608C27.9321 20.1626 28.3334 19.9413 28.6254 19.624C28.8841 19.344 29.0788 19.0106 29.1974 18.6506C29.3308 18.244 29.3308 17.788 29.3281 16.8813L29.3254 16.116C29.3241 15.2053 29.3228 14.7493 29.1881 14.3426C29.0686 13.9836 28.874 13.6541 28.6174 13.376C28.3281 13.0613 27.9308 12.84 27.1361 12.3986L27.1334 12.3973Z" stroke="#58A4B0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10.666 16.5C10.666 17.9144 11.2279 19.271 12.2281 20.2712C13.2283 21.2714 14.5849 21.8333 15.9993 21.8333C17.4138 21.8333 18.7704 21.2714 19.7706 20.2712C20.7708 19.271 21.3327 17.9144 21.3327 16.5C21.3327 15.0855 20.7708 13.7289 19.7706 12.7287C18.7704 11.7285 17.4138 11.1666 15.9993 11.1666C14.5849 11.1666 13.2283 11.7285 12.2281 12.7287C11.2279 13.7289 10.666 15.0855 10.666 16.5Z" stroke="#58A4B0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <span>Settings</span>
+              </Link>
+            </li>
+            <li className="menu-item-newsdash" onClick={handleLogoutClick}>
+              <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon1-newsdash'>
+                <path d="M22.6667 21.8334L28 16.5M28 16.5L22.6667 11.1667M28 16.5H9.33333M17.3333 21.8334V23.1667C17.3333 24.2276 16.9119 25.245 16.1618 25.9951C15.4116 26.7453 14.3942 27.1667 13.3333 27.1667H8C6.93913 27.1667 5.92172 26.7453 5.17157 25.9951C4.42143 25.245 4 24.2276 4 23.1667V9.83337C4 8.77251 4.42143 7.75509 5.17157 7.00495C5.92172 6.2548 6.93913 5.83337 8 5.83337H13.3333C14.3942 5.83337 15.4116 6.2548 16.1618 7.00495C16.9119 7.75509 17.3333 8.77251 17.3333 9.83337V11.1667" stroke="#58A4B0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Logout</span>
+            </li>
+          </ul>
+
+          {/* {showPopup && (
+        <div className="popup-logout-newsdash">
+          <div className="popup-content-logout-newsdash">
+            <h2>Are you sure you want to logout?</h2>
+            <button onClick={handleClosePopup} className="cancel-button-logout-newsdash">Cancel</button>
+            <button className="confirm-button-logout-newsdash">Logout</button>
+          </div>
+        </div>
+      )} */}
+        </aside>
+
+
+
+        {/* <div className="dashboard1">
+      <div className="events-attended">
+        <h2>Events attended</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Start date</th>
+              <th>End date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {events.map((event, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{event.title}</td>
+                <td>{event.startDate}</td>
+                <td>{event.endDate}</td>
+                <td className={`status ${event.status.toLowerCase()}`}>
+                  {event.status} {event.status === 'Completed' ? '✅' : '❌'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="announcements">
+        <h2>Announcements</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Department</th>
+              <th>Announcement</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {announcements.map((announcement, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{announcement.date}</td>
+                <td>{announcement.department}</td>
+                <td>{announcement.message}</td>
+                <td>
+                  <button className="view-btn">👁️</button>
+                  <button className="edit-btn">✏️</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+
+     */}
+      </div>
+    </div>
+
+  );
+};
+
+export default NewsDash;

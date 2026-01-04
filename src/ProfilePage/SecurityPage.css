@@ -1,0 +1,1314 @@
+.container2 {
+    display: flex;
+    flex-direction: row; /* Stack elements vertically */
+    padding: 10px; 
+     gap: 10px; 
+    /* background-color: white; */
+    margin-left: 500px;
+    margin-top: -10px;
+    height: 390px;
+  }
+  
+  .password-management  {
+    border: 1px solid #ddd;
+    border-radius:18px;
+    padding: 15px;
+    width: 350px; /* Ensure full width of the container */
+    height:260px;
+    text-align: left;
+    background-color: white;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+  .password-management h2{
+    font-size: 18px;
+    color: black;
+  }
+
+   
+
+  .edit-but-container {
+    position: absolute; /* Absolute positioning for custom placement */
+    top: 210px; /* Position from the top */
+    left: 800px; /* Position from the left */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Width of the container */
+    height: 30px; /* Height of the container */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 7px; /* Rounded corners */
+    background-color: white; /* Background color */
+    padding: 0px 5px; /* Padding around the icon */
+    cursor: pointer;
+  }
+  
+  .edit-but {
+    width: 20px; /* Icon width */
+    height: 20px; /* Icon height */
+    fill: #1B1B1E; /* Icon color */
+  }
+  
+  /* h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    color: black;
+  } */
+  .password-input1-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    font-weight: 600;
+  }
+  
+  .password-input1-container label {
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    color: #000000;
+  }
+  
+  .password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .password-input1 {
+    width: 100%;
+    /* padding: 10px;/ */
+    font-size: 16px;
+    border: 1px solid #BDBDBD;
+    border-radius: 14px;
+    gap: 10px;
+   padding-left: 40px;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .left-icon {
+    left: 12px;
+    font-size: 0px;
+
+  }
+  
+  .right-icon {
+    top: 25px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .icon svg {
+    fill: #9E9E9E;
+  }
+  @media (min-width: 1600px) {
+    .container2 {
+      margin-left: 680px; /* Center container on large screens */
+      margin-top: 20px;
+      
+      justify-content: space-between;
+    }
+    .password-management h2{
+      font-size: 28px;
+      color: black;
+    }
+    .password-management {
+     width: 40%;
+      padding: 20px;
+      height: 350px;
+    }
+    
+    .password-input1-container label {
+      font-size: 22px;
+      margin-bottom: 2px;
+      font-weight: 400;
+      color: #000000;
+    }
+    
+    .edit-but-container {
+      top: 60px;
+      left: 1060px;
+    }
+  
+    .password-input1 {
+      font-size: 23px;
+      padding-left: 45px;
+    }
+  
+    /* Making sure password input container is responsive */
+    .password-input1-container {
+      padding: 5px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .edit-but-container {
+      right: 8px;
+      top: 20px;
+      width: 28px;
+      height: 28px;
+    }
+    .password-management h2 {
+      font-size: 17px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .password-management {
+      max-width: 90%;
+      padding: 10px;
+    }
+    
+    .edit-but-container {
+      top: 10px;
+      right: 10px;
+      width: 26px;
+      height: 26px;
+      padding: 2px 4px;
+    }
+    
+    .password-input1 {
+      font-size: 14px;
+      padding-left: 35px;
+    }
+    
+    .password-management h2 {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .password-management {
+      max-width: 100%;
+      padding: 8px;
+    }
+    
+    .edit-but-container {
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+    }
+  
+    .password-input1 {
+      font-size: 14px;
+      padding-left: 30px;
+    }
+  
+    .password-management h2 {
+      font-size: 15px;
+    }
+  }
+  /* ===================== */
+  .container3 {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px; 
+     gap: 10px; 
+    /* background-color: white; */
+    margin-left: 860px;
+    margin-top: -400px;
+    height: 400px;
+  }
+  .authenticator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20px;
+  }
+  
+  .option-box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    height: 60px;
+    /* max-width: 400px; */
+    display: flex;
+    align-items: left;
+    background-color: white;
+  }
+  
+  .option-box label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  input[type="radio"] {
+    margin-left:-190px;
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  .option-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+  .option-content strong{
+    font-size: 14px;
+    margin-top: 26px;
+    margin-left: -180px;
+  }
+  .option-content p{
+    font-size: 12px;
+    margin-top: 6px;
+    margin-left: -180px;
+  }
+
+  .option-content1 {
+    display: flex;
+    flex-direction: column;
+    /* font-size: 12px; */
+  }
+  .option-content1 strong{
+    font-size: 17px;
+    margin-top: 12px;
+    /* margin-bottom: 20px; */
+    padding-top: 0px;
+    margin-left: -180px;
+  }
+  .option-content1 p{
+    font-size: 12px;
+    margin-top: px;
+    margin-left: -180px;
+  }
+  .setup-button {
+    background-color: #66b3b2;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 300px;
+    height: 40px;
+  }
+  
+  .setup-button:hover {
+    background-color: #599b9a;
+  }
+  
+  .account-activity-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-left: 510px;
+    margin-top: -110px;
+    height: 120px;
+    width: 870px;
+  }
+  
+  .account-activity-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .account-activity-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .location-icon {
+    font-size: 24px;
+  }
+  
+  .location-info {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .location-name {
+    font-weight: bold;
+  }
+  
+  .device-info {
+    color: #777;
+    flex: 1;
+    text-align: right;
+  }
+  
+  .three-dots {
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .progress-container-securitypassword {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding:10px;
+    gap: 10px;
+  }
+  
+  .progress-bar-securitypassword {
+    width: 50%;
+    height: 5px;
+    border-radius: 20px;
+  }
+  
+  .progress-red {
+    background-color: #ff4a4a; /* Red */
+  }
+  
+  .progress-yellow {
+    background-color: #ffb300; /* Yellow */
+  }
+  
+  .progress-green {
+    background-color: #4caf50; /* Green */
+  }
+
+  .edit-password-container-securitypassword {
+    position: relative;
+  }
+  
+  .edit-but-container-securitypassword {
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .modal-securitypassword {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content-securitypassword {
+    background-color: #ededf1;
+    padding: 20px;
+    border-radius: 10px;  
+    width: 330px;
+    max-width: 100%;
+    height: 350px;
+  }
+  
+  .modal-header-securitypassword {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+
+  }
+  
+  .close-icon-securitypassword {
+    cursor: pointer;
+  }
+  
+ 
+  
+  .password-strength-securitypassword {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  
+  /* .strength-bar-securitypassword {
+    width: 30%;
+    height: 5px;
+    background-color: lightgray;
+    border-radius: 2px;
+  } */
+  
+  /* .weak {
+    background-color: red;
+  }
+  
+  .medium {
+    background-color: orange;
+  }
+  
+  .strong {
+    background-color: green;
+  } */
+  
+  .save-button-securitypassword {
+    background-color: #ffffff;
+    color:rgb(89,158,158);
+    padding-bottom: 30px;
+    margin-top: 20px;
+    /* margin-right: 90px; */
+    margin-left: 70px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 30px;
+  }
+  
+  .save-button-securitypassword:hover {
+    background-color:rgb(89,158,158);
+    color: white;
+  }
+  
+  
+
+  .input-container-edit-securitypassword {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon-edit-securitypassword {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #888;
+}
+
+.input-container-edit-securitypassword input {
+  padding-left: 40px;  /* Space for the lock icon */
+  padding-right: 40px; /* Space for the eye icon */
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.toggle-password-edit-securitypassword {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #888;
+}
+/* =============================================================== */
+.profilesecurity-authenticate-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  max-width: 470px;
+  height: 260px;
+  margin-top: 10px;
+  /* margin: 20px auto; */
+  /* font-family: "Arial", sans-serif; */
+}
+
+.profilesecurity-authenticate-heading {
+  font-size: 18px;
+  font-weight: 600;
+  /* margin-top: -10px; */
+  /* margin-bottom: 20px; */
+}
+
+.profilesecurity-authenticate-option {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 4px;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  position: relative;  /* Added for better control over the label/input positioning */
+}
+
+.profilesecurity-authenticate-label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.profilesecurity-authenticate-radio {
+  margin-right: 10px;
+  position: absolute;
+  left: 10px;
+  top: 10%;
+  transform: translateY(-50%);  /* Centering the radio button vertically */
+}
+
+.profilesecurity-authenticate-description {
+  margin-left: 40px;  /* Adjust to give space for the radio button */
+}
+
+.profilesecurity-authenticate-option-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.profilesecurity-authenticate-option-text {
+  font-size: 13px;
+  color: #2c2c2c;
+  margin-top: -5px;
+  /* margin: 5px 0 0; */
+}
+
+.profilesecurity-authenticate-button {
+  background-color: #58a4b0;
+  color: #fff;
+  border: none;
+  padding: 1.5px 10px;
+  border-radius: 13px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 60%;
+  height: 33px;
+  text-align: center;
+ margin-left: 100px;
+}
+
+.profilesecurity-authenticate-button:hover {
+  background-color: #4c8690;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+/* ========================== Responsive Design ========================== */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  .profilesecurity-authenticate-container {
+    max-width: 90%;  /* Full width with padding */
+    height: auto;
+  }
+  
+  .profilesecurity-authenticate-heading {
+    font-size: 16px;
+  }
+
+  .profilesecurity-authenticate-option {
+    flex-direction: column;
+    height: auto;  /* Allow option to adjust to content */
+  }
+
+  .profilesecurity-authenticate-radio {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .profilesecurity-authenticate-description {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .profilesecurity-authenticate-button {
+    width: 80%;  /* Wider button on smaller screens */
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .profilesecurity-authenticate-container {
+    max-width: 95%;  /* Adjust for mobile */
+    padding: 15px;
+  }
+
+  .profilesecurity-authenticate-heading {
+    font-size: 14px;
+  }
+
+  .profilesecurity-authenticate-option {
+    padding: 12px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .profilesecurity-authenticate-radio {
+    margin-bottom: 10px;
+    left: 10px;  /* Center radio button in mobile */
+  }
+
+  .profilesecurity-authenticate-description {
+    margin-left: 0;
+  }
+
+  .profilesecurity-authenticate-button {
+    width: 90%;  /* Make button nearly full width on mobile */
+  }
+}
+
+/* For large screens (desktops) */
+@media screen and (min-width: 1024px) {
+  .profilesecurity-authenticate-container {
+    max-width: 470px;  /* Keep the original size on desktop */
+  }
+
+  .profilesecurity-authenticate-button {
+    width: 60%;  /* Default button width */
+  }
+}
+
+/* For 1200px screens (large tablets or small laptops) */
+@media screen and (min-width: 1200px) {
+  .profilesecurity-authenticate-container {
+    max-width: 500px;  /* Increase container size on larger screens */
+    padding: 5px;  /* Add more padding for better spacing */
+  }
+
+  .profilesecurity-authenticate-heading {
+    font-size: 20px;  /* Slightly larger font */
+  }
+
+  .profilesecurity-authenticate-option {
+    padding: 30px;  /* Increase padding for more space */
+    height: 80px;  /* Adjust height for larger screens */
+  }
+
+  .profilesecurity-authenticate-button {
+    width: 50%;  /* Slightly smaller button on large screens */
+  }
+}
+
+/* For 1600px screens (large desktops) */
+@media screen and (min-width: 1600px) {
+  .profilesecurity-authenticate-container {
+    max-width: 650px;  /* Larger container for large screens */
+    padding: 15px;  /* More padding for larger viewports */
+    margin-left: 280px;
+    height: 350px;
+  }
+  .profilesecurity-authenticate-radio {
+    margin-right: 10px;
+    position: absolute;
+    left: -60px;
+    top: 10%;
+    transform: translateY(-50%);  /* Centering the radio button vertically */
+  }
+  .profilesecurity-authenticate-heading {
+    font-size: 28px;  /* Larger heading text */
+  }
+
+  .profilesecurity-authenticate-option {
+    /* padding: 4px;  Even more padding on larger screens */
+    height: 110px;  /* Increased height */
+  }
+
+  .profilesecurity-authenticate-button {
+    width: 40%;  /* Smaller button on very large screens */
+  }
+  .profilesecurity-authenticate-option-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    margin: 0;
+  }
+  
+  .profilesecurity-authenticate-option-text {
+    font-size: 20px;
+    color: #2c2c2c;
+    margin-top: -5px;
+    /* margin: 5px 0 0; */
+  }
+  .profilesecurity-authenticate-button {
+    background-color: #58a4b0;
+    color: #fff;
+    border: none;
+    padding: 4px 19px;
+    border-radius: 13px;
+    font-size: 30px;
+    cursor: pointer;
+    width: 60%;
+    height: 50px;
+    text-align: center;
+   margin-left: 100px;
+  }
+  
+}
+/* ====================================================================== */
+.profilecsecurity-account-activity {
+  background-color: white;
+  border-radius: 8px;
+  padding: 13px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+
+  max-width: 830px;
+  /* margin: auto; */
+  font-family: 'Poppins', sans-serif;
+  /* width: 700px; */
+  margin-left: 510px;
+  margin-top: -110px;
+  height: 140px;
+}
+
+.profilecsecurity-account-activity h3 {
+  font-size: 18px;
+  font-weight: 600;
+  /* margin-bottom: 20px; */
+}
+
+.profilecsecurity-activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
+  /* border-bottom: 1px solid #e0e0e0; */
+  margin-top: -10px;
+  margin-left: 100px;
+}
+.profilecsecurity-activity-item1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
+  /* border-bottom: 1px solid #e0e0e0; */
+  margin-top: -30px;
+  margin-left: 100px;
+}
+.profilecsecurity-activity-item:last-child {
+  border-bottom: none;
+}
+
+.profilecsecurity-location {
+  display: flex;
+  align-items: center;
+}
+
+.profilecsecurity-icon {
+  font-size: 24px;
+  margin-right: 0px;
+  margin-top: -10px;
+}
+
+.profilecsecurity-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profilecsecurity-city {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profilecsecurity-status {
+  font-size: 14px;
+  color: #828282;
+  margin-top: -20px;
+}
+
+.profilecsecurity-status.profilecsecurity-active {
+  color: #00a862; /* Green color for active status */
+}
+
+.profilecsecurity-device-info {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: -120px;
+}
+
+.profilecsecurity-device-info .profilecsecurity-dot {
+  /* margin-right: 5px; */
+}
+.profilecsecurity-dot {
+font-size: 40px;
+}
+.profilecsecurity-device-info1 {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: -300px;
+}
+
+.profilecsecurity-device-info .profilecsecurity-dot {
+  /* margin-right: 5px; */
+}
+.profilecsecurity-dot1 {
+font-size: 40px;
+}
+.profilecsecurity-more-options {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 100px;
+}
+/* ========================== Responsive Design ========================== */
+
+/* For mobile screens (up to 480px) */
+@media screen and (max-width: 480px) {
+  .profilecsecurity-account-activity {
+    max-width: 95%;
+    padding: 10px;
+  }
+  .profilecsecurity-account-activity h3 {
+    font-size: 16px;
+  }
+  .profilecsecurity-activity-item,
+  .profilecsecurity-activity-item1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profilecsecurity-device-info,
+  .profilecsecurity-device-info1 {
+    flex-direction: column;
+  }
+  .profilecsecurity-more-options {
+    font-size: 18px;
+  }
+}
+
+/* For tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .profilecsecurity-account-activity {
+    max-width: 90%;
+  }
+}
+
+/* For small laptops and tablets (769px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .profilecsecurity-account-activity {
+    max-width: 80%;
+  }
+}
+
+/* For large laptops (1200px) */
+@media screen and (min-width: 1200px) {
+  .profilecsecurity-account-activity {
+    max-width: 1000px;
+  }
+}
+
+/* For large desktops (1600px and above) */
+@media screen and (min-width: 1600px) {
+  .profilecsecurity-account-activity {
+    max-width: 1110px;
+    padding: 10px;
+    height: 200px;
+    margin-top: -10px;
+    margin-left: 690px;
+  }
+  .profilecsecurity-account-activity h3 {
+    font-size: 28px;
+    font-weight: 600;
+    /* margin-bottom: 20px; */
+  }
+  .profilecsecurity-dot {
+    font-size: 60px;
+    }
+    .profilecsecurity-device-info1 {
+      font-size: 24px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      margin-top: 0px;
+      margin-left: -300px;
+    }
+    
+    .profilecsecurity-device-info .profilecsecurity-dot {
+      /* margin-right: 5px; */
+    }
+    .profilecsecurity-dot1 {
+    font-size: 60px;
+    }
+    .profilecsecurity-more-options {
+      font-size: 30px;
+      cursor: pointer;
+      margin-right: 100px;
+    }
+    .profilecsecurity-icon {
+      font-size: 30px;
+      margin-right: 0px;
+      margin-top: -10px;
+    }
+    
+    .profilecsecurity-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .profilecsecurity-city {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    
+    .profilecsecurity-status {
+      font-size: 21px;
+      color: #828282;
+      margin-top: -20px;
+    }
+    .profilecsecurity-device-info {
+      font-size: 24px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-left: -0px;
+    }
+}
+
+/* =========================================================== */
+.mobile-app-authenticator-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  max-width: 470px;
+  height: 260px;
+  margin-top: 10px;
+}
+
+.back-button-container {
+  align-self: flex-start;
+  margin-top: -10px;
+}
+.back-button-container span{
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 50px;
+  
+}
+.back-button-container svg{
+  font-size: 18px;
+  font-weight: 400;
+ padding-left: 0px;
+  
+}
+.back-button  {
+  font-size: 18px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-number-container {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-number-label {
+  font-size: 13px;
+  /* margin-bottom: 10px; */
+  font-weight: 400;
+  margin-left: 90px;
+}
+
+.mobile-number-input {
+  padding: 10px;
+  width: 60%;
+  height: 30px;
+  border: 1px solid #0f0f0f;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: black;
+  margin-left: 90px;
+  font-size: 13px;
+}
+
+.get-code-button {
+  background-color:transparent;
+  color: #58a4b0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -20px;
+  font-size: 9px;
+  margin-left: 230px;
+}
+
+.profilesecurity-otp-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: -15px;
+  margin-left: 90px;
+}
+
+.profilesecurity-otp-label {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.profilesecurity-otp-hr {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #b4dbdb; /* Line color */
+  margin: 0;
+  /* margin-bottom: 10px; */
+}
+
+.profilesecurity-otp-input-boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 252px; /* Adjust width as needed */
+}
+
+.profilesecurity-otp-box {
+  width: 30px;
+  height: 35px;
+  border: 2px solid #b4dbdb; /* Border matching design */
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  outline: none;
+  margin: 0 0px;
+}
+
+.profilesecurity-otp-box:focus {
+  border-color: #66b3b7; /* Border color when input is focused */
+}
+
+.profilesecurity-otp-box::placeholder {
+  color: transparent; /* Hide the placeholder */
+}
+
+.setup-button-inside {
+  background-color: #58a4b0;
+  color: white;
+  padding: 1px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  height: 30px;
+  margin-left: 90px;
+  width: 60%;
+}
+/* Media queries for different screen sizes */
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .mobile-app-authenticator-form {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .mobile-number-label {
+    margin-left: 10px;
+  }
+
+  .mobile-number-input {
+    width: 100%;
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .get-code-button {
+    margin-left: 0;
+    font-size: 12px;
+  }
+
+  .profilesecurity-otp-container {
+    margin-left: 0;
+  }
+
+  .profilesecurity-otp-input-boxes {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .profilesecurity-otp-box {
+    width: 40px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .setup-button-inside {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Tablet view (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mobile-app-authenticator-form {
+    width: 80%;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .mobile-number-input {
+    width: 70%;
+    margin-left: 30px;
+  }
+
+  .get-code-button {
+    margin-left: 190px;
+  }
+
+  .profilesecurity-otp-input-boxes {
+    width: 220px;
+  }
+
+  .profilesecurity-otp-box {
+    width: 35px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .setup-button-inside {
+    width: 70%;
+    margin-left: 30px;
+  }
+}
+
+/* Desktop view (1025px to 1199px) */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .mobile-app-authenticator-form {
+    width: 60%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .mobile-number-input {
+    width: 60%;
+    margin-left: 30px;
+  }
+
+  .get-code-button {
+    margin-left: 230px;
+  }
+
+  .profilesecurity-otp-input-boxes {
+    width: 252px;
+  }
+
+  .profilesecurity-otp-box {
+    width: 40px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .setup-button-inside {
+    width: 60%;
+    margin-left: 30px;
+  }
+}
+
+/* Large Desktop view (1200px to 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .mobile-app-authenticator-form {
+    width: 50%;
+    height: auto;
+    padding: 30px;
+  }
+
+  .mobile-number-input {
+    width: 50%;
+    margin-left: 40px;
+  }
+
+  .get-code-button {
+    margin-left: 250px;
+  }
+
+  .profilesecurity-otp-input-boxes {
+    width: 300px;
+  }
+
+  .profilesecurity-otp-box {
+    width: 45px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .setup-button-inside {
+    width: 50%;
+    margin-left: 40px;
+  }
+}
+
+/* Extra Large Desktop view (1600px and above) */
+@media (min-width: 1600px) {
+  .mobile-app-authenticator-form {
+    max-width: 650px; 
+    height: 350px;
+    padding: 35px;
+    margin-left: 280px;
+  }
+
+  .mobile-number-input {
+    width: 65%;
+    margin-left: 80px;
+  }
+
+  .get-code-button {
+    margin-left: 270px;
+    font-size: 30px;
+  }
+
+  .profilesecurity-otp-input-boxes {
+    width: 350px;
+  }
+  .back-button-container span{
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 50px;
+    
+  }
+  .profilesecurity-otp-label {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .profilesecurity-otp-box {
+    width: 50px;
+    height: 55px;
+    font-size: 24px;
+  }
+  .mobile-number-label {
+    font-size: 23px;
+    /* margin-bottom: 10px; */
+    font-weight: 400;
+    margin-left: 90px;
+  }
+  
+  .mobile-number-input {
+    padding: 10px;
+    width: 60%;
+    height: 30px;
+    border: 1px solid #0f0f0f;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: black;
+    margin-left: 90px;
+    font-size: 23px;
+  }
+  
+ 
+  .setup-button-inside {
+    width: 45%;
+    margin-left: 150px;
+    font-size: 20px;
+  }
+}
