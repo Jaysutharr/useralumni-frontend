@@ -50,11 +50,13 @@ const Signup = () => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
+    console.log("API URL:", process.env.REACT_APP_API_URL);
 
     if (Object.keys(validationErrors).length === 0) {
       try {
         // Register the user with form data (email, FullName, password)
-        const registrationResponse = await axios.post(process.env.REACT_APP_LOCALURL + "/api/v1/auth/signup", formData);
+        const registrationResponse = await axios.post(process.env.REACT_APP_API_URL
+          + "/api/v1/auth/signup", formData);
 
         if (registrationResponse.data.success) {
           // Success alert on successful registration
@@ -65,7 +67,8 @@ const Signup = () => {
           });
 
           // Send OTP after successful registration
-          const otpResponse = await axios.post(process.env.REACT_APP_LOCALURL + "/api/v1/send-otp-to-user", { email: formData.email });
+          const otpResponse = await axios.post(process.env.REACT_APP_API_URL
+            + "/api/v1/send-otp-to-user", { email: formData.email });
 
           if (otpResponse.data.success) {
             // DEV MODE: Show OTP on screen if returned
