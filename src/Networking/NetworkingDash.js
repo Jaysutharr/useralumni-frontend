@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NetworkingDash.css'; // Your CSS file for styling
-import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit, FaBars } from 'react-icons/fa';
 // import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cl from '../assets/companylogo1.png';
@@ -13,7 +13,10 @@ const NetworkingDash = () => {
   const [events, setEvents] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     // Set the body background color to white when this component mounts
@@ -88,9 +91,9 @@ const NetworkingDash = () => {
     <div className="dashboard-container-networks">
       <div
         className="sidebar-toggle-networks"
-        onClick={() => setSidebarOpen(!sidebarOpen)}
+        onClick={toggleSidebar}
       >
-        ☰
+        <FaBars />
       </div>
       <header className="header1-networks">
         <div className="logo-section-networks">
@@ -112,7 +115,8 @@ const NetworkingDash = () => {
       </header>
 
       <div className="content-container-networks">
-        <div className="sidebar-networks">
+        <div className={`sidebar-networks ${isSidebarOpen ? 'active' : ''}`}>
+
           <ul className="sidebar-menu-networks">
             <li className="menu-item-networks " onClick={handleDashboardNavigation}>
               <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-networks'>

@@ -140,6 +140,8 @@
   border-radius: 50%;
 }
 
+
+
 .chat-messages {
   flex: 1;
   padding: 15px;
@@ -158,7 +160,7 @@
 .received {
   background: white;
   align-self: flex-start;
-  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .sent {
@@ -466,4 +468,3 @@
     font-size: 13px;
   }
 }
-

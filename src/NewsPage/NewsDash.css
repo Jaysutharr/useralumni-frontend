@@ -459,25 +459,34 @@
   .sidebar-newsdash {
     transform: translateX(-100%);
     /* Hidden by default */
-    width: 100%;
-    /* Full-width on small screens when toggled */
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
 
   /* Sidebar toggle button */
   .sidebar-toggle-newsdash {
     display: block;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 24px;
-    color: #58A4B0;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: #58a4b0;
     cursor: pointer;
     z-index: 1100;
-    /* Above the sidebar */
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   /* When the sidebar is toggled */
-  .sidebar.active-newsdash {
+  .sidebar-newsdash.active {
     transform: translateX(0);
     /* Slide in */
   }

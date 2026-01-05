@@ -1,90 +1,94 @@
-
 .dashboard-container-donationdash {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure the layout takes full height */
-    background-color: rgb(252, 252, 255);
-  }
-  .header1-donationdash {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: white;
-      height: 70px;
-    }
-    
-    .logo-section-donationdash {
-      display: flex;
-      align-items: center;
-    }
-    
-    .logo-donationdash {
-      height: 50px;
-      margin-right: 10px;
-      margin-left: 80px;
-    }
-    
-    .company-name-donationdash {
-      font-size: 24px;
-      font-weight: inherit;
-      margin-right: 10px;
-      color: #000;
-    }
-    
-    .dashboard-text-donationdash {
-      font-size: 30px;
-      font-weight: 500;
-      color: #69b3b7;
-      margin-top: -10px;
-      margin-left: 50px;
-    }
-    
-    .search-section1-donationdash {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-      margin-left: 120px;
-    }
-    
-    .search-input1-donationdash{
-      width: 80%;
-      padding: 8px 16px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 15px;
-    }
-    
-    .user-section-donationdash {
-      display: flex;
-      align-items: center;
-      margin-right: 50px;
-    }
-    .user-section-noti-donationdash{
-      /* border: 2px solid yellow; */
-      height: 40px;
-      width: 40px;
-      margin-right: 20px;
-      border-radius: 10px;
-      background-color: rgb(255, 244, 221);
-    
-      padding: 5px 11px;
-    }
-    .notification-icon-donationdash {
-      width: 18px;
-      height: 20px;
-      margin-right: 20px;
-      /* border: 1px solid ; */
-      align-items: center;
-    }
-    
-    .profile-image-donationdash {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-     /* Responsive Adjustments */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensure the layout takes full height */
+  background-color: rgb(252, 252, 255);
+}
+
+.header1-donationdash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  height: 70px;
+}
+
+.logo-section-donationdash {
+  display: flex;
+  align-items: center;
+}
+
+.logo-donationdash {
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 80px;
+}
+
+.company-name-donationdash {
+  font-size: 24px;
+  font-weight: inherit;
+  margin-right: 10px;
+  color: #000;
+}
+
+.dashboard-text-donationdash {
+  font-size: 30px;
+  font-weight: 500;
+  color: #69b3b7;
+  margin-top: -10px;
+  margin-left: 50px;
+}
+
+.search-section1-donationdash {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: 120px;
+}
+
+.search-input1-donationdash {
+  width: 80%;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+}
+
+.user-section-donationdash {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.user-section-noti-donationdash {
+  /* border: 2px solid yellow; */
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: rgb(255, 244, 221);
+
+  padding: 5px 11px;
+}
+
+.notification-icon-donationdash {
+  width: 18px;
+  height: 20px;
+  margin-right: 20px;
+  /* border: 1px solid ; */
+  align-items: center;
+}
+
+.profile-image-donationdash {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive Adjustments */
 
 /* Medium screens (laptops, tablets) */
 @media (max-width: 1200px) {
@@ -179,6 +183,7 @@
     height: 35px;
   }
 }
+
 /* Extra-large screens (1600px and above) */
 @media (min-width: 1600px) {
   .header1-donationdash {
@@ -227,75 +232,80 @@
     height: 55px;
   }
 }
-    /* sidebar */
-   /* Sidebar styling */
-  .sidebar-donationdash {
-    width: 250px;
-    background-color: white;
-    padding: 20px 0;
-    border-right: 1px solid #e5e5e5;
-    position: fixed; /* Keeps the sidebar fixed on the left */
-    height: 100vh;   /* Full height of the viewport */
-   
-    margin-top: 0px;
-  }
-  
-  .sidebar-menu-donationdash {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-  }
-  
-  .menu-item-donationdash {
-    display: flex;
-    align-items: center;
-    padding: 5px 20px;
-    color: #58A4B0;
-    font-size: 19px;
-    font-weight: 600;
-    cursor: pointer;
-    margin: 10px 20px;
-    border-radius: 15px;
-  }
-  
-  .menu-item-donationdash:hover {
-    background-color: rgb(89, 158, 158);
-    color: white;
-    border-radius: 15px;
-  }
-  
-  .menu-item-donationdash.active {
-    background-color: rgb(89, 158, 158);
-    color: #fff;
-    border-radius: 10px;
-  }
-  
-  .menu-icon-donationdash {
-    margin-right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .menu-item-donationdash:hover .menu-icon-donationdash {
-    color: white;
-  }
-  
-  .menu-icon1-donationdash {
-    margin-right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .menu-item-donationdash:hover .menu-icon1-donationdash path {
-    stroke: white; /* Change color on hover */
-  }
-  
-  .menu-item-donationdash:hover .menu-icon-donationdash path {
-    fill: white;
-  }
-  
-  /* Responsive Styling */
+
+/* sidebar */
+/* Sidebar styling */
+.sidebar-donationdash {
+  width: 250px;
+  background-color: white;
+  padding: 20px 0;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  /* Keeps the sidebar fixed on the left */
+  height: 100vh;
+  /* Full height of the viewport */
+
+  margin-top: 0px;
+  z-index: 900;
+}
+
+.sidebar-menu-donationdash {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.menu-item-donationdash {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  color: #58A4B0;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 20px;
+  border-radius: 15px;
+}
+
+.menu-item-donationdash:hover {
+  background-color: rgb(89, 158, 158);
+  color: white;
+  border-radius: 15px;
+}
+
+.menu-item-donationdash.active {
+  background-color: rgb(89, 158, 158);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.menu-icon-donationdash {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-donationdash:hover .menu-icon-donationdash {
+  color: white;
+}
+
+.menu-icon1-donationdash {
+  margin-right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-item-donationdash:hover .menu-icon1-donationdash path {
+  stroke: white;
+  /* Change color on hover */
+}
+
+.menu-item-donationdash:hover .menu-icon-donationdash path {
+  fill: white;
+}
+
+/* Responsive Styling */
 
 /* Large screens: default sidebar width */
 @media (min-width: 1200px) {
@@ -313,10 +323,11 @@
   .menu-item-donationdash {
     font-size: 35px;
   }
-.menu-item-donationdash svg{
-  height: 30px;
-  width: 30px;
-}
+
+  .menu-item-donationdash svg {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 /* Medium screens (1024px - 1199px): narrower sidebar */
@@ -349,98 +360,114 @@
   }
 }
 
+/* Sidebar toggle button (hidden on desktop) */
+.sidebar-toggle-donationdash {
+  display: none;
+  font-size: 24px;
+  color: #58A4B0;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
 /* Extra-small screens (below 768px): hidden sidebar with toggle button */
 @media (max-width: 767px) {
-  .sidebar-donationdash {
-    transform: translateX(-100%); /* Hidden by default */
-    width: 100%; /* Full-width on small screens when toggled */
-  }
-
-  /* Sidebar toggle button */
   .sidebar-toggle-donationdash {
     display: block;
+    /* Show toggle button */
+  }
+
+  .sidebar-donationdash {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 250px;
+    /* Sidebar width */
+    height: 100vh;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 24px;
-    color: #58A4B0;
-    cursor: pointer;
-    z-index: 1100; /* Above the sidebar */
+    top: 70px;
+    /* Below header */
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
 
   /* When the sidebar is toggled */
-  .sidebar.active-donationdash {
-    transform: translateX(0); /* Slide in */
+  .sidebar-donationdash.active {
+    transform: translateX(0);
+    /* Slide in */
   }
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .popup-logout-donationdash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    /* position: absolute; must be positioned */
-  }
-  
-  .popup-content-logout-donationdash {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: absolute; /* must be positioned */
-    z-index: 9999;
-  }
-  
-  .popup-content-logout-donationdash h2 {
-    margin-bottom: 20px;
-  }
-  
-  .cancel-button-logout-donationdash,
-  .confirm-button-logout-donationdash {
-    /* background-color: #6bb9b7; */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    margin: 10px;
-  }
-  .confirm-button-logout-donationdash {
-    background-color: #58A4B0;
-    color: white;
-  }
-  .cancel-button-logout-donationdash {
-    background-color: transparent;
-    border: 1px solid #58a4b0;
-    color: black;
-  }
-  
-  .cancel-button-logout-donationdash:hover,
-  .confirm-button-logout-donationdash:hover {
-    opacity: 0.8;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popup-logout-donationdash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  /* position: absolute; must be positioned */
+}
+
+.popup-content-logout-donationdash {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  /* must be positioned */
+  z-index: 9999;
+}
+
+.popup-content-logout-donationdash h2 {
+  margin-bottom: 20px;
+}
+
+.cancel-button-logout-donationdash,
+.confirm-button-logout-donationdash {
+  /* background-color: #6bb9b7; */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.confirm-button-logout-donationdash {
+  background-color: #58A4B0;
+  color: white;
+}
+
+.cancel-button-logout-donationdash {
+  background-color: transparent;
+  border: 1px solid #58a4b0;
+  color: black;
+}
+
+.cancel-button-logout-donationdash:hover,
+.confirm-button-logout-donationdash:hover {
+  opacity: 0.8;
+}

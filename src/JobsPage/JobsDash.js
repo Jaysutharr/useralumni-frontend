@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './JobsDash.css'; // Your CSS file for styling
-import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit, FaBars } from 'react-icons/fa';
 // import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cl from '../assets/companylogo1.png';
@@ -13,7 +13,10 @@ const JobsDash = () => {
   const [events, setEvents] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   // State for jobs
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -116,6 +119,12 @@ const JobsDash = () => {
   return (
 
     <div className="dashboard-container-jobsdash">
+      <div
+        className="sidebar-toggle-jobsdash"
+        onClick={toggleSidebar}
+      >
+        <FaBars />
+      </div>
       <header className="header1-jobsdash">
         <div className="logo-section-jobsdash">
           <img src={cl} alt="Company Logo" className="logo-jobsdash" />
@@ -136,7 +145,7 @@ const JobsDash = () => {
       </header>
 
       <div className="content-container-jobsdash">
-        <div className="sidebar-jobsdash">
+        <div className={`sidebar-jobsdash ${isSidebarOpen ? 'active' : ''}`}>
           <ul className="sidebar-menu-jobsdash">
             <li className="menu-item-jobsdash " onClick={handleDashboardNavigation}>
               <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-jobsdash'>

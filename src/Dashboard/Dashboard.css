@@ -86,26 +86,35 @@
 
 
 
-/* Extra-small screens (below 768px): hidden sidebar with toggle button */
 @media (max-width: 767px) {
-  .sidebar-newsdash {
-    transform: translateX(-100%);
-    /* Hidden by default */
-    width: 100%;
-    /* Full-width on small screens when toggled */
-  }
-
-  /* Sidebar toggle button */
   .sidebar-toggle {
     display: block;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 24px;
-    color: #58A4B0;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: #58a4b0;
     cursor: pointer;
     z-index: 1100;
-    /* Above the sidebar */
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 250px;
+    /* Sidebar width */
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    /* Below header */
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
 
   /* When the sidebar is toggled */
@@ -466,24 +475,34 @@
 
 /* Extra-small screens (below 768px): hidden sidebar with toggle button */
 @media (max-width: 767px) {
-  .sidebar {
-    transform: translateX(-100%);
-    /* Hidden by default */
-    width: 100%;
-    /* Full-width on small screens when toggled */
-  }
-
-  /* Sidebar toggle button */
   .sidebar-toggle {
     display: block;
     position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 24px;
-    color: #58A4B0;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: #58a4b0;
     cursor: pointer;
     z-index: 1100;
-    /* Above the sidebar */
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    /* Hidden by default */
+    width: 250px;
+    /* Sidebar width */
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    /* Below header */
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
 
   /* When the sidebar is toggled */
@@ -2406,7 +2425,7 @@
   }
 
   .announce-card,
-  . calendar-card,
+  .calendar-card,
   .mentors-card,
   .messages-card {
     max-width: 100%;

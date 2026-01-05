@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './DonationDash.css'; // Your CSS file for styling
-import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit, FaBars } from 'react-icons/fa';
 // import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cl from '../assets/companylogo1.png';
@@ -13,7 +13,12 @@ const DonationDash = () => {
   const [events, setEvents] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State for sidebar visibility
   const navigate = useNavigate();
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   useEffect(() => {
     // Set the body background color to white when this component mounts
     document.body.style.backgroundColor = "white";
@@ -96,6 +101,7 @@ const DonationDash = () => {
     <div className="dashboard-container-donationdash">
       <header className="header1-donationdash">
         <div className="logo-section-donationdash">
+          <FaBars className="sidebar-toggle-donationdash" onClick={toggleSidebar} />
           <img src={cl} alt="Company Logo" className="logo-donationdash" />
           <h1 className="company-name-donationdash">University</h1>
           <h2 className="dashboard-text-donationdash">Donations</h2>
@@ -114,7 +120,7 @@ const DonationDash = () => {
       </header>
 
       <div className="content-container-donationdash">
-        <div className="sidebar-donationdash">
+        <div className={`sidebar-donationdash ${isSidebarOpen ? 'active' : ''}`}>
           <ul className="sidebar-menu-donationdash">
             <li className="menu-item-donationdash " onClick={handleDashboardNavigation}>
               <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-donationdash'>

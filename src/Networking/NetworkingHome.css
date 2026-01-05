@@ -1,9 +1,18 @@
-
 .flex-container {
   display: flex;
   font-family: 'Poppins', sans-serif;
   margin-top: 26px;
 }
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
 /* NetworkMessageBox.css */
 .network-message-box {
   max-width: 350px;
@@ -11,8 +20,22 @@
   border-radius: 15px;
   padding: 22px !important;
   /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
-  margin-left: 240px;
-  margin-top: -560px
+}
+
+@media (min-width: 769px) {
+  .network-message-box {
+    margin-left: 240px;
+    margin-top: -560px;
+  }
+}
+
+@media (max-width: 768px) {
+  .network-message-box {
+    margin-left: 0;
+    margin-top: 20px;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .network-header {
@@ -26,7 +49,7 @@
   width: 300px;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
- z-index: 1; 
+  z-index: 1;
 }
 
 .network-header h3 {
@@ -57,6 +80,7 @@
   height: 30px;
   width: 300px;
 }
+
 /* Responsive styles with minimum widths for specific breakpoints */
 
 /* For screens up to 1600px */
@@ -67,20 +91,22 @@
     font-family: 'Poppins';
     margin-left: 130px;
     margin-top: -240px;
-   /* width:% !important; */
+    /* width:% !important; */
   }
 
   .network-message-box {
-    
+
     padding: 24px;
   }
+
   .network-header {
-   height: 70px;
+    height: 70px;
     width: 470px;
-  z-index: 1; 
+    z-index: 1;
   }
+
   .network-header h3 {
-    font-size: 30px !important; 
+    font-size: 30px !important;
   }
 
   .network-overview-item {
@@ -91,6 +117,7 @@
     margin-top: 2px;
     margin-left: 2px;
   }
+
   .network-dropdown-arrow {
     font-size: 23px;
   }
@@ -180,16 +207,18 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  
+
 }
-.connection-requests-heading{
+
+.connection-requests-heading {
   color: black;
 }
+
 .network-message-title h4 {
   font-size: 16px;
   font-weight: 600;
   color: #5da3a3;
- margin-left: 100px;
+  margin-left: 100px;
 }
 
 .network-expand-btn {
@@ -202,7 +231,7 @@
 .network-message-list {
   max-height: 180px;
   /* overflow-y: auto; */
-margin-left: 10px;
+  margin-left: 10px;
 }
 
 .network-message-item {
@@ -312,7 +341,7 @@ margin-left: 10px;
 /* For very large screens (1600px and above) */
 @media (min-width: 1600px) {
   .network-messages-wrapper {
-   width: 470px !important;
+    width: 470px !important;
     padding: 20px;
     height: 290px;
   }
@@ -325,25 +354,30 @@ margin-left: 10px;
     width: 55px;
     height: 55px;
   }
+
   .network-user-name {
     font-size: 20px;
     font-weight: 600;
     display: block;
   }
+
   .network-message-text {
     font-size: 19px;
   }
+
   .network-time-stamp {
     display: block;
     font-size: 18px;
     color: #6b6b6b;
   }
+
   .network-unread-count {
     width: 28px;
     height: 28px;
     font-size: 17px;
   }
 }
+
 /* Footer */
 .network-footer {
   margin-top: 10px;
@@ -372,6 +406,7 @@ margin-left: 10px;
 .network-company-info img {
   margin-right: 5px;
 }
+
 /* Responsive adjustments */
 
 /* For tablets and medium screens (768px and above) */
@@ -427,10 +462,11 @@ margin-left: 10px;
 
   .network-company-info img {
     width: 42px !important;
-    
+
     height: 42px !important;
   }
 }
+
 /* ================================================================ */
 .connection-requests-container {
   width: 89%;
@@ -448,7 +484,8 @@ margin-left: 10px;
 .tabs {
   display: flex;
   color: white;
-  border: 1px solid #58a4b0; /* Light border around both tabs */
+  border: 1px solid #58a4b0;
+  /* Light border around both tabs */
   border-radius: 15px;
   overflow: hidden;
 }
@@ -458,64 +495,77 @@ margin-left: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  background-color: white; /* Background for non-active tab */
+  background-color: white;
+  /* Background for non-active tab */
   color: white;
   height: 40px;
   outline: none;
   transition: background-color 0.3s ease;
-  
+
 }
 
 .active {
-  background-color: #00A8B0; /* Light turquoise color for active tab */
+  background-color: #00A8B0;
+  /* Light turquoise color for active tab */
   color: white;
 }
 
 .stay-updated-tab {
-  background-color: white; /* Background for inactive tab */
+  background-color: white;
+  /* Background for inactive tab */
   color: black;
 }
 
 .connect-tab {
-  background-color: #00A8B0; /* Active tab */
+  background-color: #00A8B0;
+  /* Active tab */
 }
+
 /* Responsive Styling */
 
 /* For small screens (Mobile) */
 @media (max-width: 600px) {
   .tabs-container {
-    flex-direction: column; /* Stack tabs vertically on smaller screens */
+    flex-direction: column;
+    /* Stack tabs vertically on smaller screens */
     margin-bottom: 15px;
   }
 
   .tabs {
-    width: 100%; /* Ensure tabs take up full width */
+    width: 100%;
+    /* Ensure tabs take up full width */
     justify-content: space-around;
   }
 
   .tab {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 8px 12px; /* Adjust padding for smaller screens */
+    font-size: 14px;
+    /* Adjust font size for smaller screens */
+    padding: 8px 12px;
+    /* Adjust padding for smaller screens */
   }
 
   .connection-requests-container {
-    width: 95%; /* Adjust container width for mobile */
+    width: 95%;
+    /* Adjust container width for mobile */
   }
 }
 
 /* For tablets (Medium screens) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .tabs-container {
-    flex-direction: row; /* Ensure tabs are in a row on tablets */
+    flex-direction: row;
+    /* Ensure tabs are in a row on tablets */
   }
 
   .tab {
-    font-size: 15px; /* Adjust font size for tablets */
+    font-size: 15px;
+    /* Adjust font size for tablets */
     padding: 12px 20px;
   }
 
   .connection-requests-container {
-    width: 90%; /* Adjust container width for tablets */
+    width: 90%;
+    /* Adjust container width for tablets */
   }
 }
 
@@ -526,12 +576,14 @@ margin-left: 10px;
   }
 
   .tab {
-    font-size: 16px; /* Default font size for medium-large screens */
+    font-size: 16px;
+    /* Default font size for medium-large screens */
     padding: 15px 25px;
   }
 
   .connection-requests-container {
-    width: 85%; /* Adjust container width for larger tablets/smaller desktops */
+    width: 85%;
+    /* Adjust container width for larger tablets/smaller desktops */
   }
 }
 
@@ -542,12 +594,14 @@ margin-left: 10px;
   }
 
   .tab {
-    font-size: 17px; /* Increase font size for larger screens */
+    font-size: 17px;
+    /* Increase font size for larger screens */
     /* padding: 15px 30px; */
   }
 
   .connection-requests-container {
-    width: 90%; /* Adjust container width for larger desktops */
+    width: 90%;
+    /* Adjust container width for larger desktops */
   }
 }
 
@@ -558,16 +612,19 @@ margin-left: 10px;
   }
 
   .tab {
-    font-size: 28px; /* Increase font size for very large screens */
+    font-size: 28px;
+    /* Increase font size for very large screens */
     /* padding: 20px 35px; */
     height: 80px;
-   
+
   }
 
   .connection-requests-container {
-    width: 90%; /* Adjust container width for very large desktops */
+    width: 90%;
+    /* Adjust container width for very large desktops */
   }
 }
+
 /* -------------------------------- */
 .connection-requests-heading {
   font-size: 18px;
@@ -594,12 +651,14 @@ margin-left: 10px;
   /* padding:10px 0; */
   /* border-bottom: 1px solid #ddd; */
 }
+
 .request-item1 {
   display: flex;
   align-items: center;
-  padding:30px 0;
-    margin-top: -50px;
+  padding: 30px 0;
+  margin-top: -50px;
 }
+
 .profile-image-network {
   width: 65px;
   height: 65px;
@@ -613,9 +672,10 @@ margin-left: 10px;
 }
 
 .user-name-detail {
-font-size: 14px;
-color: black;
+  font-size: 14px;
+  color: black;
 }
+
 .user-description {
   font-size: 12px;
   color: #666;
@@ -627,15 +687,18 @@ color: black;
   color: #999;
   margin-top: -20px;
 }
-.user-follows svg{
+
+.user-follows svg {
   margin-right: 5px;
 }
+
 .action-buttons {
   display: flex;
   gap: 10px;
 }
 
-.ignore-button, .accept-button {
+.ignore-button,
+.accept-button {
   padding: 5px 15px;
   border-radius: 10px;
   cursor: pointer;
@@ -643,28 +706,32 @@ color: black;
 }
 
 .ignore-button {
-  background-color:transparent;
-  color:rgb(79, 79, 79);
-font-weight: 200;
+  background-color: transparent;
+  color: rgb(79, 79, 79);
+  font-weight: 200;
 }
-.ignore-button:hover{
-   background-color: #58a4b0;
-  color:white;
+
+.ignore-button:hover {
+  background-color: #58a4b0;
+  color: white;
   font-weight: 300;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .accept-button {
   /* background-color: #58a4b0; */
-  color:rgb(74, 74, 74);
+  color: rgb(74, 74, 74);
   border: 0.5px solid #58a4b0;
   font-weight: 200;
 }
+
 .accept-button:hover {
   background-color: #58a4b0;
-  color:white;
+  color: white;
   font-weight: 300;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 /* Responsive Styles */
 
 /* For Screens with max-width 1200px */
@@ -804,6 +871,7 @@ font-weight: 200;
     gap: 3px;
   }
 }
+
 /* ------------------- */
 .boost-connections-container {
   /* background-color: white; */
@@ -829,7 +897,7 @@ font-weight: 200;
 .boost-connections-header h2 {
   font-size: 18px;
   font-weight: 400;
- color: black;
+  color: black;
 }
 
 .boost-close-button {
@@ -857,20 +925,23 @@ font-weight: 200;
 }
 
 .boost-connections-list {
-    display: flex;
-    gap: 15px;
-    justify-content: space-between;
-    overflow-x: scroll;
-    max-width: 700px;
-    height: 160px;
-    -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
-  scrollbar-width: none;  
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  overflow-x: scroll;
+  max-width: 700px;
+  height: 160px;
+  -ms-overflow-style: none;
+  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;
 }
 
 .boost-connection-item {
   flex: 1;
-  width: 60%; /* Adjust the width as per your requirement */
-  max-width: 950px; /* You can increase this value for larger screens */
+  width: 60%;
+  /* Adjust the width as per your requirement */
+  max-width: 950px;
+  /* You can increase this value for larger screens */
   text-align: center;
   height: 150px;
 }
@@ -909,10 +980,12 @@ font-weight: 200;
 .boost-connect-button:hover {
   background-color: #4d8e98;
 }
+
 .networking-main-container {
   overflow-y: scroll;
   height: 500px;
-  background-color: white !important; /* Ensures background stays white */
+  background-color: white !important;
+  /* Ensures background stays white */
   border-radius: 15px !important;
   width: 800px !important;
   margin-left: 580px !important;
@@ -920,20 +993,22 @@ font-weight: 200;
   transition: none !important;
   position: absolute !important;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  -ms-overflow-style: none;  /* Hides scrollbar for Internet Explorer and Edge */
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  /* Hides scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;
 }
+
 /* Media Queries for Responsiveness */
 @media (min-width: 1200px) {
- 
-  .boost-connections-container
-  {
+
+  .boost-connections-container {
     width: 95%;
     margin: 10px auto;
   }
 
   .boost-connection-item {
-    min-width: 18%; /* Slightly larger on 1200px screens */
+    min-width: 18%;
+    /* Slightly larger on 1200px screens */
     /* height: 150px; */
   }
 
@@ -950,19 +1025,24 @@ font-weight: 200;
   .boost-connections-container {
     max-width: 1500px;
   }
-  .networking-main-container{
-    margin-left: 750px!important;
+
+  .networking-main-container {
+    margin-left: 750px !important;
     width: 1000px !important;
     height: 770px;
   }
+
   .boost-connection-item {
-    min-width: 20%; /* Slightly larger width for better layout on larger screens */
-    
+    min-width: 20%;
+    /* Slightly larger width for better layout on larger screens */
+
   }
-.boost-connections-list{
-  max-width: 890px;
-  height: 180px;
-}
+
+  .boost-connections-list {
+    max-width: 890px;
+    height: 180px;
+  }
+
   .boost-connections-header h2 {
     font-size: 25px;
   }
@@ -970,12 +1050,14 @@ font-weight: 200;
   .boost-user-name {
     font-size: 23px;
   }
+
   .boost-user-role {
     font-size: 18px;
     color: #666;
     margin-bottom: 5px;
     margin-top: -25px;
   }
+
   .boost-connect-button {
     width: 120px;
     font-size: 17px;
@@ -984,6 +1066,7 @@ font-weight: 200;
 }
 
 @media (max-width: 1024px) {
+
   .boost-connections-container,
   .networking-main-container {
     width: 95%;
@@ -992,6 +1075,7 @@ font-weight: 200;
 }
 
 @media (max-width: 768px) {
+
   .boost-connections-container,
   .networking-main-container {
     width: 100%;
@@ -1018,6 +1102,7 @@ font-weight: 200;
 }
 
 @media (max-width: 480px) {
+
   .boost-connections-header h2,
   .boost-user-name {
     font-size: 0.8125rem;

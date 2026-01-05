@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NewsDash.css'; // Your CSS file for styling
-import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit, FaBars } from 'react-icons/fa';
 // import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cl from '../assets/companylogo1.png';
@@ -13,7 +13,10 @@ const NewsDash = () => {
   const [events, setEvents] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -130,9 +133,9 @@ const NewsDash = () => {
     <div className="dashboard-container-newsdash">
       <div
         className="sidebar-toggle-newsdash"
-        onClick={() => setSidebarOpen(!sidebarOpen)}
+        onClick={toggleSidebar}
       >
-        ☰
+        <FaBars />
       </div>
 
       <header className="header1-newsdash">
@@ -305,7 +308,7 @@ const NewsDash = () => {
 
 
         <aside
-          className={`sidebar-newsdash ${sidebarOpen ? "active-newsdash" : ""
+          className={`sidebar-newsdash ${isSidebarOpen ? "active" : ""
             }`}
         >
 

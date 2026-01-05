@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './EventsDash.css'; // Your CSS file for styling
-import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit, FaBars } from 'react-icons/fa';
 // import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cl from '../assets/companylogo1.png';
@@ -13,6 +13,10 @@ const EventsDash = () => {
   const [events, setEvents] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     // Set the body background color to white when this component mounts
@@ -92,6 +96,12 @@ const EventsDash = () => {
   return (
 
     <div className="dashboard-container-eventdash">
+      <div
+        className="sidebar-toggle-eventdash"
+        onClick={toggleSidebar}
+      >
+        <FaBars />
+      </div>
       <header className="header1-eventdash">
         <div className="logo-section-eventdash">
           <img src={cl} alt="Company Logo" className="logo-eventdash" />
@@ -112,7 +122,7 @@ const EventsDash = () => {
       </header>
 
       <div className="content-container-eventdash">
-        <div className="sidebar-eventdash">
+        <div className={`sidebar-eventdash ${isSidebarOpen ? 'active' : ''}`}>
           <ul className="sidebar-menu-eventdash">
             <li className="menu-item-eventdash " onClick={handleDashboardNavigation}>
               <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon-eventdash'>

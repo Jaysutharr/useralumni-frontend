@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css'; // Your CSS file for styling
-import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit } from 'react-icons/fa';
+import { FaHome, FaNetworkWired, FaCalendarAlt, FaNewspaper, FaBriefcase, FaHandHoldingHeart, FaBlog, FaLifeRing, FaCog, FaSignOutAlt, FaCheckCircle, FaTimesCircle, FaEye, FaEdit, FaBars } from 'react-icons/fa';
 // import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cl from '../assets/companylogo1.png';
@@ -21,7 +21,10 @@ const Dashboard = () => {
   const [events, setEvents] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   const navigate = useNavigate();
   const handleLogoutClick = () => {
     setShowPopup(true); // Show the popup when logout is clicked
@@ -229,9 +232,9 @@ const Dashboard = () => {
     <div className="dashboard-container ">
       <div
         className="sidebar-toggle"
-        onClick={() => setSidebarOpen(!sidebarOpen)}
+        onClick={toggleSidebar}
       >
-        ☰
+        <FaBars />
       </div>
       <header className="header1">
         <div className="logo-section">
@@ -253,7 +256,7 @@ const Dashboard = () => {
       </header>
       {/* ======================================= */}
       <div className="content-container">
-        <div className="sidebar mt-[-100px]" >
+        <div className={`sidebar ${isSidebarOpen ? 'active' : ''}`} >
           <ul className="sidebar-menu">
             <li className="menu-item active" onClick={handleDashboardNavigation}>
               <svg width="22" height="23" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg" className='menu-icon'>
