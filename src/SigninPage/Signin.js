@@ -61,16 +61,20 @@ const Signin = () => {
     if (validateForm()) {
       try {
         // const response = await fetch("http://13.235.100.222:13417/api/v1/auth/signin", {
-        const response = await fetch(process.env.REACT_APP_LOCALURL + "/api/v1/auth/signin", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...formData,
-            email: formData.email.toLowerCase(),
-          }),
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/v1/auth/signin`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ...formData,
+              email: formData.email.toLowerCase(),
+            }),
+          }
+        );
+
 
         if (response.ok) {
           const data = await response.json();
@@ -134,13 +138,17 @@ const Signin = () => {
 
       // Make the API call using the correct userIdFromResponse
       // const response = await fetch(`http://13.235.100.222:13417/api/v1/updateuser/${userIdFromResponse}`, {
-      const response = await fetch(process.env.REACT_APP_LOCALURL + "/api/v1/updateuser/" + userIdFromResponse, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ StreetAddress, City, State, Postalcode }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/v1/updateuser/${userIdFromResponse}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ StreetAddress, City, State, Postalcode }),
+        }
+      );
+
 
       // Handle the response
       if (response.ok) {
