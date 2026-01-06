@@ -3,6 +3,7 @@ import SupportDash from './SupportDash';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import './SupportRead.css'; // Ensure we use the shared layout styles
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const CreateFAQ = () => {
     const navigate = useNavigate();
@@ -31,8 +32,8 @@ const CreateFAQ = () => {
         setError('');
 
         try {
-            const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-            const apiUrl = `${baseUrl}/api/v1/faqs`;
+            const apiUrl = `${API_BASE_URL}/api/v1/faqs`;
+
 
             await axios.post(apiUrl, {
                 question: question,
@@ -53,7 +54,7 @@ const CreateFAQ = () => {
             setLoading(false);
         }
     };
-
+    const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
     return (
         <>
             <SupportDash />
