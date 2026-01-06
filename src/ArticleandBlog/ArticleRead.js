@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './ArticleRead.css';
 import axios from 'axios';
 
+
 const ArticleRead = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,13 +16,13 @@ const ArticleRead = () => {
   useEffect(() => {
     // Set the body background color to white when this component mounts
     document.body.style.backgroundColor = "white";
-
+    const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
     // Increment view count when blog is opened
     const incrementViewCount = async () => {
       if (blog && blog._id) {
         try {
           // Call backend to increment view count
-          const response = await axios.put(`http://localhost:13417/api/v1/blogs/${blog._id}/view`);
+          const response = await axios.put(`${API_BASE_URL}/api/v1/blogs/${blog._id}/view`);
           if (response.data && response.data.views !== undefined) {
             setViewCount(response.data.views);
           }
@@ -39,7 +40,7 @@ const ArticleRead = () => {
     const fetchRelatedBlogs = async () => {
       try {
         const timestamp = new Date().getTime();
-        const response = await axios.get(`http://localhost:13417/api/v1/blogs?t=${timestamp}`);
+        const response = await axios.get(`${API_BASE_URL}/api/v1/blogs?t=${timestamp}`);
 
         // Sort by date and exclude current blog
         const sortedBlogs = response.data
