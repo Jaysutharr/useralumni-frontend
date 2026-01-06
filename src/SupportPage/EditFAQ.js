@@ -3,6 +3,7 @@ import SupportDash from './SupportDash';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from "axios";
 import './SupportRead.css';
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const EditFAQ = () => {
     const navigate = useNavigate();
@@ -26,14 +27,10 @@ const EditFAQ = () => {
     useEffect(() => {
         if (!id) return;
 
-        // If we have state data, usage is optional, but fetching ensures freshness.
-        // If NO question/answer in state, definitely fetch.
         if (!question || !answer) {
             setLoading(true);
-            const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-            const apiUrl = `${baseUrl}/api/v1/faqs/${id}`;
 
-            axios.get(apiUrl)
+            axios.get(`${API_BASE_URL}/api/v1/faqs/${id}`)
                 .then(response => {
                     const data = response.data;
                     if (data) {
@@ -49,7 +46,7 @@ const EditFAQ = () => {
                     setLoading(false);
                 });
         }
-    }, [id, question, answer]);
+    }, [id]);
 
 
     const handleSubmit = async (e) => {
@@ -64,17 +61,17 @@ const EditFAQ = () => {
         setError('');
 
         try {
-            const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-            const apiUrl = `${baseUrl}/api/v1/faqs/${id}`;
 
-            const response = await axios.put(apiUrl, {
-                question: question,
-                answer: answer
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
+            const response = await axios.put(
+                `${API_BASE_URL}/api/v1/faqs/${id}`,
+                { question, answer },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
                 }
-            });
+            );
+
 
             // Log success response as per user's confirmation of format
             console.log("FAQ Update Successful:", response.data);
