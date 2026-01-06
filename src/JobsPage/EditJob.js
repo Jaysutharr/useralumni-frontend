@@ -26,7 +26,8 @@ const EditJob = () => {
         document.body.style.backgroundColor = "#fce8e6";
         const fetchJob = async () => {
             try {
-                const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
+                const baseUrl = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
+
                 const response = await axios.get(`${baseUrl}/api/v1/jobs/${id}`);
                 const jobData = response.data;
 
@@ -89,7 +90,8 @@ const EditJob = () => {
         setError('');
 
         try {
-            const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
+            const baseUrl = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
+
             const apiUrl = `${baseUrl}/api/v1/jobs/${id}`;
 
             // Format date to DD-MM-YYYY for backend consistency
