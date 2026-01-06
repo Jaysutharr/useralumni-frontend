@@ -27,6 +27,7 @@ const CreateBlog = () => {
             [name]: value
         }));
     };
+    const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -49,7 +50,7 @@ const CreateBlog = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:13417/api/v1/blogs',
+                `${API_BASE_URL}/api/v1/blogs`,
                 blogData,
                 {
                     headers: {
