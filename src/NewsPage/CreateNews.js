@@ -58,7 +58,11 @@ const CreateNews = () => {
                 tags: tagsArray
             };
 
-            const response = await axios.post('http://localhost:13417/api/v1/news-articles', newsData);
+            const response = await axios.post(
+                `${process.env.REACT_APP_API_URL}/api/v1/news-articles`,
+                newsData
+            );
+
 
             console.log('News created:', response.data);
             setSuccess(true);
