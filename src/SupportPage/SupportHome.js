@@ -9,6 +9,7 @@ import mI from '../assets/ImageEmail.png'
 import cpI from '../assets/ImagecallUs.png'
 import Dashboard from '../Dashboard/Dashboard';
 import SupportDash from './SupportDash';
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const SupportHome = () => {
   const navigate = useNavigate();
@@ -44,8 +45,8 @@ const SupportHome = () => {
 
     try {
       // Ensure no trailing slash usage from env var
-      const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-      const apiUrl = `${baseUrl}/api/v1/support-tickets`;
+      const apiUrl = `${API_BASE_URL}/api/v1/support-tickets`;
+
 
       console.log('Sending support ticket to:', apiUrl);
 
