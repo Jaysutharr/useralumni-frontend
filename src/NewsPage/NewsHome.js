@@ -22,7 +22,8 @@ const NewsHome = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:13417/api/v1/news-articles');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/news-articles`);
+
         console.log('API Response:', response.data);
 
         // Access the news array from response.data.news
