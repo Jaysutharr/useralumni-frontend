@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-const API_BASE_URL =
-    (process.env.REACT_APP_API_URL || "http://localhost:13417").replace(/\/$/, "");
 
 const EditDonation = () => {
     const navigate = useNavigate();
@@ -33,12 +31,8 @@ const EditDonation = () => {
 
     const fetchDonationDetails = async () => {
         try {
-            const response = await axios.get(
-                `${API_BASE_URL}/api/v1/getdonationsbyid/${id}`
-            );
-
-            const data = response.data?.data || response.data;
-
+            const response = await axios.get(`http://localhost:13417/api/v1/getdonationsbyid/${id}`);
+            const data = response.data;
             setFormData({
                 CampaignTitle: data.CampaignTitle || "",
                 CampaignDescription: data.CampaignDescription || "",
@@ -46,10 +40,8 @@ const EditDonation = () => {
                 GoalAmount: data.GoalAmount || "",
                 PaymentMethods: data.PaymentMethods || "",
                 Paymentdetail: data.Paymentdetail || "",
-                AllowCommenting:
-                    data.AllowCommenting === "true" || data.AllowCommenting === true
+                AllowCommenting: data.AllowCommenting === "true" || data.AllowCommenting === true
             });
-
             setLoading(false);
         } catch (err) {
             console.error("Error fetching donation details:", err);
@@ -57,7 +49,6 @@ const EditDonation = () => {
             setLoading(false);
         }
     };
-
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -78,22 +69,21 @@ const EditDonation = () => {
         };
 
         try {
-            const response = await axios.put(
-                `${API_BASE_URL}/api/v1/updatedonations/${id}`,
-                payload
-            );
-
+            const response = await axios.put(`http://localhost:13417/api/v1/updatedonations/${id}`, payload);
             if (response.status === 200) {
                 setSuccess(true);
-                setTimeout(() => navigate("/donation"), 2000);
+                setTimeout(() => {
+                    navigate("/donation");
+                }, 2000);
             }
         } catch (err) {
             console.error("Error updating donation:", err);
-
-            if (err.response?.status === 404) {
-                setError("Donation not found. It may have been deleted.");
-            } else if (err.response) {
-                setError("Server error. Please try again later.");
+            if (err.response) {
+                if (err.response.status === 404) {
+                    setError("Donation not found. It may have been deleted.");
+                } else {
+                    setError("Server error. Please try again later.");
+                }
             } else {
                 setError("Network error. Please check your connection.");
             }
@@ -101,7 +91,6 @@ const EditDonation = () => {
             setUpdating(false);
         }
     };
-
 
     const containerStyle = {
         maxWidth: "800px",
