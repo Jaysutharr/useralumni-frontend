@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CreateBlog.css'; // Reuse the same CSS
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const EditBlog = () => {
     const navigate = useNavigate();
@@ -66,7 +67,7 @@ const EditBlog = () => {
 
         try {
             const response = await axios.put(
-                `http://localhost:13417/api/v1/blogs/${blogToEdit._id}`,
+                `${API_BASE_URL}/api/v1/blogs/${blogToEdit._id}`,
                 blogData,
                 {
                     headers: {
@@ -118,6 +119,7 @@ const EditBlog = () => {
     if (!blogToEdit) {
         return null; // Will redirect in useEffect
     }
+
 
     return (
         <div className="create-blog-container">
