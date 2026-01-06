@@ -71,7 +71,8 @@ const NewsDash = () => {
       setLoading(true);
       // Add timestamp to prevent caching
       const timestamp = new Date().getTime();
-      const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
+      const baseUrl = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
+
       const response = await axios.get(`${baseUrl}/api/v1/blogs?t=${timestamp}`);
 
       // Sort blogs by createdAt date (newest first)
