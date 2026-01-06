@@ -29,7 +29,10 @@ const NewsDash = () => {
       try {
         console.log('🔄 Fetching news...');
         const timestamp = new Date().getTime();
-        const response = await axios.get(`http://localhost:13417/api/v1/news-articles?t=${timestamp}`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/v1/news-articles?t=${timestamp}`
+        );
+
         console.log('✅ News Response:', response.data);
         console.log('📊 News array:', response.data.news);
         console.log('📈 News count:', response.data.news?.length || 0);
