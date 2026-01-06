@@ -41,8 +41,8 @@ const CreateJob = () => {
         setError('');
 
         try {
-            const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-            const apiUrl = `${baseUrl}/api/v1/jobs`;
+            const apiUrl = `${process.env.REACT_APP_API_URL}/api/v1/jobs`;
+
 
             // Format date to DD-MM-YYYY
             const dateObj = new Date(formData.DatePosted);
