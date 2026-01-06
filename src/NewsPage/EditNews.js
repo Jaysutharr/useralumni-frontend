@@ -85,9 +85,10 @@ const EditNews = () => {
             };
 
             const response = await axios.put(
-                `http://localhost:13417/api/v1/news-articles/${news._id}`,
+                `${process.env.REACT_APP_API_URL}/api/v1/news-articles/${news._id}`,
                 newsData
             );
+
 
             console.log('News updated:', response.data);
             setSuccess(true);
