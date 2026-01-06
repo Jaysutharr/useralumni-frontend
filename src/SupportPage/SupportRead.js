@@ -10,6 +10,7 @@ import cpI from '../assets/ImagecallUs.png'
 import { FaArrowLeft } from 'react-icons/fa'; // Using FontAwesome for the left arrow
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const SupportRead = () => {
   const navigate = useNavigate();
@@ -29,8 +30,8 @@ const SupportRead = () => {
     // Fetch FAQs from API
     const fetchFaqs = async () => {
       try {
-        const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-        const response = await axios.get(`${baseUrl}/api/v1/faqs`);
+        const response = await axios.get(`${API_BASE_URL}/api/v1/faqs`);
+
 
         // Strictly expect an array based on user's specification
         if (Array.isArray(response.data)) {
