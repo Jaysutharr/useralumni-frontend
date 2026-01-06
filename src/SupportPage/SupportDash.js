@@ -8,6 +8,7 @@ import ni from '../assets/notificationI.jpeg';
 import pi from '../assets/profilei.jpeg';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const SupportDash = () => {
   const [events, setEvents] = useState([]);
@@ -59,7 +60,8 @@ const SupportDash = () => {
   }
   useEffect(() => {
     // Fetch events data
-    const eventsUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '') + '/api/v1/vieweventDetails';
+    const eventsUrl = `${API_BASE_URL}/api/v1/vieweventDetails`;
+
     axios.get(eventsUrl)
       .then(response => {
         // Handle response structure variations
