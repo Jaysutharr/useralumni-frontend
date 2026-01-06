@@ -64,17 +64,19 @@ const JobsDash = () => {
   useEffect(() => {
     // Fetch events data
     // Fetch events data
-    const eventsUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '') + '/api/v1/vieweventDetails';
+    const eventsUrl = `${process.env.REACT_APP_API_URL}/api/v1/vieweventDetails`;
+
     axios.get(eventsUrl)
       .then(response => {
-        // Handle response structure variations
-        const eventData = Array.isArray(response.data) ? response.data : (response.data.data || response.data || []);
-        // Only set if we got an array, otherwise default to empty to prevent map errors
-        setEvents(Array.isArray(eventData) ? eventData : []);
+        const eventData = Array.isArray(response.data)
+          ? response.data
+          : (response.data.data || []);
+        setEvents(eventData);
       })
       .catch(error => {
-        // console.error('Error fetching events:', error); 
+        console.error('Error fetching events:', error);
       });
+
 
     // Fetch announcements data - Endpoint not verified, commenting out to prevent 404
     /*
@@ -86,8 +88,9 @@ const JobsDash = () => {
     // Fetch Jobs Data
     const fetchJobs = async () => {
       try {
-        const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-        const response = await axios.get(`${baseUrl}/api/v1/jobs`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/v1/jobs`
+        );
         if (response.data.success) {
           setJobs(response.data.data);
         }
@@ -97,6 +100,7 @@ const JobsDash = () => {
         setLoading(false);
       }
     };
+
 
     fetchJobs();
   }, []);
