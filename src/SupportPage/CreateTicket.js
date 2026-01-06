@@ -3,6 +3,7 @@ import SupportDash from './SupportDash';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import './SupportRead.css'; // Reusing for consistency, or we can inline style
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
 
 const CreateTicket = () => {
     const navigate = useNavigate();
@@ -46,8 +47,8 @@ const CreateTicket = () => {
         setError('');
 
         try {
-            const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-            const apiUrl = `${baseUrl}/api/v1/support-tickets`;
+            const apiUrl = `${API_BASE_URL}/api/v1/support-tickets`;
+
 
             // Payload matches controller expectation: { subject, description, user }
             const payload = {
