@@ -62,16 +62,22 @@ const DonationDash = () => {
     // Fetch events data
     // axios.get('/api/events')
     // Fetch events data
-    const eventsUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '') + '/api/v1/vieweventDetails';
+    const baseUrl = process.env.REACT_APP_API_URL;
+
+    const eventsUrl = `${baseUrl}/api/v1/vieweventDetails`;
+
     axios.get(eventsUrl)
       .then(response => {
-        // Handle response structure variations
-        const eventData = Array.isArray(response.data) ? response.data : (response.data.data || response.data || []);
+        const eventData = Array.isArray(response.data)
+          ? response.data
+          : (response.data.data || response.data || []);
+
         setEvents(Array.isArray(eventData) ? eventData : []);
       })
       .catch(error => {
-        // console.error('Error fetching events:', error); 
+        console.error('Error fetching events:', error);
       });
+
 
     // Fetch announcements data - Endpoint not verified, commenting out to prevent 404
     /*

@@ -31,7 +31,11 @@ const EditDonation = () => {
 
     const fetchDonationDetails = async () => {
         try {
-            const response = await axios.get(`http://localhost:13417/api/v1/getdonationsbyid/${id}`);
+            const response = await axios.put(
+                `${API_BASE_URL}/api/v1/updatedonations/${id}`,
+                payload
+            );
+
             const data = response.data;
             setFormData({
                 CampaignTitle: data.CampaignTitle || "",
@@ -69,7 +73,11 @@ const EditDonation = () => {
         };
 
         try {
-            const response = await axios.put(`http://localhost:13417/api/v1/updatedonations/${id}`, payload);
+            const response = await axios.put(
+                `${API_BASE_URL}/api/v1/updatedonations/${id}`,
+                payload
+            );
+
             if (response.status === 200) {
                 setSuccess(true);
                 setTimeout(() => {

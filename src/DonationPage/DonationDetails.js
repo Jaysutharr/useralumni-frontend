@@ -23,11 +23,11 @@ const DonationDetails = () => {
 
   const fetchDonationDetails = async () => {
     try {
-      const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-      const response = await axios.get(`${baseUrl}/api/v1/getdonationsbyid/${id}`);
-      console.log("Donation details response:", response.data);
+      const baseUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.get(
+        `${baseUrl}/api/v1/getdonationsbyid/${id}`
+      );
 
-      // Handle response format - could be { data: {...} } or direct object
       const donationData = response.data?.data || response.data;
       setDonation(donationData);
       setLoading(false);
@@ -38,13 +38,14 @@ const DonationDetails = () => {
     }
   };
 
+
   const fetchMoreDonations = async () => {
     try {
-      const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-      const response = await axios.get(`${baseUrl}/api/v1/donations`);
-      console.log("More donations response:", response.data);
+      const baseUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.get(
+        `${baseUrl}/api/v1/donations`
+      );
 
-      // Handle response format
       let donationsArray = [];
       if (Array.isArray(response.data?.data)) {
         donationsArray = response.data.data;
@@ -52,12 +53,16 @@ const DonationDetails = () => {
         donationsArray = response.data;
       }
 
-      // Exclude current one and limit to 10
-      setMoreDonations(donationsArray.filter(d => d._id !== id && d.DonationId !== id).slice(0, 10));
+      setMoreDonations(
+        donationsArray
+          .filter(d => d._id !== id && d.DonationId !== id)
+          .slice(0, 10)
+      );
     } catch (err) {
       console.error("Error fetching more donations:", err);
     }
-  }
+  };
+
 
   const handleBackClick = () => {
     navigate(-1);

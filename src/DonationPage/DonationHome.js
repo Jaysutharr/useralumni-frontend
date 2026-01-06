@@ -32,16 +32,18 @@ const DonationHome = () => {
     // Fetch Donations
     const fetchDonations = async () => {
       try {
-        const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
-        const response = await axios.get(`${baseUrl}/api/v1/donations`);
+        const baseUrl = process.env.REACT_APP_API_URL;
+
+        const response = await axios.get(
+          `${baseUrl}/api/v1/donations`
+        );
 
         console.log("Donation API Response:", response.data);
 
-        // Handle response format: { data: [...] } or just array
         let donationData = [];
-        if (response.data && Array.isArray(response.data.data)) {
+        if (Array.isArray(response.data?.data)) {
           donationData = response.data.data;
-        } else if (response.data && Array.isArray(response.data)) {
+        } else if (Array.isArray(response.data)) {
           donationData = response.data;
         }
 
@@ -51,11 +53,13 @@ const DonationHome = () => {
           title: item.CampaignTitle || item.title || "Untitled Campaign",
           progress: item.progress || Math.floor(Math.random() * 100)
         }));
+
         setCampaigns(fetchedCampaigns);
       } catch (error) {
         console.error("Error fetching donations:", error);
       }
     };
+
 
     fetchDonations();
 

@@ -51,7 +51,13 @@ const CreateDonation = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:13417/api/v1/createdonations", payload);
+            const baseUrl = (process.env.REACT_APP_API_URL || "http://localhost:13417").replace(/\/$/, "");
+
+            const response = await axios.post(
+                `${baseUrl}/api/v1/createdonations`,
+                payload
+            );
+
             if (response.status === 201 || response.status === 200) {
                 setSuccess(true);
                 setTimeout(() => {
