@@ -49,7 +49,9 @@ const NewsRead = () => {
     try {
       const timestamp = new Date().getTime();
       // Using newly fixed endpoint
-      const response = await axios.get(`http://localhost:13417/api/v1/news-articles?t=${timestamp}`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/v1/news-articles?t=${timestamp}`
+      );
 
       const sorted = (response.data.news || [])
         .filter(n => n._id !== news._id)
@@ -66,8 +68,10 @@ const NewsRead = () => {
     if (!news?._id) return;
     try {
       // Using newly fixed endpoint
-      const response = await axios.get(`http://localhost:13417/api/v1/comments/${news._id}`);
-      setComments(response.data);
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/v1/comments/${news._id}`
+      );
+
     } catch (err) {
       console.error('Error fetching comments:', err);
     }
@@ -84,7 +88,11 @@ const NewsRead = () => {
         content: newComment
       };
 
-      await axios.post('http://localhost:13417/api/v1/comments', payload);
+      await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/v1/comments`,
+        payload
+      );
+
       setNewComment('');
       fetchComments(); // Refresh comments
     } catch (err) {
