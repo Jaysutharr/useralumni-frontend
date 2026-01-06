@@ -78,10 +78,12 @@ const JobDetails = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://13.235.100.222:13417/api/v1/jobs"); // Replace with your API endpoint
-        // const response = await axios.get(process.env.REACT_APP_localUrl+"/api/v1/jobs"); // Replace with your API endpoint
+        const baseUrl = (process.env.REACT_APP_API_URL || "http://localhost:13417").replace(/\/$/, "");
+        const response = await axios.get(`${baseUrl}/api/v1/jobs`);
+
+
         setJobs(response.data.data);
-        console.log("data",response.data.data);
+        console.log("data", response.data.data);
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch job listings");

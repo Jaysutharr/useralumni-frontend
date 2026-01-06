@@ -13,7 +13,8 @@ const JobView = () => {
   useEffect(() => {
     const fetchJobDetails = async () => {
       try {
-        const baseUrl = (process.env.REACT_APP_LOCALURL || 'http://localhost:13417').replace(/\/$/, '');
+        const baseUrl = (process.env.REACT_APP_API_URL || 'http://localhost:13417').replace(/\/$/, '');
+
 
         // Fetch current job details
         const jobResponse = await axios.get(`${baseUrl}/api/v1/jobs/${id}`);
